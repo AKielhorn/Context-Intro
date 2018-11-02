@@ -1,0 +1,38 @@
+% !TEX TS-program = ConTeXt (LuaTeX 1.0.9)
+% !TEX encoding = UTF-8 Unicode
+
+% Copyright 2018 Axel Kielhorn
+% Lizenz: CC-BY-SA 4.0 Unported http://creativecommons.org/licenses/by-sa/4.0/deed.de
+
+\startcomponent *
+\product prd_intro
+\project project_intro
+
+\startsection[
+  reference=links,
+  title={Links}
+  ]
+\index{Links}
+Für Hyperlinks ist kein zusätzliches Paket erforderlich, das Dokument muss lediglich mit
+
+\starttyping
+\setupinteraction[state=start]
+\stoptyping
+
+als interaktiv definiert werden.
+
+\startitemize
+
+\item
+  Als URL direkt: \useURL[url1][http://www.dante.de/]\from[url1]
+\item
+  Oder als Name maskiert: \useURL[url2][http://www.dante.de/][][DANTE
+  e.V.]\from[url2]
+\item
+  Interner Verweis auf \in{Kapitel}[Verweise]. Hier steht etwas über Verweise.
+\stopitemize
+
+\stopsection
+
+\stopcomponent
+

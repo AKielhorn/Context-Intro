@@ -1,0 +1,31 @@
+% !TEX TS-program = ConTeXt (LuaTeX 1.0.9)
+% !TEX encoding = UTF-8 Unicode
+
+\startcomponent *
+\product prd_intro
+\project project_intro
+
+\startsection[
+  reference=typing,
+  title={Typing}
+  ]
+\index{Verbatim}\index{Typing}
+
+\type{Typing} soll den Text exakt wiedergeben. Das heißt, mehrere
+Leerzeichen werden nicht zu einem Leerraum zusammengefügt, ConTeXt-Befehle
+werden nicht ersetzen und Kommentare nicht ausgeblendet.
+
+Für kurze Einschübe in der Zeile dient der Befehl \type{\type{}}.
+
+In LaTeX heißt die Umgebung \type{verbatim}.
+
+\starttyping
+% Ein Kommentar 
+\startitemize
+    \item {\tiny tiny}
+\stopitemize
+\stoptyping
+
+\stopsection
+
+\stopcomponent

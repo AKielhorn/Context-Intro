@@ -1,0 +1,92 @@
+% !TEX TS-program = ConTeXt (LuaTeX 1.0.9)
+% !TEX encoding = UTF-8 Unicode
+
+% Copyright 2018 Axel Kielhorn
+% Lizenz: CC-BY-SA 4.0 Unported http://creativecommons.org/licenses/by-sa/4.0/deed.de
+
+\startcomponent *
+\product prd_intro
+\project project_intro
+
+\startsection[reference=gliederung,
+  title={Gliederung}
+  ]
+  
+  \index{Section}
+  \index{Part}
+  
+  Es gibt zwei Möglichkeiten Gliederungen zu definieren.
+  ConTeXt versteht die LaTeX-Befehle \type{\chapter{}}, \type{\section{}} usw.
+  
+  Für einige Funktionen (tagged-PDF, ePUB Export und XML Export) muss die Gliederung als Umgebung definiert werden.
+  
+\starttyping
+  \startsection[
+    reference=gliederung,
+    title={Gliederung}
+    ]
+    Lorem ipsum dolor
+  \stopsection
+\stoptyping
+
+
+Ein Dokument hat dann z.\,B. folgenden Aufbau:
+
+\starttyping
+\startext
+  \startpart[title={Part}]
+    \startchapter[title={Chapter}]
+      \startsection[title={Section}]
+        \startsubsection[title={Subsection}]
+          \startsubsubsection[title={Subsubsection}]
+            \startsubsubsubsection[title={Subsubsubsection}]
+              \startsubsubsubsubsection[title={Subsubsubsubsection}]
+
+              \stopsubsubsubsubsection
+            \stopsubsubsubsection
+          \stopsubsubsection
+        \stopsubsection
+      \stopsection
+    \stopchapter
+  \stoppart
+\stoptext
+\stoptyping
+
+
+  \startsubsection[
+    reference=subsection,
+    title={subsection}
+    ]
+
+    Dies ist der Test für eine \type{subsection}.
+
+    \startsubsubsection[
+      reference=subsubsection,
+      title={subsubsection}
+      ]
+
+      Dies ist der Test für eine \type{subsubsection}.
+
+      \startsubsubsubsection[
+        reference=subsubsubsection,
+        title={subsubsubsection}
+        ]
+
+        Dies ist der Test für einen \type{subsubsubsection}. 
+        Ab dieser Ebene werden die Abschnitte nicht mehr nummeriert.
+        Das läßt sich jedoch mit dem Befehl \type{\setuphead[subsubsubsection][number=yes]} ändern.
+
+
+        \startsubsubsubsubsection[
+          reference= subsubsubsubsection,
+          title={subsubsubsubsection}
+          ]
+
+          Dies ist der Test für einen \type{subsubsubsubsection}.
+        \stopsubsubsubsubsection
+      \stopsubsubsubsection
+    \stopsubsubsection
+  \stopsubsection
+\stopsection
+
+\stopcomponent

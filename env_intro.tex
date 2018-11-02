@@ -1,0 +1,136 @@
+\startenvironment env_intro
+
+\usepath[A]
+\setuphyphenation[method=expanded]
+
+\usemodule[wtitle]
+\usemodule[lettrine]
+
+\language[de]
+\mainlanguage[de]
+\setbreakpoints[compound]
+
+\setupcolors[state=start]
+
+\setupbibtex[database={epub_latex_beispiel},sort=author]
+\setuppublications[alternative=apa]
+
+% Enable hyperlinks
+\setupinteraction[state=start, color=middleblue]
+
+\setuppapersize [A4][A4]
+\setuplayout    [width=middle,  backspace=1.5in, cutspace=1.5in,
+                 height=middle, topspace=0.75in, bottomspace=0.75in]
+
+\setuppagenumbering[location={footer,center}]
+
+%
+% Ligaturen für Aufl* Wörter
+%
+\replaceword[eka][Auflage][Au{fl}age]
+\replaceword[eka][Auflistung][Au{fl}istung]
+\setreplacements[eka]
+
+\setupbodyfont[11pt]
+
+\setupwhitespace[medium]
+
+\setuphead[chapter]             [style=\ssd] % title
+\setuphead[section]             [style=\ssc] % subject
+\setuphead[subsection]          [style=\ssb] % subsubject
+\setuphead[subsubsection]       [style=\bf]  % subsubsubject
+\setuphead[subsubsubsection]    [style=\bf]
+\setuphead[subsubsubsubsection] [style=\bf]
+
+%\setuphead[chapter, section, subsection, subsubsection][number=no]
+\setuphead[subsubsubsection, subsubsubsubsection][number=no]
+%\setuphead[subsubsubsection, subsubsubsubsection][number=yes]
+\setuphead[subsubsubsection, subsubsubsubsection][alternative=text]
+
+%
+% Neue Auzählung
+%
+
+\defineitemgroup[aufzählung][level=3]
+\setupitemgroup[aufzählung][1][n,repeat][stopper=)]
+\setupitemgroup[aufzählung][2][a,repeat][stopper=),width=2em]
+\setupitemgroup[aufzählung][3][n][width=3em]
+
+%
+% Unterschiedliche Descriptions
+%
+\definedescription
+  [description]
+  [headstyle=bold, style=normal, location=hanging, width=broad,
+   alternative=hanging, distance=0.2em, 
+   ]
+
+\definedescription
+  [ldescription]
+  [headstyle=bold, style=normal, location=hanging, width=broad,
+   distance=0.2em, alternative=serried,
+   ]
+
+\definedescription
+  [xdescription]
+  [headstyle=bold, style=normal, location=hanging, width=broad,
+   distance=0.2em, alternative=serried,
+   ]
+
+\setupitemize[autointro]    % prevent orphan list intro
+\setupitemize[indentnext=no]
+
+\setupfloat[figure][default={here,nonumber}]
+\setupfloat[table][default={here,nonumber}]
+
+\setupthinrules[width=15em] % width of horizontal rules
+
+\setupdelimitedtext
+  [blockquote]
+  [before={\blank[medium]},
+   after={\blank[medium]},
+   indentnext=no,
+  ]
+
+%\setupdelimitedtext[quotation:1][left=»,right=«]
+%\setupdelimitedtext[quotation:2][left=›,right=‹]
+%\setupdelimitedtext[quotation:1][left=„,right=“]
+%\setupdelimitedtext[quotation:2][left=‚,right=’]
+
+\setupcombinedlist[content][list={chapter,section,subsection,subsubsection}]
+
+%
+% Einstellungen für unit und digits
+%
+\setdigitmode {3} \setdigitorder{0} % kleiner 1000er Trenner, Komma
+\setupunits[method=3]
+
+%
+% Initiale einfach
+%
+\setupinitial
+   [location=text,
+    n=2,
+    color=darkred,
+    distance=0em,
+    hoffset=0em,
+    voffset=3.4ex,
+    before=\blank]
+
+%
+% und mit t-lettrine
+%
+\setuplettrine[Lines=3, % default 2
+               Hang=.5, % default 0
+               Oversize=0,
+               Raise=0,
+               Findent=0pt,
+               Nindent=0em,
+               Slope=0em,
+               Ante=,
+               FontHook=\green, % default leer
+               TextFont=\kap\bf, % default \sc
+               Image=no]
+
+
+\stopenvironment

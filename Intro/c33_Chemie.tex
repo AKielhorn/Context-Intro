@@ -1,0 +1,65 @@
+% !TEX TS-program = ConTeXt (LuaTeX 1.0.9)
+% !TEX encoding = UTF-8 Unicode
+
+% Copyright 2018 Axel Kielhorn
+% Lizenz: CC-BY-SA 4.0 Unported http://creativecommons.org/licenses/by-sa/4.0/deed.de
+
+\startcomponent *
+\product prd_intro
+\project project_intro
+
+\startsection[
+  reference=chemie,
+  title={Chemie}
+  ]
+\index{Chemie}
+Zur Eingabe chemischer Formeln benutzt man den \type{\chemical} Befehl.
+Leider ist dieser Bereich schlecht dokumentiert.
+
+\starttyping
+\startchemicalformula
+ \chemical{2 H_2}\chemical{PLUS}\chemical{O_2}
+ \chemical{GIVES}\chemical{2 H_2O}
+\stopchemicalformula
+\stoptyping
+
+\startchemicalformula
+ \chemical{2 H_2}\chemical{PLUS}\chemical{O_2}\chemical{GIVES}\chemical{2 H_2O}
+\stopchemicalformula
+
+Das kann man auch als Textformel darstellen: \chemical{2 H_2,PLUS,O_2,GIVES,2 H_2O}.
+
+Wasser dissoziiert zu Ionen.
+
+\starttyping
+\startchemicalformula
+ \chemical{2 H_2O}\chemical{GIVES}
+ \chemical{OH\high{$-$}}\chemical{PLUS}\chemical{H_3O\high{$+$}}
+\stopchemicalformula
+\stoptyping
+
+\startchemicalformula
+ \chemical{2 H_2O}\chemical{GIVES}\chemical{OH\high{$-$}}\chemical{PLUS}\chemical{H_3O\high{$+$}}
+\stopchemicalformula
+
+Zum Abschluss noch etwas Süßes
+
+\startchemical [height=4500,bottom=2500]
+  \bottext{$\beta$-D-Fructofuranose}
+  \chemical[FIVEFRONT,BB123,+SB4,-SB5,Z5][O]
+  \chemical[+LR1234,+LRZ1234][OH,\SR{HO},H,\SR{HOH_2C}] % oben
+  \chemical[+RR1234,-RRZ1234][\SL{CH_2OH},H,OH,H] %unten
+\stopchemical
+
+\startchemical [height=4500,bottom=2500]
+  \bottext{$\beta$-D-Fructopyranose}
+  \chemical[SIXFRONT,BB123,B4,+SB5,-SB6,Z6] [O]
+  \chemical[+LR12345,LRZ12345] [OH,\SR{HO},H,H,H] % oben
+  \chemical[+RR12345,RRZ12345] [CH_2OH,H,\SL{OH},\SR{HO},H] % unten
+\stopchemical
+
+
+\stopsection
+
+\stopcomponent
+

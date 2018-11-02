@@ -1,0 +1,57 @@
+% !TEX TS-program = ConTeXt (LuaTeX 1.0.9)
+% !TEX encoding = UTF-8 Unicode
+
+% Copyright 2018 Axel Kielhorn
+% Lizenz: CC-BY-SA 4.0 Unported http://creativecommons.org/licenses/by-sa/4.0/deed.de
+
+\startcomponent *
+\product prd_intro
+\project project_intro
+
+
+\startsection[
+  reference=zitate,
+  title={Zitate}
+  ]
+\index{Zitate}\index{Anführungszeichen}
+Längere Zitate werden in einer \type{blockquote} Umgebung gesetzt.
+
+\starttyping
+\startblockquote
+Hier ist eine Zitat in etwas kleinerer Schrift mit breiteren Rändern.
+Es muss noch etwas länger werden, damit man die Ränder besser sieht.
+\stopblockquote
+\stoptyping
+
+\startblockquote
+Hier ist eine Zitat in etwas kleinerer Schrift mit breiteren Rändern.
+Es muss noch etwas länger werden, damit man die Ränder besser sieht.
+\stopblockquote
+
+
+Für kurze Zitate, die innerhalb eines Absatzes gibt es den \type{\quotation} Befehl. 
+Damit kann man wörtliche Rede \quotation{So wie diese hier.} wiedergeben.
+Die Anführungsstriche werden richtig gesetzt. "Hier zum Unterschied falsche Anführungszeichen."
+
+Innerhalb der \type{\quotation} kann man mit dem \type{\quote} Befehl eine weitere Ebene schachteln.
+\quotation{Äußere Rede \quote{Innerer Monolog} und hier wieder außen.}
+
+Die Anführungszeichen werden abhängig von der Sprache angepasst.
+
+{\language[fr]
+In Französich sieht das dann so aus:
+Innerhalb der \type{\quotation} kann man mit dem \type{\quote} Befehl eine weitere Ebene schachteln.
+\quotation{Äußere Rede \quote{Innerer Monolog} und hier wieder außen.}
+}
+
+In der Environment-Datei kann man das Aussehen umdefinieren.
+
+\starttyping
+\setupdelimitedtext[quotation:1][left=»,right=«]
+\setupdelimitedtext[quotation:2][left=›,right=‹]
+\stoptyping
+
+\stopsection
+
+\stopcomponent
+

@@ -1,0 +1,52 @@
+% !TEX TS-program = ConTeXt (LuaTeX 1.0.9)
+% !TEX encoding = UTF-8 Unicode
+
+% Copyright 2018 Axel Kielhorn
+% Lizenz: CC-BY-SA 4.0 Unported http://creativecommons.org/licenses/by-sa/4.0/deed.de
+
+\startcomponent *
+\product prd_intro
+\project project_intro
+
+\startsection[
+  reference=Verweise,
+  title={Verweise}
+  ]
+
+\index{Links}\index{Verweise}
+Anstelle des \type{\label} Befehls gibt man die Referenz in eckigen Klammern bei den Gliederungsbefehlen an. 
+Benutzt man MkIV Syntax, so wird stattdessen eine Referenz in \type{\startsection} Befehl definiert.
+
+Verweise im Text erreicht man mit \type{\label} und \type{\ref}. So
+wurde am Anfang dieses Teils ein Label \type{Beispiele} gesetzt, auf
+welches man mit „siehe Teil {[}Beispiele{]}“ verweisen kann. Alternativ
+kann man mit \type{\pageref} auf die Seite verweise, also „siehe Seite”.
+Das Verweisen klappt auch auf Abschnitte, siehe dazu 
+\in{Abschnitt}[Verweise] auf \at{Seite}[Verweise].
+
+\starttyping
+\section[whatever]{Who cares}
+... 
+\stoptyping
+
+\starttyping
+\startsection[reference=whatever,title={Who cares}]
+... 
+\stopsection
+\stoptyping
+
+Auf die Referenzen kann man mit verschiedenen Befehlen zugreifen:
+
+\starttyping
+\at {page}[other::whatever]
+\in {chapter}[other::whatever]
+\about [other::whatever]
+\goto{location}[other::whatever]
+\stoptyping
+
+Es ist möglich für jedes Kapitel einen eigenen Namensraum zu schaffen. Somit können Konflikte bei gleiche Referenzen in unterschiedlichen Kapiteln vermieden werden.
+
+\stopsection
+
+\stopcomponent
+

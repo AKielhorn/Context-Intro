@@ -1,0 +1,88 @@
+% !TEX TS-program = ConTeXt (LuaTeX 1.0.9)
+% !TEX encoding = UTF-8 Unicode
+
+% Copyright 2018 Axel Kielhorn
+% Lizenz: CC-BY-SA 4.0 Unported http://creativecommons.org/licenses/by-sa/4.0/deed.de
+
+\startcomponent *
+\product prd_intro
+\project project_intro
+
+\startsection[
+  reference=Ausblick,
+  title={Ausblick}
+  ]
+
+\startsubsection[title={Registerhaltiger Satz}]
+\index{registerhaltiger Satz}\index{Grundlinienraster}
+ConTeXt bietet Unterstützung für registerhaltigen Satz.
+Dadurch werden die Grundlinien der Zeilen an einem Raster ausgerichtet.
+Das ist besonders bei mehrspaltigem Satz sinnvoll.
+
+Der registerhaltige Satz wird mit
+
+\starttyping
+\setuplayout[grid=yes]
+\stoptyping
+
+aktiviert.
+Damit das Ergebnis gut aussieht, müssen an verschiedenen Stellen Anpassungen im Layout vorgenommen werden.
+So sollten Überschriften ein Vielfaches des Grundlinienraster hoch sein, 
+auch wenn sie auf mehrere Zeile umbrochen werden.
+
+\stopsubsection
+
+\startsubsection[title={Titelblatt}]
+
+\index{Titelblatt}
+
+Diese Dokument benutzt das \type{wtitle} Modul um ein Titelblatt zu erzeugen.
+Da kein Datum definiert wurde, wird das Datum der PDF-Erstellung benutzt.
+
+\starttyping
+\doctitle{Eine kurze Einführung in ConTeXt}
+\author{Axel Kielhorn}
+%\date{}
+\maketitle
+\stoptyping
+
+\stopsubsection
+
+\startsubsection[title={Inhaltsverzeichnis}]
+
+\index{Inhaltsverzeichnis}
+
+Das Inhaltsverzeichnis wird entweder mit \type{\completecontent}
+oder mit \type{\placecontent} erstellt. Im ersten Fall gibt es eine Überschrift, im zweiten nicht.
+
+\useURL[contextcontent][https://wiki.contextgarden.net/Table_of_Contents][][Contextgarden]
+
+Es gibt viele Möglichkeiten das Aussehen des Inhaltsverzeichnises zu beeinflussen.
+Im \from[contextcontent] gibt es dazu eine umfangreiche Seite.
+ 
+
+\stopsubsection
+
+
+\startsubsection[title={Literaturverzeichnis}]
+
+\index{Literaturverzeichnis}
+ConTeXt kann ein Literaturverzeichnis erstellen und kommt dabei ohne externe Programme aus.
+
+\stopsubsection
+
+\startsubsection[title={Schlagwortregister}]
+
+\index{Index}\index{Schlagwortregister}
+ConTeXt kann ein Schlagwortregister (Index) erstellen und kommt dabei ohne externe Programme aus.
+
+\stopsubsection
+
+%\startparagraph
+%
+%\stopparagraph
+
+\stopsection
+
+\stopcomponent
+

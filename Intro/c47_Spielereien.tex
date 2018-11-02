@@ -1,0 +1,46 @@
+% !TEX TS-program = ConTeXt (LuaTeX 1.0.9)
+% !TEX encoding = UTF-8 Unicode
+
+% Copyright 2018 Axel Kielhorn
+% Lizenz: CC-BY-SA 4.0 Unported http://creativecommons.org/licenses/by-sa/4.0/deed.de
+
+\startcomponent *
+\product prd_intro
+\project project_intro
+
+\startsection[
+  reference=spielereien,
+  title={Spielereien}
+  ]
+\index{Initiale}
+\startparagraph
+
+\lettrine{D}{ieses} Dokument soll als Beispiel für die Konvertierung von LaTeX nach
+EPUB dienen. Wichtig hierbei ist, dass alle Befehle oder Pakete, die
+sich auf das Layout beziehen (Satzspiegel, Seitenränder etc.) in der
+Regel bei einen EPUB, welches keine feste Seitenstruktur hat, keinen
+Sinn ergeben und somit auch von den meisten Konvertierungsprogrammen
+ignoriert werden. Aus dem Grund werden auch Veränderungen von Abständen
+oder ähnliches nicht geprüft.\cite[stein2000]
+\stopparagraph
+
+\startparagraph
+\lettrine[FontHook=]{D}{as} Dokument hat neben dieser Einleitung einen Teil mit
+Beispielen. In einzelnen Abschnitten werden spezifische Elemente eines
+LaTeX-Dokuments beschrieben, die der Konverter dann in das EPUB
+übernehmen soll.\cite[mertens2012]
+\stopparagraph
+
+\startparagraph
+\placeinitial Für das Verständnis der Konvertierung ist es daneben ggf. noch wichtig,
+dass ein EPUB zu einem großen Teil einer HTML-Seite mit CSS-Elementen
+entspricht. Dementsprechend wird bei der Konvertierung von ConTeXt zuerst
+der Zwischenschritt über HTML gegangen. So kann man direkt im Browser
+prüfen, ob das Dokument gut aussieht, bevor man sie in ein EPUB
+wandelt.\cite[becker2012]
+\stopparagraph
+
+\stopsection
+
+\stopcomponent
+

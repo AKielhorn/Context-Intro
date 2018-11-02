@@ -1,0 +1,118 @@
+% !TEX TS-program = ConTeXt (LuaTeX 1.0.9)
+% !TEX encoding = UTF-8 Unicode
+
+% Copyright 2018 Axel Kielhorn
+% Lizenz: CC-BY-SA 4.0 Unported http://creativecommons.org/licenses/by-sa/4.0/deed.de
+
+\startcomponent *
+\product prd_intro
+\project project_intro
+
+\startsection[
+  reference=auflistungen,
+  title={Auflistungen}
+  ]
+\index{Auflistung}
+
+\startparagraph
+Hier ist eine einfach Auflistung.
+Die Liste wird dreifach verschachtelt.
+\stopparagraph
+
+\starttyping
+\startitemize
+\item
+   Listenpunkt 1 
+\item
+   Listenpunkt 2 
+
+  \startitemize
+  \item
+     Listenpunkt 2.1 
+  \item
+     Listenpunkt 2.2 
+  \stopitemize
+\item
+   Listenpunkt 3 
+\item
+   Listenpunkt 4 
+
+  \startitemize
+  \item
+     Listenpunkt 4.1 
+  \item
+     Listenpunkt 4.2 
+
+    \startitemize
+    \item
+       Listenpunkt 4.2.1 
+    \item
+       Listenpunkt 4.2.2 
+    \stopitemize
+  \stopitemize
+\stopitemize
+\stoptyping
+
+\index{itemize}
+\startitemize
+\item
+   Listenpunkt 1 
+\item
+   Listenpunkt 2 
+
+  \startitemize
+  \item
+     Listenpunkt 2.1 
+  \item
+     Listenpunkt 2.2 
+  \stopitemize
+\item
+   Listenpunkt 3 
+\item
+   Listenpunkt 4 
+
+  \startitemize
+  \item
+     Listenpunkt 4.1 
+  \item
+     Listenpunkt 4.2 
+
+    \startitemize
+    \item
+       Listenpunkt 4.2.1 
+    \item
+       Listenpunkt 4.2.2 
+    \stopitemize
+  \stopitemize
+\stopitemize
+
+\startparagraph
+Es folgt noch eine Liste, bei der der Listenpunkt mit $\diamond$ überschrieben wurde.
+ Dazu definiert man ein neues Symbol und verwendet es in der \type{itemize} Umgebung.
+\stopparagraph
+
+\starttyping
+{
+\definesymbol[itemneu][{$\diamond$}]
+\startitemize[symbol=itemneu]
+\item
+  Listenpunkt 1
+\item
+  Listenpunkt 2
+\stopitemize
+}
+\stoptyping
+
+{
+\definesymbol[itemneu][{$\diamond$}]
+\startitemize[symbol=itemneu]
+\item
+  Listenpunkt 1
+\item
+  Listenpunkt 2
+\stopitemize
+}
+\stopsection
+
+\stopcomponent
+

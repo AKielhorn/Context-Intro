@@ -1,0 +1,76 @@
+% !TEX TS-program = ConTeXt (LuaTeX 1.0.9)
+% !TEX encoding = UTF-8 Unicode
+
+% Copyright 2018 Axel Kielhorn
+% Lizenz: CC-BY-SA 4.0 Unported http://creativecommons.org/licenses/by-sa/4.0/deed.de
+
+\startcomponent *
+\product prd_intro
+\project project_intro
+
+\startsection[
+  reference=beschreibungslisten,
+  title={Beschreibungslisten}
+  ]
+
+Eine Beschreibungsliste ist ähnliche einer Liste, hat anstelle der
+Listenpunkte aber einen beschreibenden Text. Erstreckt sich der Text über
+mehrere Zeilen, werden die folgenden eingerückt.
+
+\index{Beschreibungslisten}
+
+\starttyping
+\startdescription{Erde}
+  Mostly harmless.
+\stopdescription
+
+\startdescription{Menschen}
+  (Homo sapiens) sind nach der ...
+\stopdescription
+
+\startdescription{Donald E. Knuth}
+  (* 10. Januar 1938 in Milwaukee, Wisconsin) ...
+\stopdescription
+\stoptyping
+
+\startdescription{Erde}
+  Mostly harmless.
+\stopdescription
+
+\startdescription{Menschen}
+  (Homo sapiens) sind nach der biologischen Systematik höhere Säugetiere
+  aus der Ordnung der Primaten (Primates). Der Mensch gehört zur
+  Unterordnung der Trockennasenaffen (Haplorrhini) und dort zur Familie
+  der Menschenaffen (Hominidae).
+\stopdescription
+
+\startdescription{Donald E. Knuth}
+  (* 10. Januar 1938 in Milwaukee, Wisconsin) ist ein US-amerikanischer
+  Informatiker, emeritierter Professor an der Stanford University, Autor
+  des Standardwerks The Art of Computer Programming und Urvater des
+  Textsatzsystems TeX.
+\stopdescription
+
+In der Environment-Datei wurde ein weiteres Layout definiert:
+
+\startldescription{Erde}
+Mostly harmless.
+\stopldescription
+
+\startldescription{Menschen}
+(Homo sapiens) sind nach der biologischen Systematik höhere Säugetiere
+aus der Ordnung der Primaten (Primates). Der Mensch gehört zur
+Unterordnung der Trockennasenaffen (Haplorrhini) und dort zur Familie
+der Menschenaffen (Hominidae).
+\stopldescription
+
+\startldescription{Donald E. Knuth}
+(* 10. Januar 1938 in Milwaukee, Wisconsin) ist ein US-amerikanischer
+Informatiker, emeritierter Professor an der Stanford University, Autor
+des Standardwerks The Art of Computer Programming und Urvater des
+Textsatzsystems TeX.
+\stopldescription
+\stopsection
+
+\stopcomponent
+

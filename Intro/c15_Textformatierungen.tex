@@ -1,0 +1,65 @@
+% !TEX TS-program = ConTeXt (LuaTeX 1.0.9)
+% !TEX encoding = UTF-8 Unicode
+
+% Copyright 2018 Axel Kielhorn
+% Lizenz: CC-BY-SA 4.0 Unported http://creativecommons.org/licenses/by-sa/4.0/deed.de
+
+\startcomponent *
+\product prd_intro
+\project project_intro
+
+\startsection[
+  reference=textformatierungen,
+  title={Textformatierungen}
+  ]
+\index{Kursiv}\index{fett}
+In diesem Abschnitt sollen verschiedenen Textformatierungen ausprobiert
+werden.
+
+\startitemize
+\item
+  hervorgehoben: \type{\em} {\em hervorgehoben}
+\item
+  fett: \type{\bf} {\bf fett}
+\item
+  kursiv: \type{\em} {\em kursiv}
+\item
+  geneigt: \type{\sl} {\sl geneigt}
+\item
+  Sans-Serif: \type{\ss} {\ss Sans Serif}
+\item
+  Schreibmaschine: \type{\tt} {\tt Schreibmaschine}
+\item
+  Kapitälchen: \type{\sc} {\sc Kapitälchen}
+\item
+  unterstrichen 1: {\underbar alles unterstrichen}
+\item
+  unterstrichen 2: {\underbars Jedes Wort wird einzeln unterstrichen}
+\item
+  Oldstyle Ziffern: Normale Ziffern 1234567890 oder mit \type{\os} {\os 1234567890}
+
+\stopitemize
+
+Textformatierungen kann man auch blockweise für ganze Absätze nutzen:
+
+{\bf Dies ist ein kurzer Absatz, der mit \type{\bf} fett gedruckt
+wurde.}
+
+{\sc Dies ist ein kurzer Absatz, der mit \type{\sc} als Kapitälchen
+gesetzt wurde.}
+
+{\sl Dies ist ein kurzer Absatz, der mit \type{\sl} geneigt gesetzt
+wurde.}
+
+{\it Dies ist ein kurzer Absatz, der mit \type{\it} kursiv gesetzt
+wurde.}
+
+{\tt Dies ist ein kurzer Absatz, der mit \type{\tt} in
+Schreibmaschinenschrift gesetzt wurde.}
+
+{\ss Dies ist ein kurzer Absatz, der mit \type{\ss} serifenlos gesetzt
+wurde.}
+\stopsection
+
+\stopcomponent
+

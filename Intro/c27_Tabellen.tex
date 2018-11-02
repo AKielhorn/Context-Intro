@@ -1,0 +1,564 @@
+% !TEX TS-program = ConTeXt (LuaTeX 1.0.9)
+% !TEX encoding = UTF-8 Unicode
+
+% Copyright 2018 Axel Kielhorn
+% Lizenz: CC-BY-SA 4.0 Unported http://creativecommons.org/licenses/by-sa/4.0/deed.de
+
+\startcomponent *
+\product prd_intro
+\project project_intro
+
+\startsection[
+  reference=Tabellen,
+  title={Tabellen}
+  ]
+\index{Tabellen}
+Es gibt mehrere Möglichkeiten in ConTeXt Tabellen zu erzeugen.
+Die gängigsten sind:
+
+\startdescription{Tabulate}
+Für einfache Tabellen.
+\stopdescription
+
+\startdescription{Table}
+Veraltet, sollte für neue Dokumente nicht mehr verwendet werden.
+\stopdescription
+
+\startdescription{Tables}
+Veraltet, sollte für neue Dokumente nicht mehr verwendet werden.
+\stopdescription
+
+\startdescription{TABLE}
+Natürliche Tabellen (natural tables) sehr leistungsfähig, erfordert viel Schreibaufwand.
+\stopdescription
+
+\startdescription{xtables}
+Extreme Tabellen (extreme tables) weitgehend kompatibel mit natürlichen Tabellen. Bessere Seitenumbrüche.
+\stopdescription
+
+In diesem Dokument werden nur die \type{TABLE} behandelt.\index{TABLE}
+
+Eine Tabelle ist einfach aufgebaut.
+Die \type{\setupTABLE} Befehle bestimmen das Aussehen der Tabelle.
+Damit sie nur für diese Tabelle gelten, wird die komplette Tabelle in \type{{}} eingeschlossen.
+
+\blank[big]
+
+\starttyping
+{\bTABLE
+\setupTABLE[c][1][align=right,frame=off]
+\setupTABLE[c][2][align=middle,frame=off]
+\setupTABLE[c][3][align=left,frame=off]
+
+\bTR 
+  \bTD linksbündig \eTD  \bTD zentriert \eTD \bTD rechtsbündig\eTD
+\eTR
+\bTR
+  \bTD längerer Text \eTD \bTD längerer Text \eTD \bTD längerer Text\eTD
+\eTR
+
+\eTABLE}
+\stoptyping
+
+\index{TABLE}
+{\bTABLE
+\setupTABLE[c][1][align=right,frame=off]
+\setupTABLE[c][2][align=middle,frame=off]
+\setupTABLE[c][3][align=left,frame=off]
+
+\bTR \bTD linksbündig \eTD  \bTD zentriert \eTD \bTD rechtsbündig\eTD \eTR
+\bTR \bTD längerer Text \eTD \bTD längerer Text \eTD \bTD längerer Text\eTD\eTR
+
+\eTABLE}
+\blank[big]
+
+ Mit Linien sieht man es etwas besser:
+
+\starttyping
+\setupTABLE[c][1][align=right]
+\setupTABLE[c][2][align=middle]
+\setupTABLE[c][3][align=left]
+\stoptyping
+
+\blank[big]
+
+{\bTABLE
+\setupTABLE[c][1][align=right]
+\setupTABLE[c][2][align=middle]
+\setupTABLE[c][3][align=left]
+
+\bTR \bTD linksbündig \eTD  \bTD zentriert \eTD \bTD rechtsbündig\eTD \eTR
+\bTR \bTD längerer Text \eTD \bTD längerer Text \eTD \bTD längerer Text\eTD\eTR
+
+\eTABLE}
+
+
+Gibt man eine Spaltenbreite vor, so wird der Text passend umbrochen.
+
+\starttyping
+\setupTABLE[c][1][width=3cm]
+\setupTABLE[c][2][width=5cm]
+\stoptyping
+
+\blank[big]
+
+{\bTABLE
+\setupTABLE[c][1][width=3cm]
+\setupTABLE[c][2][width=5cm]
+\bTR
+  \bTD Dies ist ein langer Text der hoffentlich nach 3 cm umbrochen wird.
+    Die Ausrichtung ist oben.\eTD
+  \bTD Im Gegensatz dazu ein Umbruch nach 5 cm.\eTD
+\eTR
+\eTABLE}
+\blank[big]
+
+Mit der Option \type{nc} werden mehrere Spalten (Column) und mit der Option \type{nr} mehrere Zeilen zu einer Zelle zusammengefasst.
+Es sind nur rechteckige Zellen möglich.
+
+(Beispiel von
+\useURL[url3][https://en.wikibooks.org/wiki/LaTeX/Tables]\from[url3]):
+\blank[big]
+
+\starttyping
+\bTR \bTD[nc=2,align=middle] Item \eTD \bTD\eTD \eTR
+\stoptyping
+
+{\bTABLE
+\setupTABLE[offset=1mm]
+\setupTABLE[c][1][frame=off]
+\setupTABLE[c][2][frame=off]
+\setupTABLE[c][3][frame=off,aligncharacter=yes,alignmentcharacter={.},align=left]
+\setupTABLE[r][1,2,3][topframe=on]
+\setupTABLE[r][last][bottomframe=on]
+\setupTABLE[c][1,2,3][leftframe=on]
+\setupTABLE[c][last][rightframe=on]
+
+\bTR \bTD[nc=2,align=middle] Item \eTD \bTD\eTD \eTR
+\bTR \bTD Animal \eTD \bTD Description \eTD \bTD Price (\$)\eTD \eTR
+\bTR \bTD Gnat \eTD \bTD per gram \eTD \bTD 13.65 \eTD\eTR
+\bTR \bTD\eTD       \bTD each     \eTD \bTD  0.01 \eTD \eTR
+\bTR \bTD Gnu   \eTD \bTD stuffed \eTD \bTD 92.50 \eTD \eTR 
+\bTR \bTD Emu   \eTD \bTD stuffed \eTD \bTD 33.33 \eTD \eTR
+\bTR \bTD Armadillo \eTD \bTD frozen \eTD \bTD 8.99 \eTD \eTR 
+\eTABLE}
+\blank[big]
+
+{\bTABLE
+\setupTABLE[frame=off,offset=1pt]
+\setupTABLE[r][1][bottomframe=on]
+%\setupTABLE[c][last][rightframe=on]
+\setupTABLE[c][2,3,4,5,6,7][width=1.2em,align=left]
+\setupTABLE[c][8][width=1.6em,align=left]
+\bTR \bTD Team              \eTD \bTD P \eTD \bTD W \eTD \bTD D \eTD \bTD L \eTD \bTD F  \eTD \bTD A \eTD \bTD Pts \eTD \eTR
+\bTR \bTD Manchester United \eTD \bTD 6 \eTD \bTD 4 \eTD \bTD 0 \eTD \bTD 2 \eTD \bTD 10 \eTD \bTD 5 \eTD \bTD 12  \eTD \eTR
+\bTR \bTD Celtic            \eTD \bTD 6 \eTD \bTD 3 \eTD \bTD 0 \eTD \bTD 3 \eTD \bTD 8  \eTD \bTD 9 \eTD \bTD 9   \eTD \eTR
+\bTR \bTD Benfica           \eTD \bTD 6 \eTD \bTD 2 \eTD \bTD 1 \eTD \bTD 3 \eTD \bTD 7  \eTD \bTD 8 \eTD \bTD 7   \eTD \eTR
+\bTR \bTD FC Copenhagen     \eTD \bTD 6 \eTD \bTD 2 \eTD \bTD 1 \eTD \bTD 3 \eTD \bTD 5  \eTD \bTD 8 \eTD \bTD 7   \eTD \eTR
+\eTABLE}
+\blank[big]
+
+{\bTABLE
+\setupTABLE[frame=off,offset=1pt]
+\setupTABLE[c][each][align=lohi,frame=off]
+\setupTABLE[c][3][align=right]
+\setupTABLE[r][2][topframe=on,rulethickness=1.5pt]
+\setupTABLE[r][3,7,10,11][topframe=on]
+\bTR \bTD [nc=3,align=middle] Team sheet \eTD \eTR
+\bTR \bTD Goalkeeper         \eTD \bTD GK \eTD \bTD Paul Robinson   \eTD \eTR
+\bTR \bTD [nr=4] Defenders   \eTD \bTD LB \eTD \bTD Lucus Radebe    \eTD \eTR
+\bTR                              \bTD DC \eTD \bTD Michael Duburry \eTD \eTR
+\bTR                              \bTD DC \eTD \bTD Dominic Matteo  \eTD \eTR
+\bTR                              \bTD RB \eTD \bTD Didier Domi     \eTD \eTR
+\bTR \bTD [nr=3] Midfielders \eTD \bTD MC \eTD \bTD David Batty     \eTD \eTR
+\bTR                              \bTD MC \eTD \bTD Eirik Bakke     \eTD \eTR
+\bTR                              \bTD MC \eTD \bTD Jody Morris     \eTD \eTR
+\bTR \bTD Forward            \eTD \bTD FW \eTD \bTD Jamie McMaster  \eTD \eTR
+\bTR \bTD [nr=2] Strikers    \eTD \bTD ST \eTD \bTD Alan Smith      \eTD \eTR
+\bTR                              \bTD ST \eTD \bTD Mark Viduka     \eTD \eTR
+\eTABLE}
+\blank[big]
+
+Tabellenzellen können an beliebigen Zeichen ausgerichtet werden, in diesem Fall am Dezimalkomma.
+\blank[big]
+{
+\setupTABLE[row][each][frame=off]
+%\setupTABLE[c][1][width=0.1\textwidth]
+\setupTABLE[c][2][alignmentcharacter={,},aligncharacter=yes,align=middle]
+\setupTABLE[c][3][alignmentcharacter={,},aligncharacter=yes,align=middle]
+
+\bTABLE
+    \bTABLEbody
+        \bTR \bTD Jahr \eTD \bTD Meine Aktie \eTD \bTD Mitbewerber \eTD \eTR
+        \bTR \bTD 2010  \eTD \bTD  120,56     \eTD \bTD 100,5       \eTD \eTR
+        \bTR \bTD 2011  \eTD \bTD  130,78     \eTD \bTD  90,78      \eTD \eTR
+        \bTR \bTD 2012  \eTD \bTD  140,9      \eTD \bTD  99,2       \eTD \eTR
+        \bTR \bTD 2013  \eTD \bTD  120,89     \eTD \bTD 120         \eTD \eTR
+    \eTABLEbody
+\eTABLE
+}
+\blank[big]
+
+Normalerweise funktioniert das zuverlässig.
+Schwierig wird es, wenn auch in der Titelzeile Zahlen vorkommen, 
+da der Ausrichtungsalgorithmus versucht, auch diese am Komma auszurichten.
+
+Die Ausrichtung kann daher für eine Zeile deaktiviert werden.
+
+\starttyping
+\bTR [aligncharacter=no] \bTD Jahr  \eTD \bTD WKN 123456  \eTD \bTD WKN A78C90  \eTD \eTR
+\stoptyping
+
+\blank[big]
+
+{
+\setupTABLE[row][each][frame=off]
+%\setupTABLE[c][1][width=0.1\textwidth]
+\setupTABLE[c][2][alignmentcharacter={,},aligncharacter=yes,align=middle]
+\setupTABLE[c][3][alignmentcharacter={,},aligncharacter=yes,align=middle]
+
+\bTABLE
+    \bTABLEbody
+        \bTR [aligncharacter=no] \bTD Jahr \eTD \bTD WKN 123456 \eTD \bTD WKN A78C90 \eTD \eTR
+        \bTR \bTD 2010                     \eTD \bTD  120,56    \eTD \bTD 100,5      \eTD \eTR
+        \bTR \bTD 2011                     \eTD \bTD  130,78    \eTD \bTD  90,78     \eTD \eTR
+        \bTR \bTD 2012                     \eTD \bTD  140,9     \eTD \bTD  99,2      \eTD \eTR
+        \bTR \bTD 2013                     \eTD \bTD  120,89    \eTD \bTD 120        \eTD \eTR
+    \eTABLEbody
+\eTABLE
+}
+
+Tabellen können auch über mehrere Seiten verlaufen.
+Die Option \type{split=yes}, bzw. \type{split=repeat} definiert dabei, ob der Tabellenkopf wiederholt werden soll, oder nicht. Außerdem kann man für die Folgeseiten einen anderen Kopf definieren.
+
+\blank[big]
+
+{\bTABLE[split=repeat]
+\setupTABLE[frame=off,offset=1pt]
+\setupTABLE[c][1,2][align=left]
+\setupTABLE[c][3][align=middle]
+% Letzte Zeile
+\setupTABLE[r][last]
+  [style=bold,
+   background=color,
+   backgroundcolor=green]
+% Kopfzeile
+\bTABLEhead
+\bTR
+\bTH [nc=3] Kopfzeile  \eTH
+\eTR
+\eTABLEhead
+\bTABLEnext 
+% Wiederholungszeilen auf weiteren Seiten
+\bTR [background=color,backgroundcolor=cyan,align=middle]
+  \bTH [nc=3] Fortsetung \eTH
+\eTR
+\eTABLEnext
+\bTABLEbody
+\bTR
+\bTD 1. Zeile\eTD
+\bTD rechts\eTD
+\bTD zentriert\eTD
+\eTR\bTR
+\bTD 2. Zeile\eTD
+\bTD rechts\eTD
+\bTD zentriert\eTD
+\eTR\bTR
+\bTD 3. Zeile\eTD
+\bTD rechts\eTD
+\bTD zentriert\eTD
+\eTR\bTR
+\bTD 4. Zeile\eTD
+\bTD rechts\eTD
+\bTD zentriert\eTD
+\eTR\bTR
+\bTD 5. Zeile\eTD
+\bTD rechts\eTD
+\bTD zentriert\eTD
+\eTR\bTR
+\bTD 6. Zeile\eTD
+\bTD rechts\eTD
+\bTD zentriert\eTD
+\eTR\bTR
+\bTD 7. Zeile\eTD
+\bTD rechts\eTD
+\bTD zentriert\eTD
+\eTR\bTR
+\bTD 8. Zeile\eTD
+\bTD rechts\eTD
+\bTD zentriert\eTD
+\eTR\bTR
+\bTD 9. Zeile\eTD
+\bTD rechts\eTD
+\bTD zentriert\eTD
+\eTR\bTR
+\bTD 10. Zeile\eTD
+\bTD rechts\eTD
+\bTD zentriert\eTD
+\eTR\bTR
+\bTD 11. Zeile\eTD
+\bTD rechts\eTD
+\bTD zentriert\eTD
+\eTR\bTR
+\bTD 12. Zeile\eTD
+\bTD rechts\eTD
+\bTD zentriert\eTD
+\eTR\bTR
+\bTD 13. Zeile\eTD
+\bTD rechts\eTD
+\bTD zentriert\eTD
+\eTR\bTR
+\bTD 14. Zeile\eTD
+\bTD rechts\eTD
+\bTD zentriert\eTD
+\eTR\bTR
+\bTD 15. Zeile\eTD
+\bTD rechts\eTD
+\bTD zentriert\eTD
+\eTR\bTR
+\bTD 16. Zeile\eTD
+\bTD rechts\eTD
+\bTD zentriert\eTD
+\eTR\bTR
+\bTD 17. Zeile\eTD
+\bTD rechts\eTD
+\bTD zentriert\eTD
+\eTR\bTR
+\bTD 18. Zeile\eTD
+\bTD rechts\eTD
+\bTD zentriert\eTD
+\eTR\bTR
+\bTD 19. Zeile\eTD
+\bTD rechts\eTD
+\bTD zentriert\eTD
+\eTR\bTR
+\bTD 20. Zeile\eTD
+\bTD rechts\eTD
+\bTD zentriert\eTD
+\eTR\bTR
+\bTD 21. Zeile\eTD
+\bTD rechts\eTD
+\bTD zentriert\eTD
+\eTR\bTR
+\bTD 22. Zeile\eTD
+\bTD rechts\eTD
+\bTD zentriert\eTD
+\eTR\bTR
+\bTD 23. Zeile\eTD
+\bTD rechts\eTD
+\bTD zentriert\eTD
+\eTR\bTR
+\bTD 24. Zeile\eTD
+\bTD rechts\eTD
+\bTD zentriert\eTD
+\eTR\bTR
+\bTD 25. Zeile\eTD
+\bTD rechts\eTD
+\bTD zentriert\eTD
+\eTR\bTR
+\bTD 26. Zeile\eTD
+\bTD rechts\eTD
+\bTD zentriert\eTD
+\eTR\bTR
+\bTD 27. Zeile\eTD
+\bTD rechts\eTD
+\bTD zentriert\eTD
+\eTR\bTR
+\bTD 28. Zeile\eTD
+\bTD rechts\eTD
+\bTD zentriert\eTD
+\eTR\bTR
+\bTD 29. Zeile\eTD
+\bTD rechts\eTD
+\bTD zentriert\eTD
+\eTR\bTR
+\bTD 30. Zeile\eTD
+\bTD rechts\eTD
+\bTD zentriert\eTD
+\eTR\bTR
+\bTD 31. Zeile\eTD
+\bTD rechts\eTD
+\bTD zentriert\eTD
+\eTR\bTR
+\bTD 32. Zeile\eTD
+\bTD rechts\eTD
+\bTD zentriert\eTD
+\eTR\bTR
+\bTD 33. Zeile\eTD
+\bTD rechts\eTD
+\bTD zentriert\eTD
+\eTR\bTR
+\bTD 34. Zeile\eTD
+\bTD rechts\eTD
+\bTD zentriert\eTD
+\eTR\bTR
+\bTD 35. Zeile\eTD
+\bTD rechts\eTD
+\bTD zentriert\eTD
+\eTR\bTR
+\bTD 36. Zeile\eTD
+\bTD rechts\eTD
+\bTD zentriert\eTD
+\eTR\bTR
+\bTD 37. Zeile\eTD
+\bTD rechts\eTD
+\bTD zentriert\eTD
+\eTR\bTR
+\bTD 38. Zeile\eTD
+\bTD rechts\eTD
+\bTD zentriert\eTD
+\eTR\bTR
+\bTD 39. Zeile\eTD
+\bTD rechts\eTD
+\bTD zentriert\eTD
+\eTABLEbody
+%
+% Fußzeile (kann auch vor body stehen)
+%
+\bTABLEfoot
+\bTR
+  \bTC  Fuß 1 \eTC
+  \bTC  Fuß 2 \eTC
+  \bTC  Fuß 3 \eTC
+\eTR
+\eTABLEfoot
+%
+\eTABLE}
+\blank[big]
+
+Die Rahmen um die Tabellenzellen dürfen auch runde Ecken haben.
+
+% Runde Ecken 1
+%
+% Achtung! Leerzeichen vor und nach den {} sind wichtig.
+%
+{
+\setupcolors[state=start] 
+%\showstruts
+\setupTABLE[background=color,backgroundcolor=yellow]
+\setupframed[framecolor=darkgreen]
+
+\defineparagraphs[ThreeCols]
+
+\startThreeCols
+
+{
+\setupTABLE[row]   [first][topframe=off]%
+\setupTABLE[row]   [last] [bottomframe=off]%
+\setupTABLE[column][first][leftframe=off]%
+\setupTABLE[column][last] [rightframe=off]%
+\framed[strut=no,corner=round,offset=.5\linewidth]
+{\bTABLE
+      \bTR \bTD test \eTD \bTD test \eTD \eTR
+      \bTR \bTD test \eTD \bTD test \eTD \eTR
+      \bTR \bTD test \eTD \bTD test \eTD \eTR
+\eTABLE}
+}
+Dünner Rahmen
+
+\nextThreeCols
+
+{
+\setupTABLE[row]   [first][topframe=off]
+\setupTABLE[row]   [last] [bottomframe=off]
+\setupTABLE[column][first][leftframe=off]
+\setupTABLE[column][last] [rightframe=off]
+\framed[strut=no,corner=round,offset=.5\linewidth,,rulethickness=1mm]
+{\bTABLE
+        \bTR \bTD test \eTD \bTD test \eTD \eTR
+        \bTR \bTD test \eTD \bTD test \eTD \eTR
+        \bTR \bTD test \eTD \bTD test \eTD \eTR
+\eTABLE}
+}
+Dicker Rahmen
+
+\nextThreeCols
+
+{
+\setupTABLE[row]   [first][topframe=off]
+\setupTABLE[row]   [last] [bottomframe=off]
+\setupTABLE[column][first][leftframe=off]
+\setupTABLE[column][last] [rightframe=off]
+\framed[strut=no,corner=round,
+    radius=1.4mm,offset=-1mm,,rulethickness=.1mm]
+    {\framed[strut=no,corner=round,
+            radius=1.5mm,offset=0mm,,rulethickness=1mm,framecolor=white]
+        {\bTABLE
+            \bTR \bTD test \eTD \bTD test \eTD \eTR
+            \bTR \bTD test \eTD \bTD test \eTD \eTR
+            \bTR \bTD test \eTD \bTD test \eTD \eTR
+        \eTABLE}}
+}
+Dünner Rahmen mit korrigierter Füllung
+
+\stopThreeCols
+}
+\blank[big]
+
+Im dritten Beispiel wird ein zusätzlicher weißer Rahmen um die Tabelle gezogen,
+dadurch werden die Ecken der Zellfüllung übermalt.
+
+% Runde Ecken 2
+
+Das folgende Beispiel kommt ohne diese Tricks aus und benutzt die Option \type{backgroundcorner}.
+Damit lassen sich auch runde Ecken innerhalb der Tabelle erzeugen.
+
+\blank[big]
+{
+\setupTABLE[framecolor=darkgreen]
+\setupTABLE [y]    [first][background=color,backgroundcolor=orange,frame=off,bottomframe=on,topframe=on]
+\setupTABLE [first][first][backgroundcorner=2,corner=10,frame=on]
+\setupTABLE [last] [first][backgroundcorner=4,corner=12,frame=on]
+\setupTABLE [row]  [each] [background=color,backgroundcolor=yellow,frame=on]
+\setupTABLE [first][2]    [corner=8]
+\setupTABLE [last] [2]    [corner=5]
+\setupTABLE [first][last] [corner=7]
+\setupTABLE [last] [last] [corner=6]
+
+\bTABLE[frame=off,align=middle]
+\bTR \bTD one   \eTD \bTD two    \eTD \bTD three \eTD \eTR
+\bTR \bTD first \eTD \bTD second \eTD \bTD third \eTD \eTR
+\bTR \bTD alpha \eTD \bTD beta   \eTD \bTD gamma \eTD \eTR
+\eTABLE
+}
+\blank[big]
+
+\useURL[contextTABLE][https://wiki.contextgarden.net/TABLE][][Contextgarden]
+Tabellen sind extrem vielfältig, mehr Informationen gibt es im \from[contextTABLE], allerdings nur auf englisch.
+
+Mit dem Befehl \type{\placetable} erhält man ein Gleitobjekt mit einer \type{\caption}, auf die man sich später beziehen kann.
+
+\index{table}
+\placetable{Eine sehr einfache Tabelle.}
+\starttable[|l|c|r|]
+\HL
+\NC linksbündig
+\NC zentriert
+\NC rechtsbündig
+\NC\AR
+\NC längerer Text
+\NC längerer Text
+\NC längerer Text
+\NC\AR
+\HL
+\stoptable
+
+\placetable{Eine sehr einfache Tabelle mit Linien.}
+\starttable[|l|c|r|]
+\HL
+\NC linksbündig
+\NC zentriert
+\NC rechtsbündig
+\NC\AR
+\HL
+\NC längerer Text
+\NC längerer Text
+\NC längerer Text
+\NC\AR
+\HL
+\stoptable
+
+\stopsection
+
+\stopcomponent
+

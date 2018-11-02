@@ -1,0 +1,234 @@
+% !TEX TS-program = ConTeXt (LuaTeX 1.0.9)
+% !TEX encoding = UTF-8 Unicode
+
+% Copyright 2018 Axel Kielhorn
+% Lizenz: CC-BY-SA 4.0 Unported http://creativecommons.org/licenses/by-sa/4.0/deed.de
+
+\startcomponent *
+\product prd_intro
+\project project_intro
+
+\startsection[
+  reference=aufzählung,
+  title={Aufzählung}
+  ]
+\index{Aufzählung}
+
+Hier ist eine einfach Aufzählung. Die
+Liste wird dreifach verschachtelt.
+
+\starttyping
+\startitemize[n][stopper=.]
+\item
+  Listenpunkt 1
+\item
+  Listenpunkt 2
+
+  \startitemize[n][stopper=.]
+  \item
+    Listenpunkt 2.1
+  \item
+    Listenpunkt 2.2
+  \stopitemize
+\item
+  Listenpunkt 3
+\item
+  Listenpunkt 4
+
+  \startitemize[n][stopper=.]
+  \item
+    Listenpunkt 4.1
+  \item
+    Listenpunkt 4.2
+
+    \startitemize[n][stopper=)]
+    \item
+      Listenpunkt 4.2.1
+    \item
+      Listenpunkt 4.2.2
+    \stopitemize
+  \stopitemize
+\stopitemize
+\stoptyping
+
+\startitemize[n][stopper=.]
+\item
+  Listenpunkt 1
+\item
+  Listenpunkt 2
+
+  \startitemize[n][stopper=.]
+  \item
+    Listenpunkt 2.1
+  \item
+    Listenpunkt 2.2
+  \stopitemize
+\item
+  Listenpunkt 3
+\item
+  Listenpunkt 4
+
+  \startitemize[n][stopper=.]
+  \item
+    Listenpunkt 4.1
+  \item
+    Listenpunkt 4.2
+
+    \startitemize[n][stopper=)]
+    \item
+      Listenpunkt 4.2.1
+    \item
+      Listenpunkt 4.2.2
+    \stopitemize
+  \stopitemize
+\stopitemize
+
+Die Zählweise lässt sich leicht anpassen:
+
+\starttyping
+\startitemize[n,repeat][stopper=.]
+\item
+  Listenpunkt 1
+\item
+  Listenpunkt 2
+
+  \startitemize[a,repeat][stopper=)]
+  \item
+    Listenpunkt 2.1
+  \item
+    Listenpunkt 2.2
+  \stopitemize
+\item
+  Listenpunkt 3
+\item
+  Listenpunkt 4
+
+  \startitemize[a,repeat][stopper=)]
+  \item
+    Listenpunkt 4.1
+  \item
+    Listenpunkt 4.2
+
+    \startitemize[n][stopper=)]
+    \item
+      Listenpunkt 4.2.1
+    \item
+      Listenpunkt 4.2.2
+    \stopitemize
+  \stopitemize
+\stopitemize
+\stoptyping
+
+\startitemize[n,repeat][stopper=.]
+\item
+  Listenpunkt 1
+\item
+  Listenpunkt 2
+
+  \startitemize[a,repeat][stopper=,width=2em]
+  \item
+    Listenpunkt 2.1
+  \item
+    Listenpunkt 2.2
+  \stopitemize
+\item
+  Listenpunkt 3
+\item
+  Listenpunkt 4
+
+  \startitemize[a,repeat][stopper=,width=2em]
+  \item
+    Listenpunkt 4.1
+  \item
+    Listenpunkt 4.2
+
+    \startitemize[n][stopper=),width=3em]
+    \item
+      Listenpunkt 4.2.1
+    \item
+      Listenpunkt 4.2.2
+    \stopitemize
+  \stopitemize
+\stopitemize
+
+Damit man das nicht bei jeder Aufzählung angeben muss, definiert man es global für das gesamte Dokument.
+
+\starttyping
+% in der env-Datei
+\defineitemgroup[aufzählung][level=3]
+\setupitemgroup[aufzählung][1][n,repeat][stopper=)]
+\setupitemgroup[aufzählung][2][a,repeat][stopper=),width=2em]
+\setupitemgroup[aufzählung][3][n][width=3em]
+
+%im Dokument
+\startaufzählung
+\item
+  Listenpunkt 1
+\item
+  Listenpunkt 2
+
+  \startaufzählung
+  \item
+    Listenpunkt 2.1
+  \item
+    Listenpunkt 2.2
+      \startaufzählung
+        \item
+          Listenpunkt 2.2.1
+        \item
+          Listenpunkt 2.2.2
+      \stopaufzählung
+  \stopaufzählung
+\item
+  Listenpunkt 3
+\item
+  Listenpunkt 4
+\stopaufzählung
+\stoptyping
+
+\startaufzählung
+\item
+  Listenpunkt 1
+\item
+  Listenpunkt 2
+
+  \startaufzählung
+  \item
+    Listenpunkt 2.1
+  \item
+    Listenpunkt 2.2
+      \startaufzählung
+        \item
+          Listenpunkt 2.2.1
+        \item
+          Listenpunkt 2.2.2
+      \stopaufzählung
+  \stopaufzählung
+\item
+  Listenpunkt 3
+\item
+  Listenpunkt 4
+\stopaufzählung
+
+Die folgende Aufzählung soll mit römischen Ziffern beginnen.
+ConTeXt kann das ohne Zusatzpaket.
+
+\starttyping
+\startitemize[R][width=2.0em,itemalign=flushright,stopper={. }]
+\item
+  Listenpunkt 1
+\item
+  Listenpunkt 2
+\stopitemize
+\stoptyping
+
+\startitemize[R][width=2.0em,itemalign=flushright,stopper={. }]
+\item
+  Listenpunkt 1
+\item
+  Listenpunkt 2
+\stopitemize
+\stopsection
+
+\stopcomponent
+

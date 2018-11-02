@@ -1,0 +1,50 @@
+% !TEX TS-program = ConTeXt (LuaTeX 1.0.9)
+% !TEX encoding = UTF-8 Unicode
+
+% Copyright 2018 Axel Kielhorn
+% Lizenz: CC-BY-SA 4.0 Unported http://creativecommons.org/licenses/by-sa/4.0/deed.de
+
+\startcomponent *
+\product prd_intro
+\project project_intro
+
+\startsection[
+  reference=verzeichnisse,
+  title={Verzeichnisse}
+  ]
+
+\startsubsection[title={Abbildungsverzeichnis}]
+
+Im  \in{Kapitel}[Grafiken] ab \at{Seite}[Grafiken] wurden zwei Abbildungen
+dargestellt, die hier im Abbildungsverzeichnis auftauchen sollten.
+
+\placelistoffigures[criterium=all]
+
+\stopsubsection
+
+\startsubsection[title={Tabellenverzeichnis}]
+
+In  \in{Kapitel}[Tabellen] ab \at{Seite}[Tabellen] wurden zwei Tabellen
+dargestellt.
+
+\placelistoftables[criterium=all]
+
+\stopsubsection
+
+\startsubsection[title={Schlagwortverzeichnis}]
+
+Es gibt auch ein  Stichwortverzeichnis:
+\blank[big]
+
+\placeindex
+
+\stopsubsection
+
+\startsubsection[title={Literaturverzeichnis}]
+
+Und zuletzt „natürlich“ das Literaturverzeichnis:
+\placepublications[criterium=all]
+
+\stopsubsection
+
+\stopcomponent

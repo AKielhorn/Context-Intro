@@ -1,0 +1,29 @@
+% !TEX encoding = UTF-8 Unicode
+% !TEX TS-program = ConTeXt (LuaTeX)
+
+\unprotect
+\def\doctitle#1{\gdef\@title{#1}}
+\def\author#1{\gdef\@author{#1}}
+\def\date#1{\gdef\@date{#1}}
+\date{\currentdate}  % Default to today unless specified otherwise.
+
+\def\maketitle{%
+  \startalignment[center]
+    \blank[force,2*big]
+      {\switchtobodyfont[18pt] \@title\par}
+    \blank[3*medium]
+      {\switchtobodyfont[14pt] \@author\par}
+    \blank[2*medium]
+      {\switchtobodyfont[14pt] \@date\par}
+    \blank[3*medium]
+  \stopalignment}
+\protect
+
+%
+%%% Local Variables:
+%%% mode: ConTeXt
+%%% fill-column: 99999
+%%% coding: utf-8-unix
+%%% TeX-command-default: "context"
+%%% End:
+%

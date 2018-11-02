@@ -1,0 +1,49 @@
+% !TEX TS-program = ConTeXt (LuaTeX 1.0.9)
+% !TEX encoding = UTF-8 Unicode
+
+% Copyright 2018 Axel Kielhorn
+% Lizenz: CC-BY-SA 4.0 Unported http://creativecommons.org/licenses/by-sa/4.0/deed.de
+
+\startcomponent *
+\product prd_intro
+\project project_intro
+
+\startsection[
+  reference=textausrichtung,
+  title={Textausrichtung}
+  ]
+
+In manchen Fällen ist es sinnvoll, Text nicht -- wie in ConTeXt üblich --
+als Blocksatz zu schreiben, sondern rechtsbündig, linksbündig oder
+zentriert.
+
+Dieser Text wird als Blocksatz dargestellt, was man sieht, da er über
+mehrere Zeilen geht.
+
+Die Ausrichtung wird mit dem Befehl
+\starttyping
+\startalignment[flushright]
+...
+\stopalignment
+\stoptyping
+geändert.
+
+\index{alignment}
+\startalignment[flushleft]
+\type{flushleft} Dieser Text wird linksbündig dargestellt und nicht als Blocksatz, was
+man sieht, da er über mehrere Zeilen geht.
+\stopalignment
+
+\startalignment[flushright]
+\type{flushright} Dieser Text wird rechtsbündig dargestellt und nicht als Blocksatz, was
+man sieht, da er über mehrere Zeilen geht.
+\stopalignment
+
+\startalignment[middle]
+\type{middle} Dieser Text wird zentriert dargestellt und nicht als Blocksatz, was man
+sieht, da er über mehrere Zeilen geht.
+\stopalignment
+
+\stopsection
+
+\stopcomponent

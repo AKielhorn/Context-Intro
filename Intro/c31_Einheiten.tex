@@ -1,0 +1,157 @@
+% !TEX TS-program = ConTeXt (LuaTeX 1.0.5)
+% !TEX encoding = UTF-8 Unicode
+
+% Copyright 2018 Axel Kielhorn
+% Lizenz: CC-BY-SA 4.0 Unported http://creativecommons.org/licenses/by-sa/4.0/deed.de
+
+\startcomponent *
+\product prd_intro
+\project project_intro
+
+\startsection[
+  reference=einheiten,
+  title={Einheiten},
+  ]
+\index{Einheiten}\index{SI-Einheiten}
+In vielen Dokumenten werden Einheiten falsch wiedergegeben.
+Die Einheit wird grundsätzlich in aufrechter Schrift gesetzt.
+Das Meter \unit{m} ist etwas anderes als die Masse $m$.
+
+\blank[big]
+{
+\setupTABLE[frame=off]
+\setupTABLE[c][1][width=4   cm]
+\setupTABLE[c][2][width=2   cm]
+\setupTABLE[c][3][width=2.6 cm]
+\setupTABLE[c][5][width=2.2 cm]
+
+\bTABLE
+\bTR 
+  \bTD \bf Basisgröße              \eTD \bTD \bf Größensymbol \eTD \bTD \bf Dimensionssymbol \eTD \bTD \bf Einheit \eTD \bTD \bf Einheitenzeichen \eTD \eTR
+\bTR
+  \bTD Länge                       \eTD \bTD $l$              \eTD \bTD \ss L                \eTD \bTD Meter       \eTD \bTD \unit{m}             \eTD \eTR
+\bTR
+  \bTD Masse                       \eTD \bTD $m$              \eTD \bTD \ss M                \eTD \bTD Kilogramm   \eTD \bTD \unit{kg}            \eTD \eTR
+\bTR
+  \bTD Zeit                        \eTD \bTD $t$              \eTD \bTD \ss T                \eTD \bTD Sekunde     \eTD \bTD \unit{s}             \eTD \eTR
+\bTR
+  \bTD Stromstärke                 \eTD \bTD $I$              \eTD \bTD \ss I                \eTD \bTD Ampere      \eTD \bTD \unit{A}             \eTD \eTR
+\bTR
+  \bTD Thermodynamische Temperatur \eTD \bTD $T$              \eTD \bTD \ss Θ                \eTD \bTD Kelvin      \eTD \bTD \unit{Kelvin}        \eTD \eTR
+\bTR
+  \bTD Stoffmenge                  \eTD \bTD $n$              \eTD \bTD \ss N                \eTD \bTD Mol         \eTD \bTD \unit{mol}           \eTD \eTR
+\bTR
+  \bTD Lichtstärke                 \eTD \bTD $I_V$            \eTD \bTD \ss J                \eTD \bTD Candela     \eTD \bTD \unit{candela}       \eTD \eTR
+\eTABLE
+}
+
+ConTeXt ist bei der Eingabe der Einheiten sehr flexibel.
+Im Mathe-Modus ist es ein Unterschied, ob die Maßzahl vor dem \type{\unit}-Befehl steht,
+oder Teil des Befehls ist. Zeile 11 und 12 führen zu leicht unterschiedlichen Ergebnissen.
+
+\starttyping
+\startlines
+1: 10 \unit{km/h}
+2: 10 \unit{KiloMeter/Hour}
+3: 10 \unit{kilometer/hour}
+4: 10 \unit{kilometer per hour}
+5: 10 \unit{km / h}
+6: 10 \unit{ km / h }
+7: 10 \unit{km/h2}
+8: \unit{123.22^-3 km/s}
+9: \unit{123.22e-3 km/s}
+10: {\ss 30 \unit{kilo pascal square meter / second kelvin}}
+11: $\frac{10 \unit{m/s}}{20 \unit{m/s}} $
+12: $\frac{\unit{10 m/s}}{\unit{20 m/s}} $
+\stoplines
+\stoptyping
+
+\startlines
+1: 10 \unit{km/h}
+2: 10 \unit{KiloMeter/Hour}
+3: 10 \unit{kilometer/hour}
+4: 10 \unit{kilometer per hour}
+5: 10 \unit{km / h}
+6: 10 \unit{ km / h }
+7: 10 \unit{km/h2}
+8: \unit{123.22^-3 km/s}
+9: \unit{123.22e-3 km/s}
+10: {\ss 30 \unit{kilo pascal square meter / second kelvin}}
+11: $\frac{10 \unit{m/s}}{20 \unit{m/s}} $
+12: $\frac{\unit{10 m/s}}{\unit{20 m/s}} $
+\stoplines
+
+Um eine einheitliche Darstellung der Zahlen zu erreichen, kann man den Befehl \type{\digits} verwenden.
+Dieser sorgt für die richtige Darstellung des 1000er Zwischenraums und des Dezimaltrenners:
+
+\starttyping
+\startlines
+10 \setdigitmode {1} \setdigitorder{0} \digits {12,345.90}
+20 \setdigitmode {2} \setdigitorder{0} \digits {12,345.90}
+30 \setdigitmode {3} \setdigitorder{0} \digits {12,345.90}
+40 \setdigitmode {4} \setdigitorder{0} \digits {12,345.90}
+50 \setdigitmode {5} \setdigitorder{0} \digits {12,345.90}
+60 \setdigitmode {6} \setdigitorder{0} \digits {12,345.90}
+
+11 \setdigitmode {1} \setdigitorder{1} \digits {12,345.90}
+21 \setdigitmode {2} \setdigitorder{1} \digits {12,345.90}
+31 \setdigitmode {3} \setdigitorder{1} \digits {12,345.90}
+41 \setdigitmode {4} \setdigitorder{1} \digits {12,345.90}
+51 \setdigitmode {5} \setdigitorder{1} \digits {12,345.90}
+61 \setdigitmode {6} \setdigitorder{1} \digits {12,345.90}
+\stoplines
+\stoptyping
+
+\startlines
+10 \setdigitmode {1} \setdigitorder{0} \digits {12,345.90}
+20 \setdigitmode {2} \setdigitorder{0} \digits {12,345.90}
+30 \setdigitmode {3} \setdigitorder{0} \digits {12,345.90}
+40 \setdigitmode {4} \setdigitorder{0} \digits {12,345.90}
+50 \setdigitmode {5} \setdigitorder{0} \digits {12,345.90}
+60 \setdigitmode {6} \setdigitorder{0} \digits {12,345.90}
+
+11 \setdigitmode {1} \setdigitorder{1} \digits {12,345.90}
+21 \setdigitmode {2} \setdigitorder{1} \digits {12,345.90}
+31 \setdigitmode {3} \setdigitorder{1} \digits {12,345.90}
+41 \setdigitmode {4} \setdigitorder{1} \digits {12,345.90}
+51 \setdigitmode {5} \setdigitorder{1} \digits {12,345.90}
+61 \setdigitmode {6} \setdigitorder{1} \digits {12,345.90}
+\stoplines 
+
+In Deutschland ist die Kombination \type{30} üblich, kleiner 1000er Abstand und \type{,} als Dezimaltrenner.
+Der 1000er Trenner muss dabei mit eingegeben werden, bei der Eingabe der Zahl muss ein \type{.} benutzt werden.
+Hier zwei Zahlen im direkten Vergleich \digits{12,345} \digits{12345}.
+Die Einstellung sollte für das gesamte Projekt in der Environment-Datei festgelegt werden.
+
+Die gleiche Einstellung gibt es auch für Einheiten, hier ist die Methode 3 zu wählen.
+
+\startlines
+0 \setupunits[method=0]\unit{00,000.10 kilogram} 
+1 \setupunits[method=1]\unit{00,000.10 kilogram} 
+2 \setupunits[method=2]\unit{00,000.10 kilogram} 
+3 \setupunits[method=3]\unit{00,000.10 kilogram} 
+4 \setupunits[method=4]\unit{00,000.10 kilogram} 
+5 \setupunits[method=5]\unit{00,000.10 kilogram} 
+6 \setupunits[method=6]\unit{00,000.10 kilogram} 
+\stoplines 
+
+Benötigt man eine Leerstelle anstatt einer Ziffer, so können hier \type{@}, \type{_} oder \type{~} eingegeben werden.
+
+ConTeXt kennt auch die abgeleiteten Einheiten
+
+\starttyping
+\startformula
+  \unit{1 Joule} = 
+  \unit{1 Newton Meter} = 
+  \frac{\unit{1 Kilo Gram Meter}}{\unit{Second^2}}
+     \times\unit{1 Meter} =
+  \frac{\unit{1 Kilo Gram Meter^2}}{\unit{Second^2}}
+\stopformula
+\stoptyping
+
+\startformula
+\unit{1 Joule} = \unit{1 Newton Meter} = \frac{\unit{1 Kilo Gram Meter}}{\unit{Second^2}} \times \unit{1 Meter} = \frac{\unit{1 Kilo Gram Meter^2}}{\unit{Second^2}}
+\stopformula
+
+\stopcomponent
+

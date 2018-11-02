@@ -1,0 +1,114 @@
+% !TEX TS-program = ConTeXt (LuaTeX 1.0.9)
+% !TEX encoding = UTF-8 Unicode
+
+% Copyright 2018 Axel Kielhorn
+% Lizenz: CC-BY-SA 4.0 Unported http://creativecommons.org/licenses/by-sa/4.0/deed.de
+
+\startcomponent *
+\product prd_intro
+\project project_intro
+
+\startsection[
+  reference=mathematik,
+  title={Mathematik},
+  ]
+\index{Mathematik} \index{Formeln}
+ConTeXt wird häufig im naturwissenschaftlichen Umfeld benutzt, in der viel
+mit mathematischen Formeln hantiert wird. 
+
+Formeln im Fließtext erreicht man mittels \type{$…$}.
+Abgesetzte Formeln mittels \type{\startformula…\stopformula}.
+
+\startitemize
+\item
+  Dies:
+  $t-t_{0}=\sqrt{\frac{l}{g}}\int_{0}^{\varphi}{\frac{d\psi}{\sqrt{1-k^{2}\sin^{2} {\psi}}}} = \left(\sqrt{\frac{l}{g}} F(k,\varphi)\right)$
+  ist eine komplizierte Formel.
+\item
+  Dies:
+  $t-t_{0}=\sqrt{\frac{l}{g}}\int_{0}^{\varphi}{\frac{d\psi}{\sqrt{1-k^{2}\sin^{2} {\psi}}}} = \left(\sqrt{\frac{l}{g}} F(k,\varphi)\right)$
+  ist eine komplizierte Formel.
+\item
+  Dies ist eine komplizierte Formel:
+  \startformula 
+    t-t_{0}=\sqrt{\frac{l}{g}}\int_{0}^{\varphi}{\frac{d\psi}{\sqrt{1-k^{2}\sin^{2} {\psi}}}} = \left(\sqrt{\frac{l}{g}} F(k,\varphi)\right) 
+   \stopformula
+\item
+  Dies ist eine komplizierte Formel:
+  \startformula 
+    t-t_{0}=\sqrt{\frac{l}{g}}\int_{0}^{\varphi}{\frac{d\psi}{\sqrt{1-k^{2}\sin^{2} {\psi}}}} = \left(\sqrt{\frac{l}{g}} F(k,\varphi)\right) 
+  \stopformula
+\stopitemize
+
+Abgesetzt geht es durch die \type{\formula}-Umgebung. Mit dem \type{\placeformula} erhält man numerierte Formeln.
+Gibt man dem Befehl einen Formelnamen als Argument, kann sich im Text darauf beziehen, siehe Formel \in[formel2].
+
+\index{formula}
+\placeformula[formel1]
+\startformula 
+t-t_{0} = \left(\sqrt{\frac{l}{g}} F(k,\varphi)\right)
+\stopformula
+
+Mit \type{\startmathalignment} erhält man eine ausgerichtete Formel:
+
+\placeformula[formel2]
+\startformula \startmathalignment
+ \NC t-t_{0} \NC =  \left(\sqrt{\frac{l}{g}} F(k,\varphi)\right) \NR
+ \NC z_{n+1} \NC =  z_n^2+c \NR
+\stopmathalignment \stopformula
+
+Mit \type{\startmathalignment[number=auto]} werden die Formeln einzel numeriert.
+
+\placeformula[formel2a]
+\startformula \startmathalignment[number=auto]
+ \NC t-t_{0} \NC =  \left(\sqrt{\frac{l}{g}} F(k,\varphi)\right) \NR
+ \NC z_{n+1} \NC =  z_n^2+c \NR
+\stopmathalignment \stopformula
+
+Die gleich Formel ohne Ausrichtung:
+
+\placeformula[formel3]
+\startformula
+   z_{n+1} =  z_n^2+c
+\stopformula
+
+Die griechischen Buchstaben funktionieren auch im Textmodus.
+Es gibt für alle Großbuchstaben einen Befehl, auch für die, bei denen der
+griechische Buchstabe genauso aussieht, wie der lateinische.
+
+\blank[big]
+{
+\bTABLE
+\setupTABLE[frame=off]
+\setupTABLE[c][width=1.6cm]
+\bTR \bTD         \eTD \bTD [nc=2] Textmodus \eTD \bTD [nc=2] Mathemodus \eTD \eTR
+\bTR \bTD Alpha   \eTD \bTD \Alpha           \eTD \bTD \alpha            \eTD \bTD $\Alpha$   \eTD \bTD $\alpha$   \eTD \eTR
+\bTR \bTD Beta    \eTD \bTD \Beta            \eTD \bTD \beta             \eTD \bTD $\Beta$    \eTD \bTD $\beta$    \eTD \eTR
+\bTR \bTD Gamma   \eTD \bTD \Gamma           \eTD \bTD \gamma            \eTD \bTD $\Gamma$   \eTD \bTD $\gamma$   \eTD \eTR
+\bTR \bTD Delta   \eTD \bTD \Delta           \eTD \bTD \delta            \eTD \bTD $\Delta$   \eTD \bTD $\Delta$   \eTD \eTR
+\bTR \bTD Epsilon \eTD \bTD \Epsilon         \eTD \bTD \epsilon          \eTD \bTD $\Epsilon$ \eTD \bTD $\epsilon$ \eTD \eTR
+\bTR \bTD Zeta    \eTD \bTD \Zeta            \eTD \bTD \zeta             \eTD \bTD $\Zeta$    \eTD \bTD $\zeta$    \eTD \eTR
+\bTR \bTD Eta     \eTD \bTD \Eta             \eTD \bTD \eta              \eTD \bTD $\Eta$     \eTD \bTD $\eta$     \eTD \eTR
+\bTR \bTD Theta   \eTD \bTD \Theta           \eTD \bTD \theta            \eTD \bTD $\Theta$   \eTD \bTD $\theta$   \eTD \eTR
+\bTR \bTD Iota    \eTD \bTD \Iota            \eTD \bTD \iota             \eTD \bTD $\Iota$    \eTD \bTD $\iota$    \eTD \eTR
+\bTR \bTD Kappa   \eTD \bTD \Kappa           \eTD \bTD \kappa            \eTD \bTD $\Kappa$   \eTD \bTD $\kappa$   \eTD \eTR
+\bTR \bTD Lambda  \eTD \bTD \Lambda          \eTD \bTD \lambda           \eTD \bTD $\Lambda$  \eTD \bTD $\lambda$  \eTD \eTR
+\bTR \bTD Mu      \eTD \bTD \Mu              \eTD \bTD \mu               \eTD \bTD $\Mu$      \eTD \bTD $\mu$      \eTD \eTR
+\bTR \bTD Nu      \eTD \bTD \Nu              \eTD \bTD \nu               \eTD \bTD $\Nu$      \eTD \bTD $\nu$      \eTD \eTR
+\bTR \bTD Xi      \eTD \bTD \Xi              \eTD \bTD \xi               \eTD \bTD $\Xi$      \eTD \bTD $\xi$      \eTD \eTR
+\bTR \bTD Omicron \eTD \bTD \Omicron         \eTD \bTD \omicron          \eTD \bTD $\Omicron$ \eTD \bTD $\omicron$ \eTD \eTR
+\bTR \bTD Pi      \eTD \bTD \Pi              \eTD \bTD \pi               \eTD \bTD $\Pi$      \eTD \bTD $\pi$      \eTD \eTR
+\bTR \bTD Rho     \eTD \bTD \Rho             \eTD \bTD \rho              \eTD \bTD $\Rho$     \eTD \bTD $\rho$     \eTD \eTR
+\bTR \bTD Sigma   \eTD \bTD \Sigma           \eTD \bTD \sigma            \eTD \bTD $\Sigma$   \eTD \bTD $\sigma$   \eTD \eTR
+\bTR \bTD Tau     \eTD \bTD \Tau             \eTD \bTD \tau              \eTD \bTD $\Tau$     \eTD \bTD $\tau$     \eTD \eTR
+\bTR \bTD Upsilon \eTD \bTD \Upsilon         \eTD \bTD \upsilon          \eTD \bTD $\Upsilon$ \eTD \bTD $\upsilon$ \eTD \eTR
+\bTR \bTD Phi     \eTD \bTD \Phi             \eTD \bTD \phi              \eTD \bTD $\Phi$     \eTD \bTD $\phi$     \eTD \eTR
+\bTR \bTD Chi     \eTD \bTD \Chi             \eTD \bTD \chi              \eTD \bTD $\Chi$     \eTD \bTD $\chi$     \eTD \eTR
+\bTR \bTD Psi     \eTD \bTD \Psi             \eTD \bTD \psi              \eTD \bTD $\Psi$     \eTD \bTD $\psi$     \eTD \eTR
+\bTR \bTD Omega   \eTD \bTD \Omega           \eTD \bTD \omega            \eTD \bTD $\Omega$   \eTD \bTD $\omega$   \eTD \eTR
+\eTABLE
+}
+
+
+\stopcomponent
+

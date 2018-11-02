@@ -1,0 +1,71 @@
+% !TEX TS-program = ConTeXt (LuaTeX 1.0.9)
+% !TEX encoding = UTF-8 Unicode
+
+% Copyright 2018 Axel Kielhorn
+% Lizenz: CC-BY-SA 4.0 Unported http://creativecommons.org/licenses/by-sa/4.0/deed.de
+
+\startcomponent *
+\product prd_intro
+\project project_intro
+
+\startsection[title={Ein einfaches Dokument}]
+
+Ein minimales Dokument benötigt nur drei Zeilen:
+
+\starttyping
+\starttext
+  Text
+\stoptext
+\stoptyping
+
+Es gibt keine Dokumentklassen, Anpassungen am Layout werden direkt im Dokument oder in einer Environment-Datei vorgenommen.
+Außerdem können Module geladen werden, die zusätzliche Funktionen definieren.
+Hier ein etwas komplexeres Beispiel mit einem anderen Papierformat und einem Gliederungsbefehl.
+
+\starttyping
+\setuppapersize[A5]
+\starttext
+  \startchapter[title={Kapitel}]
+  Text
+  \stopchapter
+\stoptext
+\stoptyping
+
+Es stehen die Papierformate A0 bis A10 sowie die dazugehörigen B und C Formate zur Verfügung,
+zusätzlich gibt es noch die Option \type{landscape} für Dokumente im Querformat.
+
+Außerdem gibt es die Formate S3 bis S6, S8, SM und SW für die Darstellung am Bildschirm, z.\,B. für Präsentationen.
+
+Für größere Arbeiten gibt es eine Projektverwaltung.
+In der obersten Ebene werden alle Einstellungen für alle Produkte in einer Environment-Datei festgelegt.
+In der nächsten Ebene befinden sich dann die einzelnen Produkte.
+Jedes Produkt besteht aus mehreren Kapiteln, die jeweils in einer Datei gespeichert werden.
+
+Jedes Produkt wird als eigenes Dokument übersetzt.
+Es ist aber auch möglich nur einzelne Dateien zu übersetzen, 
+das spart in der Entwurfsphase sehr viel Zeit, da nur ein Dokument übersetzt wird.
+
+Diese Anleitung ist als Projekt aufgebaut.
+
+Es empfiehlt sich die Dateiarten anhand des Dateinamens zu unterscheiden.
+
+\startdescription{\type{env}}
+  Environment Dateien
+\stopdescription
+
+\startdescription{\type{prj}}
+  Die Projekt Datei
+\stopdescription
+
+\startdescription{\type{prd}}
+  Die einzelnen Produkte (Je eins pro Unterverzeichnis)
+\stopdescription
+
+\startdescription{\type{c}}
+  Die einzelnen Kapitel eines Produkts.
+\stopdescription
+
+\stopsection
+
+
+\stopcomponent

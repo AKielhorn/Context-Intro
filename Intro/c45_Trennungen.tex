@@ -1,0 +1,38 @@
+% !TEX TS-program = ConTeXt (LuaTeX 1.0.9)
+% !TEX encoding = UTF-8 Unicode
+
+% Copyright 2018 Axel Kielhorn
+% Lizenz: CC-BY-SA 4.0 Unported http://creativecommons.org/licenses/by-sa/4.0/deed.de
+
+\startcomponent *
+\product prd_intro
+\project project_intro
+
+\startsection[
+  reference=trennungen,
+  title={Trennungen}
+  ]
+
+Auch wenn der Trennalgorithmus von TeX nicht schlecht ist, gibt es
+wieder wieder Wörter, die man gerne anders oder gar nicht trennen würde.
+Aus dem Grund gibt es verschiedene Möglichkeit, Worttrennungen zu
+forcieren bzw. zu empfehlen.
+
+\startitemize[margin=4cm]
+\item
+  Dies ist ein etwas längerer Text, der das Wort „Trennalgorithmus“
+  trennen soll, wie es LaTeX normalerweise trennen würde. (Und zumindest
+  bei mir trennt TeX fehlerhaft mit „Tren-nalgorithmus“.)
+\item
+  Dies ist ein etwas längerer Text, der das Wort „Trenn\-algorithmus“
+  trennen soll. Hier wurde die Trennung mit \type{\-} forciert.
+\item
+  Hier etwas  Fülltext als zuvor, der das Wort „Floss/Libre“ trennen
+  soll. Es ragt über den Rand.
+\stopitemize
+
+Der oben beschrieben Fehler tritt mit den aktuellen Trennmustern nicht mehr auf.
+
+\stopsection
+
+\stopcomponent
