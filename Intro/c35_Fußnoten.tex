@@ -8,50 +8,138 @@
 \product prd_intro
 \project project_intro
 
+\definenote[authornote][footnote]      
+  \setupnotation[authornote]      [headstyle=bold]
+  \setupnote    [authornote]      [textstyle=bold]
+  
+\definenote[translaternote][rule=off]  
+  \setupnotation[translaternote]  [numberconversion=a,   headstyle=bold, headcolor=green, style=bolditalic] %Note Text
+  \setupnote[translaternote][textstyle=\bf, textcolor=green] % Note Symbol
+
+\definenote[translaterpnote][rule=off] 
+  \setupnotation[translaterpnote] [numberconversion=set 2,headstyle=bold, headcolor=green, style=bolditalic, way=bypage]
+  \setupnote[translaterpnote][textstyle=\bf, textcolor=green] % Note Symbol
+
+\definenote[commentnote][endnote]      
+  \setupnotation[commentnote]     [color=red,left={(},right={)}]
+  \setupnote [commentnote] [textcommand=\mycommentcommand]
+    \define[1]\mycommentcommand{\high{\tfxx(#1)}}
+
+%\setupnote[footnote][%
+%rule=off,
+%frame=on,
+%framecolor=green,
+%rulecolor=green,
+%rulethickness=1pt,
+%textstyle=\bf,
+%textcolor=green,
+%]
+%\setupnotation[footnote][%
+%numberconversion=a,
+%headstyle=bold,
+%headcolor=green,
+%style=bolditalic,
+%color=green,
+%]
+
 \startsection[
   reference=fußnoten,
   title={Fußnoten}
   ]
 \index{Fußnoten}
 
-Etwas Fülltext zum Anfang, damit die Fußnoten in der Mitte des Textes
-stehen. Ganz „schlimm“ sind lange Fußnoten\footnote{Das heißt, Fußnoten,
-  die nicht nur über ein oder zwei Zeile gehen, sondern die Hälfte einer
-  Seite einnehmen. Das gibt es in vielen Bereichen, in denen entweder
-  jedes Zitat mittels Fußnote belegt wird oder ausführliche Anmerkungen
-  in den Fußnoten stehen. Ein ehemaliger Professor von mir hat es in
-  einem zweihundertseitigen Skript immerhin auf 200 Fußnoten gebracht.
-  Das ist ggf. nicht viel, ich erzähle es aber hier, um die Fußnote
-  weiter aufzublähen ohne Blindtext zu benutzen.}.
-Oder\footnote{Zum Thema Blindtext kann ich auch noch etwas sagen. Es
-  gibt verschiedene Pakete, die Blindtext erzeugen. Darunter das Paket
-  \type{blindtext} und das Paket \type{lipsum}. So, und endlich habe ich
-  den Umbruch der Fußnote erreicht \ldots{} Argh, nein doch nicht. Je
-  nachdem, wie der Text auf der Seite und umbricht, brauchen wir also
-  doch noch mehr Text, sodass die Fußzeile weiter wächst und wächst,
-  sodass dieser Text hier erst auf der nächsten Seite zu finden ist. So,
-  jetzt reicht's! Es gibt also doch Blindtext!} Blindtext\footnote{Die
-  fehlende Fußnote 3, die im PDF einfach verschluckt wird, stört aber
-  schon etwas. Ich frage mich, wo diese im EPUB auftauchen wird.}
-in\footnote{Lorem ipsum dolor sit amet, consectetur adipisici elit, sed
-  eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad
-  minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-  aliquid ex ea commodi consequat. Quis aute iure reprehenderit in
-  voluptate velit esse cillum dolore eu fugiat nulla pariatur.} der
-Fußnote\footnote{Excepteur sint obcaecat cupiditat non proident, sunt in
-  culpa qui officia deserunt mollit anim id est laborum. Duis autem vel
-  eum iriure dolor in hendrerit in vulputate velit esse molestie
-  consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et
-  accumsan et iusto odio dignissim qui blandit praesent luptatum zzril
-  delenit augue duis dolore te feugait nulla facilisi. Lorem ipsum dolor
-  sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod
-  tincidunt ut laoreet dolore magna aliquam erat volutpat. Lorem ipsum
-  dolor sit amet, consectetur adipisici elit, sed eiusmod tempor
-  incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.}.
-Und damit hinter dem Text der Fußnoten noch etwas kommt, muss ich mir
-hier noch mehr Unsinn einfallen lassen, sodass ich mindestens drei oder
-mehr Zeilen zusammenbekomme, die dafür sorgen, dass das alles korrekt
-dargestellt wird und aussieht und so weiter und so fort.
+Fußnoten werden mit den \type{\footnote{}}\index{footnote} Befehl erzeugt.
+Das Aussehen des Fußnotensymbols im Text wird mit dem Befehl \type{\setupnote} definiert.
+Die Fußnote selbst wird mit dem Befehl \type{\setupnotation} definiert.
+Das Aussehen der Fußnoten lässt sich leicht ändern.
+
+\starttyping
+\setupnote[footnote][%
+rule=off, % Rule oder Frame
+frame=on, % Beides gleichzeitig sieht komisch aus
+framecolor=green,
+rulecolor=green,
+rulethickness=1pt, % für rule und frame
+textstyle=\bf,
+textcolor=green
+]
+
+\setupnotation[footnote][%
+numberconversion=a,
+headstyle=bold,
+headcolor=green,
+style=bolditalic,
+color=green
+]
+\stoptyping
+
+Außerdem ist es möglich eigene Fußnotenapparate zu definieren.
+So kann zwischen Originalfußnoten und Fußnoten des Übersetzers unterschieden werden.
+
+\starttyping
+\definenote[authornote][footnote] % Gleicher Zähler wie footnote     
+  \setupnotation[authornote]      [headstyle=bold] % Symbol fett
+  \setupnote    [authornote]      [textstyle=bold]
+  
+\definenote[translaternote][rule=off] % Eigener Zähler
+  \setupnotation[translaternote] [
+    numberconversion=a,   
+    headstyle=bold, headcolor=green,
+    style=bolditalic] %Note Text
+  \setupnote[translaternote] [
+    textstyle=\bf, textcolor=green] % Note Symbol
+
+\definenote[translaterpnote][rule=off] 
+  \setupnotation[translaterpnote] [
+    numberconversion=set 2,
+    headstyle=bold, headcolor=green,
+    style=bolditalic,
+    way=bypage] % seitenweise numerieren
+  \setupnote[translaterpnote] [
+    textstyle=\bf, textcolor=green] % Note Symbol
+\stoptyping
+
+Außer den Fußnoten gibt es auch noch Endnoten.\index{Endnoten}
+Diese werden mit Klammern markiert.
+
+\starttyping
+\definenote[commentnote][endnote]      
+  \setupnotation[commentnote]     [color=red,left={(},right={)}]
+  \setupnote [commentnote] [textcommand=\mycommentcommand]
+    \define[1]\mycommentcommand{\high{\tfxx(#1)}}
+\stoptyping
+
+Endnoten werden nicht automatisch ausgegeben.
+An der gewünschten Stelle muss der Befehl
+
+\starttyping
+\placenotes[commentnote]
+\stoptyping
+
+aufgerufen werden.
+
+\input ward\authornote{Eine normale Fußnote in Originaltext. Mit etwas Text, damit die Seite voll wird. \input ward}
+
+\input ward\translaternote{Eine Fußnote des Übersetzters.
+Sie benutzt einen anderen Zähler als die \type{\authornode} und wird mit Buchstaben statt Zahlen markiert.}
+\commentnote{Mehr Informationen gibt es in den Endnoten am Ende des Kapitels.}
+
+\input ward\translaterpnote{Alternativ kann man die Übersetzernoten auch seitenweise nummerieren.
+Zur Unterscheidung von normalen Fußnoten hier mit Zeichen statt Zahlen.}
+
+\input ward\footnote{Eine normale Fußnote. 
+Sie benutzt den gleichen Zähler wie \type{\authornote}, aber das Symbol ist nicht fett.
+Das führt zur Verwirrung und sollte vermieden werden.}
+
+\input ward\commentnote{Noch eine Endnote, damit es sich lohnt.} 
+
+\input ward\translaterpnote{Die zweite Fußnote des Übersetzers auf der Seite.} 
+
+\startsubsection[title={Endnoten}]
+
+\placenotes[commentnote]
+
+\stopsubsection
 
 \stopsection
 
