@@ -15,5 +15,8 @@ englisch.
  -  Fuß- und Endnoten
  *  Bibliography
  *  Unterschiedliche environments (Design, Fonts)
- *  Klammern eckig / geschweift (JUH)
  *  Define / Setup Beispiele und Erklärungen (JUH)
+
+# DONE
+
+ *  Klammern eckig / geschweift (JUH)
