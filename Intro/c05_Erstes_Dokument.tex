@@ -45,6 +45,43 @@ Dabei werden Optionen und Parameter in getrennten Klammerpaaren eingegeben.
 \Befehl[optionon][parameter=wert]{Text}
 \stoptyping
 
+\startsubsection[title={Sprachauswahl}]
+\index{Sprachauswahl}
+
+Jede Sprache hat ihre Eigenheiten.
+Das fängt bei den Trennmustern an, 
+geht über die Anführungszeichen bis hin zu Bezeichnungen für bestimmte Dokumentteile wie Kapitel oder Seite.
+
+In ConTeXt gibt es zwei Befehle zur Sprachauswahl
+
+\starttyping
+\language[de]
+\stoptyping
+
+schaltet auf deutsche Trennmuster um.
+Die automatische Trennung funktioniert sehr gut.
+
+Für alle anderen Einstellungen gibt es den Befehl
+
+\starttyping
+\mainlanguage[de]
+\stoptyping
+
+Dieser sorg dafür, dass statt \quotation{\mainlanguage[en]\labeltext{page}} oder \quotation{\mainlanguage[en]\labeltext{figure}} die richtigen Wörter
+\quotation{\labeltext{page}} und \quotation{\labeltext{figure}} erscheinen.
+
+{Mit dem Befehl
+
+\setuplabeltext[de][figure=Bild ] % Leerzeichen ist wichtig!
+
+\starttyping
+\setuplabeltext[de][figure=Bild ] % Leerzeichen ist wichtig!
+\stoptyping
+
+lassen sich die Begriffe ändern. Jetzt wir als Text \quotation{\labeltext{figure}} ausgegeben.}
+
+\stopsubsection
+
 \startsubsection[title={Projekte}]
 \index{Projekt}
 
