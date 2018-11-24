@@ -21,16 +21,42 @@ Für Hyperlinks ist kein zusätzliches Paket erforderlich, das Dokument muss led
 
 als interaktiv definiert werden.
 
-\startitemize
+Normalerweise definiert man die URLs direkt bei der Benutzung.
+Der Text in der geschweiften Klammer wird ausgegeben, 
+das Argument in der eckigen Klammer ist der eigentliche Link.
 
-\item
-  Als URL direkt: \useURL[url1][http://www.dante.de/]\from[url1]
-\item
-  Oder als Name maskiert: \useURL[url2][http://www.dante.de/][][DANTE
-  e.V.]\from[url2]
-\item
-  Interner Verweis auf \in{Kapitel}[Verweise]. Hier steht etwas über Verweise.
-\stopitemize
+\starttyping
+\goto{\hyphenatedurl{https://wiki.contextgarden.net/}}
+   [url(https://wiki.contextgarden.net/)]
+\goto{ConTeXt garden}[url(https://wiki.contextgarden.net/)]
+\stoptyping
+
+\goto{\hyphenatedurl{https://wiki.contextgarden.net/}}
+   [url(https://wiki.contextgarden.net/)]
+   
+\goto{ConTeXt garden}[url(https://wiki.contextgarden.net/)]
+
+Alternativ kann man die URLs mit dem \type{\useURL} Befehl definieren und dann mit dem \type{\from} Befehl nutzen.
+Das ist dann sinnvoll, wenn eine URL mehrfach benötigt.
+Außerdem lassen sich so alle URLs an einer Stelle (z.\,B in einer Environmentdatei) speichern.
+Somit hat man nur eine Stelle die aktualisiert werden muss.
+
+Will man eine URL in einer Bildunterschrift (z.\,B. im \type{\placefigure} Befehl) nutzen, dann muss diese Form benutzt werden.
+(Siehe \in{Kapitel}[Grafiken])
+
+\starttyping
+\useURL[url1][http://www.dante.de/]
+\useURL[url2][http://www.dante.de/][][DANTE e.V.]
+\from[url1]
+\from[url2]
+\stoptyping
+
+\useURL[url1][http://www.dante.de/]
+\useURL[url2][http://www.dante.de/][][DANTE e.V.]
+
+\from[url1]
+
+\from[url2]
 
 \stopsection
 
