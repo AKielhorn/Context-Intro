@@ -12,8 +12,13 @@
 
 \setupcolors[state=start]
 
-\setupbibtex[database={epub_latex_beispiel},sort=author]
-\setuppublications[alternative=apa]
+
+%\setupbibtex[database={epub_latex_beispiel},sort=author]
+%\setuppublications[alternative=apa]
+\definebtxdataset[default]
+\usebtxdataset[default][epub_latex_beispiel.bib]
+\usebtxdataset[default][intro.bib]
+\usebtxdefinitions[apa]
 
 % Enable hyperlinks
 \setupinteraction[state=start, color=middleblue]

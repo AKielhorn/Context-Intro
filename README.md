@@ -12,11 +12,11 @@ englisch.
 
 # TODO
 
- -  Fuß- und Endnoten
- *  Bibliography
  *  Unterschiedliche environments (Design, Fonts)
  *  Define / Setup Beispiele und Erklärungen (JUH)
 
 # DONE
 
+ -  Fuß- und Endnoten
+ *  Bibliography
  *  Klammern eckig / geschweift (JUH)

@@ -1,0 +1,208 @@
+% !TEX TS-program = ConTeXt (LuaTeX 1.0.9)
+% !TEX encoding = UTF-8 Unicode
+
+% Copyright 2018 Axel Kielhorn
+% Lizenz: CC-BY-SA 4.0 Unported http://creativecommons.org/licenses/by-sa/4.0/deed.de
+
+\startcomponent *
+\product prd_intro
+\project project_intro
+
+\startsection[
+  reference=Literatur,
+  title={Literaturverwaltung}
+  ]
+
+Es steht geschrieben, aber wo?
+
+Bei wissenschaftlichen Arbeiten ist es selbstverständlich fremde (oder auch eigene) Werke zu zitieren und dabei die Quelle anzugeben.
+
+Die Quellen sammelt man am besten in einer Datei und überlässt es dann einem Programm die relevanten Informationen rauszusuchen und richtig zu formatieren.
+Lange Zeit war BibTeX das dazu verwendete Programm, aber inzwischen kann ConTeXt die Arbeit selbst übernehmen und ist so auf keine externen Hilfsprogramme angewiesen.
+
+Da das BibTeX Datenbankformat weit verbreitet ist, ließt ConTeXt Dateien in diesem Format.
+Es gibt mehrere Programme um BibTeX Dateien zu verwalten, 
+weit verbreitet ist \goto{jabref}[url(http://jabref.sourceforge.net)].
+Ein normaler Editor reicht jedoch vollkommen aus.
+
+Außerdem kann ConTeXt folgende Formate lesen:
+
+\blank[big]
+{
+\bTABLE
+\setupTABLE[frame=off]
+\bTR \bTD savedrecs.txt \eTD \bTD Institute of Scientific Information (ISI) tagged format (e.g. Thomson Reuters™ Web of Science™) \eTD \eTR
+\bTR \bTD filename.enw  \eTD \bTD Thomson Reuters™ Endnote™ export format (there is also an Endnote .xml export) \eTD \eTR
+\bTR \bTD filename.ris  \eTD \bTD Research Information Systems, Incorporated, now Thomson Reuters™ Reference Manager™ \eTD \eTR
+\bTR \bTD pubmed_result.txt \eTD \bTD The National Library of Medicine® (NLM®) MEDLINE®/PubMed® data format\eTD \eTR
+\eTABLE
+}
+
+\startsubsection[title={Das BibTeX Format}]
+
+BibTeX kennt unterschiedliche Dokumentkategorien und erwartet dafür entsprechende Felder.
+Die bekannten Dokumentkategorien und die unterstützten Felder zeigt der Befehl
+
+\starttyping
+\showbtxfields[rotation=90]
+\stoptyping
+
+Dabei werden die Pflichteinträge grün markiert.
+
+{\tfx\showbtxfields[rotation=90]}
+
+Ein Eintrag in der Datenbank hat die Form \type{@kategorie{Schlüssel, Feld = {Wert}}}
+
+Ein Dokument der Kategorie \type{Book} benötigt folgende Felder: \type{author} oder \type{editor}, \type{publisher} und \type{title}.
+Das Feld \type{year} ist nicht unbedingt erforderlich, aber empfehlenswert. Eine Zitatstile erzeugen daraus den Text für die Quellenangabe.
+
+Der Eintrag sieht also folgendermaßen aus:
+
+\starttyping
+@book{Kielhorn-Context,
+  author    = {Axel Kielhorn},
+  title     = {ConTeXt Intro},
+  publisher = {Läufer Verlag},
+  year      = 2018,
+}
+\stoptyping
+\stopsubsection
+
+\startsubsection[title={Datenbanken und Ausgabeformat}]
+
+ConTeXt kann mehrere Datenbanken mit unterschiedlichen Konfigurationen gleichzeitig benutzen.
+In dieser Anleitung beschränke ich mich auf eine Datenbank.
+
+\starttyping
+\definebtxdataset[default]
+\usebtxdataset[default][epub_latex_beispiel.bib]
+\usebtxdataset[default][intro.bib]
+\usebtxdefinitions[apa]  % Alphabetisches Verzeichnis
+%\usebtxdefinitions[aps] % Numerisches Verzeichnis
+\stoptyping
+
+Es wird eine Datenbank mit dem Namen \type{default} definiert.
+Diese Datenbank ließt ihre Daten aus zwei Dateien vom Typ BibTeX.
+Die Kategorien und Felder werden gemäß er \type{apa}\footnote{American Psychological Association} Definition geladen.
+Alternativ stehen die Definitionen gemäß \type{aps}\footnote{American Physical Society} zur Verfügung.
+
+Zur Ausgabe des Literaturverzeichnisses dient der Befehl
+
+\starttyping
+%\placelistofpublications[apa][method=dataset] % Gesamte Datenbank
+\placelistofpublications[apa][method=global]   % Gesamtes Dokument
+%\placelistofpublications[apa][method=local]   % Dieser Abschnitt
+\stoptyping
+
+\blank[big]
+%\placelistofpublications[apa][method=dataset]
+\placelistofpublications[apa][method=global]
+%\placelistofpublications[apa][method=local]
+
+Die Option \type{apa} gibt an, wie die Daten formatiert werden.
+Hier wird z.\,B. beim zweiten und den weiteren Werken eines Autors der Name durch einen Strich ersätzt.
+
+In den Naturwissenschaften wäre \type{aps} der bessere Ausgangspunkt. 
+Im Normalfall entspricht die Formatierung nicht den Wünschen, 
+das Format lässt sich jedoch leicht ändern.
+
+Mit der Einstellung \type{method=dataset} werden alle in der Datenbank erfassten Einträge ausgegeben.
+Das ist sinnvoll um einen Überblick über die Datenbank zu erhalten.
+In realen Dokumenten kommt \type{method=global} für ein Gesamtliteraturverzeichnis,
+oder \type{method=local} für ein Kapitelliteraturverzeichnis zum Einsatz.
+
+Eine geänderte Formatierung lässt sich leicht definieren, hier wird eine Nummerierung hinzugefügt.
+Die Sortierung bleibt aber \type{authoryear}, 
+als zu erst die Autoren alphabetisch sortieren, 
+dann innerhalb eines Autors nach Erscheinungsjahr.
+
+\starttyping
+\definebtxrendering[intro]
+[apa]
+[dataset=default,repeat=yes]
+\setupbtxrendering[intro]
+[sorttype=authoryear, % authoryear, short, cite, index
+ numbering=yes,       % yes no num tag
+]
+\stoptyping
+
+\definebtxrendering[intro]
+[apa]
+[dataset=default,repeat=yes]
+\setupbtxrendering[intro]
+[sorttype=authoryear, % authoryear, short, cite, index
+ numbering=yes,       % yes no num tag
+]
+
+\blank[big]
+\placelistofpublications[intro][method=dataset]
+
+Für ein nummeriertes Literaturverzeichnis ist \type{aps} der besserer Ausgangspunkt.
+
+\loadbtxdefinitionfile[aps]
+\definebtxrendering
+  [introaps]
+  [aps]
+  [dataset=default,
+   group=introaps,
+   repeat=yes
+]
+\setupbtxrendering[introaps]
+[sorttype=cite, % authoryear, short, cite, index
+]
+
+\blank[big]
+\placelistofpublications[introaps][method=dataset]
+
+Normalerweise wird eine Quelle nur einmal angegeben.
+Für diese Beispiele musste daher zusätzlich die Option \type{repeat=yes} angegeben werden,
+damit die zusätzlichen Literaturverzeichnisse Daten enthalten.
+
+%\placelistofpublications[criterium=chapter]
+
+\stopsubsection
+
+\startsubsection[title={Zitieren}]
+
+Zur Quellenangabe im Text wird der Befehl \type{\cite[Schlüssel]} benutzt.
+Die Formatierung für \type{apa} sieht so aus \cite[Kielhorn-Ziele-dtk].
+
+Zusätzlich können noch Texte vor und nach der Quellenangabe ausgegeben werden,
+z.\,B. eine Seitenzahl \type{\cite[righttext={ S.\nbsp 12}][Kielhorn-Context]}:
+\cite[righttext={ S.\nbsp 35}][Kielhorn-Context]
+\type{\nbsp} ist dabei ein nicht trennbares Leerzeichen, 
+es verhindert, das die Seitenzahl in die nächste Zeile rutscht.
+
+Über Optionen kann auf weitere Daten eines Eintrags zugegriffen werden:
+
+{\bTABLE
+\setupTABLE[frame=off]
+\setupTABLE[1][width=0.6\textwidth]
+\bTR \bTD \type{\cite[Kielhorn-Context] }              \eTD \bTD \cite[Kielhorn-Context]              \eTD \eTR
+\bTR \bTD \type{\cite[num][Kielhorn-Context] }         \eTD \bTD \cite[num][Kielhorn-Context]         \eTD \eTR
+\bTR \bTD \type{\cite[textnum][Kielhorn-Context] }     \eTD \bTD \cite[textnum][Kielhorn-Context]     \eTD \eTR
+\bTR \bTD \type{\cite[authornum][Kielhorn-Context] }   \eTD \bTD \cite[authornum][Kielhorn-Context]   \eTD \eTR
+\bTR \bTD \type{\cite[authoryear][Kielhorn-Context] }  \eTD \bTD \cite[authoryear][Kielhorn-Context]  \eTD \eTR
+\bTR \bTD \type{\cite[authoryears][Kielhorn-Context] } \eTD \bTD \cite[authoryears][Kielhorn-Context] \eTD \eTR
+\bTR \bTD \type{\cite[short][Kielhorn-Context] }       \eTD \bTD \cite[short][Kielhorn-Context]       \eTD \eTR
+\bTR \bTD \type{\cite[tag][Kielhorn-Context] }         \eTD \bTD \cite[tag][Kielhorn-Context]         \eTD \eTR
+\bTR \bTD \type{\cite[index][Kielhorn-Context] }       \eTD \bTD \cite[index][Kielhorn-Context]       \eTD \eTR
+\bTR \bTD \type{\cite[category][Kielhorn-Context] }    \eTD \bTD \cite[category][Kielhorn-Context]    \eTD \eTR
+\bTR \bTD \type{\cite[author][Kielhorn-Context] }      \eTD \bTD \cite[author][Kielhorn-Context]      \eTD \eTR
+\bTR \bTD \type{\cite[year][Kielhorn-Context] }        \eTD \bTD \cite[year][Kielhorn-Context]        \eTD \eTR
+\bTR \bTD \type{\cite[title][Kielhorn-Context] }       \eTD \bTD \cite[title][Kielhorn-Context]       \eTD \eTR
+\bTR \bTD \type{\cite[keywords][Kielhorn-Context] }    \eTD \bTD \cite[keywords][Kielhorn-Context]    \eTD \eTR
+\bTR \bTD \type{\cite[none][Kielhorn-Context] }        \eTD \bTD \cite[none][Kielhorn-Context]        \eTD \eTR
+\bTR \bTD \type{\cite[entry][Kielhorn-Context]}        \eTD \bTD \cite[entry][Kielhorn-Context]       \eTD \eTR
+\bTR \bTD \type{}                                      \eTD \bTD                                      \eTD \eTR
+\eTABLE
+}
+
+%\usecitation[becker2012]
+%\nocite[stein2000]
+
+
+\stopsubsection
+
+\stopcomponent
+
