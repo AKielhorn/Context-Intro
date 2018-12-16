@@ -14,63 +14,142 @@
   ]
 \index{Mathematik} \index{Formeln}
 ConTeXt wird häufig im naturwissenschaftlichen Umfeld benutzt, in der viel
-mit mathematischen Formeln hantiert wird. 
+mit mathematischen Formeln hantiert wird.
+In den meisten Fällen verhält sich ConTeXt wie LaTeX,
+daher kann die reichlich vorhandene Literatur hier mitbenutzt werden.
 
-Formeln im Fließtext erreicht man mittels \type{$…$}.
+Formeln im Fließtext erreicht man mittels 
+\starttyping
+$…$
+\m{…}
+\math{…}
+\mathematics{…}
+\stoptyping
+
 Abgesetzte Formeln mittels \type{\startformula…\stopformula}.
 
-\startitemize
-\item
-  Dies:
-  $t-t_{0}=\sqrt{\frac{l}{g}}\int_{0}^{\varphi}{\frac{d\psi}{\sqrt{1-k^{2}\sin^{2} {\psi}}}} = \left(\sqrt{\frac{l}{g}} F(k,\varphi)\right)$
-  ist eine komplizierte Formel.
-\item
-  Dies:
-  $t-t_{0}=\sqrt{\frac{l}{g}}\int_{0}^{\varphi}{\frac{d\psi}{\sqrt{1-k^{2}\sin^{2} {\psi}}}} = \left(\sqrt{\frac{l}{g}} F(k,\varphi)\right)$
-  ist eine komplizierte Formel.
-\item
-  Dies ist eine komplizierte Formel:
-  \startformula 
-    t-t_{0}=\sqrt{\frac{l}{g}}\int_{0}^{\varphi}{\frac{d\psi}{\sqrt{1-k^{2}\sin^{2} {\psi}}}} = \left(\sqrt{\frac{l}{g}} F(k,\varphi)\right) 
-   \stopformula
-\item
-  Dies ist eine komplizierte Formel:
-  \startformula 
-    t-t_{0}=\sqrt{\frac{l}{g}}\int_{0}^{\varphi}{\frac{d\psi}{\sqrt{1-k^{2}\sin^{2} {\psi}}}} = \left(\sqrt{\frac{l}{g}} F(k,\varphi)\right) 
-  \stopformula
-\stopitemize
+Das Paket AMSTeX bietet in LaTeX viele Möglichkeiten Formel zu gestalten.
+Im Dokument 
+\goto{\hyphenatedurl{http://dl.contextgarden.net/myway/context-latex-math.pdf}}
+   [url(http://dl.contextgarden.net/myway/context-latex-math.pdf)]
+werden die LaTeX und ConTeXt Befehle gegenübergestellt.
 
-Abgesetzt geht es durch die \type{\formula}-Umgebung. Mit dem \type{\placeformula} erhält man numerierte Formeln.
-Gibt man dem Befehl einen Formelnamen als Argument, kann sich im Text darauf beziehen, siehe Formel \in[formel2].
+\startsubsection[title={Ausrichtung}]
 
-\index{formula}
+Einzelne Formeln stehen in einer Zeile.
+Der Befehl \type{\placeformula} erzeugt dabei die Nummerierung.
+Gibt man dem Befehl einen Formelnamen als Argument, 
+kann sich im Text darauf beziehen, siehe Formel \in[formel1].
+
+\starttyping
 \placeformula[formel1]
-\startformula 
-t-t_{0} = \left(\sqrt{\frac{l}{g}} F(k,\varphi)\right)
-\stopformula
+\startformula  v = u + at\stopformula
+\stoptyping
 
-Mit \type{\startmathalignment} erhält man eine ausgerichtete Formel:
+\placeformula[formel1]
+\startformulav = u + at\stopformula
 
-\placeformula[formel2]
-\startformula \startmathalignment
- \NC t-t_{0} \NC =  \left(\sqrt{\frac{l}{g}} F(k,\varphi)\right) \NR
- \NC z_{n+1} \NC =  z_n^2+c \NR
-\stopmathalignment \stopformula
+Die gleiche Formel ohne \type{\placeformula}:
 
-Mit \type{\startmathalignment[number=auto]} werden die Formeln einzel numeriert.
+\startformulav = u + at\stopformula
 
-\placeformula[formel2a]
-\startformula \startmathalignment[number=auto]
- \NC t-t_{0} \NC =  \left(\sqrt{\frac{l}{g}} F(k,\varphi)\right) \NR
- \NC z_{n+1} \NC =  z_n^2+c \NR
-\stopmathalignment \stopformula
+Mehrere Formeln werden zentriert untereinander geschrieben.
+Die einzelnen Formeln werden dabei von \type{\NC … \NR} umschlossen. 
 
-Die gleich Formel ohne Ausrichtung:
+\starttyping
+\placeformula \startformula  \startmathalignment[n=1]
+    \NC v = u + at,           \NR    \NC d = ut + \frac12 at^2 \NR  \stopmathalignment\stopformula
+\stoptyping
 
-\placeformula[formel3]
+In diesem Fall wird für die Gruppe eine Nummer vergeben.
+
+\placeformula \startformula  \startmathalignment[n=1]
+    \NC v = u + at,           \NR    \NC d = ut + \frac12 at^2 \NR  \stopmathalignment\stopformula
+
+Um alle (oder nur einzelne) Formel zu nummerieren, 
+muss die Zeile, die eine Nummer erhalten soll, mit \type{\NR[+]} abgeschlossen werden.
+
+\placeformula \startformula  \startmathalignment[n=1]
+    \NC v = u + at,           \NR[+]    \NC d = ut + \frac12 at^2 \NR  \stopmathalignment\stopformula
+
+Mit \type{\startmathalignment[number=auto]} werden die Formeln einzeln nummeriert.
+
+\placeformula \startformula  \startmathalignment[n=1,number=auto]
+    \NC v = u + at,           \NR    \NC d = ut + \frac12 at^2 \NR  \stopmathalignment\stopformula
+
+Die Formeln lassen sich auch linksbündig \type{[align=left]} oder rechtsbündig \type{[align=right]} ausrichten.
+Wichtiger ist aber die Ausrichtung nach Spalten.
+
+\starttyping
+\startmathalignment
+  \NC v \NC = u + at,           \NR  \NC d \NC = ut + \frac12 at^2 \NR\stopmathalignment
+\stoptyping
+
+\startformula  \startmathalignment
+\NC v \NC = u + at,           \NR\NC d \NC = ut + \frac12 at^2 \NR  \stopmathalignment\stopformula
+
+Es können auch mehrere Spalten definiert werden, 
+in diesem Fall muss die Anzahl der Spalten angegeben werden.
+
+\starttyping
+\startmathalignment[n=3]
+  \NC A + B \NC = C + D  \NC + F     \NR
+  \NC G     \NC = C      \NC + F + G \NR
+\stopmathalignment
+\stoptyping
+
 \startformula
-   z_{n+1} =  z_n^2+c
+  \startmathalignment[n=3]
+    \NC A + B \NC = C + D  \NC + F     \NR
+    \NC G     \NC = C      \NC + F + G \NR
+  \stopmathalignment
 \stopformula
+
+\stopsubsection
+\startsubsection[title={Exponenten und Indizes}]
+
+Exponenten gelten nur im Mathematikmodus.
+Sie werden durch ein \type{^} und Indizes durch ein \type{_} gekennzeichnet
+und lassen sich mit \type{{}} gruppieren.
+
+Einfache $a^b_c$, mehrfache  $a^{ab}_{ac}$ und mehrstufige  $a^{b^c}_d$ Exponenten.
+
+Als Index wird oft ein Wort anstelle eines Formelzeichens verwendet.
+Dies muss als \type{\text{}} eingegeben werden.
+
+\type{$P_{\text{Antrieb}}$} $P_{\text{Antrieb}}$ statt \type{$P_{Anbrieb}$} $P_{Anbrieb}$.
+
+\stopsubsection
+\startsubsection[title={Brüche und Klammern}]
+
+Der \type{\frac{}{}} Befehl setzt einen normalen Bruch, 
+der Befehl \type{\binom{}{}} schreibt beide Argumente ohne Bruchstrich und fügt eine Klammer in der richtigen Größe hinzu.
+
+\starttyping
+\frac{ab}{cd} \binom{ab}{cd}
+\stoptyping
+
+\startformula
+\frac{ab}{cd} \binom{ab}{cd}
+\stopformula
+
+Klammern lassen sich auch aus einem Paar \type{\left( \right)} Befehlen aufbauen.
+Die Befehle müssen immer zusammen benutzt werden, ist kein zweites Symbol gewünscht, kann ein \type{.} benutzt werden.
+
+\starttyping
+\left( \frac{ab}{cd} \right) \left(  ab \right)\NR
+\left{ \frac{ab}{cd} \right.
+\stoptyping
+
+\startformula
+  \left( \frac{ab}{cd} \right) \left(  ab \right)\NR
+  \left{ \frac{ab}{cd} \right.
+\stopformula
+
+\stopsubsection
+
+\startsubsection[title={Griechische Buchstaben}]
+\index{Griechische Buchstaben}
 
 Die griechischen Buchstaben funktionieren auch im Textmodus.
 Es gibt für alle Großbuchstaben einen Befehl, auch für die, bei denen der
@@ -81,15 +160,15 @@ griechische Buchstabe genauso aussieht, wie der lateinische.
 \bTABLE
 \setupTABLE[frame=off]
 \setupTABLE[c][width=1.6cm]
-\bTR \bTD         \eTD \bTD [nc=2] Textmodus \eTD \bTD [nc=2] Mathemodus \eTD \eTR
+\bTR \bTD         \eTD \bTD [nc=2] Textmodus \eTD \bTD [nc=2] Mathemodus \eTD \bTD Varianten \eTD \eTR
 \bTR \bTD Alpha   \eTD \bTD \Alpha           \eTD \bTD \alpha            \eTD \bTD $\Alpha$   \eTD \bTD $\alpha$   \eTD \eTR
 \bTR \bTD Beta    \eTD \bTD \Beta            \eTD \bTD \beta             \eTD \bTD $\Beta$    \eTD \bTD $\beta$    \eTD \eTR
 \bTR \bTD Gamma   \eTD \bTD \Gamma           \eTD \bTD \gamma            \eTD \bTD $\Gamma$   \eTD \bTD $\gamma$   \eTD \eTR
 \bTR \bTD Delta   \eTD \bTD \Delta           \eTD \bTD \delta            \eTD \bTD $\Delta$   \eTD \bTD $\Delta$   \eTD \eTR
-\bTR \bTD Epsilon \eTD \bTD \Epsilon         \eTD \bTD \epsilon          \eTD \bTD $\Epsilon$ \eTD \bTD $\epsilon$ \eTD \eTR
+\bTR \bTD Epsilon \eTD \bTD \Epsilon         \eTD \bTD \epsilon          \eTD \bTD $\Epsilon$ \eTD \bTD $\epsilon$ \eTD \bTD \varepsilon \eTD\eTR
 \bTR \bTD Zeta    \eTD \bTD \Zeta            \eTD \bTD \zeta             \eTD \bTD $\Zeta$    \eTD \bTD $\zeta$    \eTD \eTR
 \bTR \bTD Eta     \eTD \bTD \Eta             \eTD \bTD \eta              \eTD \bTD $\Eta$     \eTD \bTD $\eta$     \eTD \eTR
-\bTR \bTD Theta   \eTD \bTD \Theta           \eTD \bTD \theta            \eTD \bTD $\Theta$   \eTD \bTD $\theta$   \eTD \eTR
+\bTR \bTD Theta   \eTD \bTD \Theta           \eTD \bTD \theta            \eTD \bTD $\Theta$   \eTD \bTD $\theta$   \eTD \bTD \vartheta \eTD\eTR
 \bTR \bTD Iota    \eTD \bTD \Iota            \eTD \bTD \iota             \eTD \bTD $\Iota$    \eTD \bTD $\iota$    \eTD \eTR
 \bTR \bTD Kappa   \eTD \bTD \Kappa           \eTD \bTD \kappa            \eTD \bTD $\Kappa$   \eTD \bTD $\kappa$   \eTD \eTR
 \bTR \bTD Lambda  \eTD \bTD \Lambda          \eTD \bTD \lambda           \eTD \bTD $\Lambda$  \eTD \bTD $\lambda$  \eTD \eTR
@@ -97,9 +176,9 @@ griechische Buchstabe genauso aussieht, wie der lateinische.
 \bTR \bTD Nu      \eTD \bTD \Nu              \eTD \bTD \nu               \eTD \bTD $\Nu$      \eTD \bTD $\nu$      \eTD \eTR
 \bTR \bTD Xi      \eTD \bTD \Xi              \eTD \bTD \xi               \eTD \bTD $\Xi$      \eTD \bTD $\xi$      \eTD \eTR
 \bTR \bTD Omicron \eTD \bTD \Omicron         \eTD \bTD \omicron          \eTD \bTD $\Omicron$ \eTD \bTD $\omicron$ \eTD \eTR
-\bTR \bTD Pi      \eTD \bTD \Pi              \eTD \bTD \pi               \eTD \bTD $\Pi$      \eTD \bTD $\pi$      \eTD \eTR
-\bTR \bTD Rho     \eTD \bTD \Rho             \eTD \bTD \rho              \eTD \bTD $\Rho$     \eTD \bTD $\rho$     \eTD \eTR
-\bTR \bTD Sigma   \eTD \bTD \Sigma           \eTD \bTD \sigma            \eTD \bTD $\Sigma$   \eTD \bTD $\sigma$   \eTD \eTR
+\bTR \bTD Pi      \eTD \bTD \Pi              \eTD \bTD \pi               \eTD \bTD $\Pi$      \eTD \bTD $\pi$      \eTD \bTD \varpi \eTD\eTR
+\bTR \bTD Rho     \eTD \bTD \Rho             \eTD \bTD \rho              \eTD \bTD $\Rho$     \eTD \bTD $\rho$     \eTD \bTD \varrho \eTD\eTR
+\bTR \bTD Sigma   \eTD \bTD \Sigma           \eTD \bTD \sigma            \eTD \bTD $\Sigma$   \eTD \bTD $\sigma$   \eTD \bTD \varsigma \eTD\eTR
 \bTR \bTD Tau     \eTD \bTD \Tau             \eTD \bTD \tau              \eTD \bTD $\Tau$     \eTD \bTD $\tau$     \eTD \eTR
 \bTR \bTD Upsilon \eTD \bTD \Upsilon         \eTD \bTD \upsilon          \eTD \bTD $\Upsilon$ \eTD \bTD $\upsilon$ \eTD \eTR
 \bTR \bTD Phi     \eTD \bTD \Phi             \eTD \bTD \phi              \eTD \bTD $\Phi$     \eTD \bTD $\phi$     \eTD \eTR
@@ -108,6 +187,19 @@ griechische Buchstabe genauso aussieht, wie der lateinische.
 \bTR \bTD Omega   \eTD \bTD \Omega           \eTD \bTD \omega            \eTD \bTD $\Omega$   \eTD \bTD $\omega$   \eTD \eTR
 \eTABLE
 }
+
+\stopsubsection
+
+\startsubsection[title={Beispielformeln}]
+
+
+Dies ist eine komplizierte Formel:
+\startformula 
+    t-t_{0}=\sqrt{\frac{l}{g}}\int_{0}^{\varphi}{\frac{d\psi}{\sqrt{1-k^{2}\sin^{2} {\psi}}}} = \left(\sqrt{\frac{l}{g}} F(k,\varphi)\right) 
+\stopformula
+
+\stopsubsection
+\stopsection
 
 
 \stopcomponent
