@@ -59,6 +59,93 @@ Schreibmaschinenschrift gesetzt wurde.}
 
 {\ss Dies ist ein kurzer Absatz, der mit \type{\ss} serifenlos gesetzt
 wurde.}
+
+\startsubsection[title={Schriftauswahl}]
+
+Jahrelang konnte man mit TeX erstellte Dokumente sofort an ihrer Schrift erkennen.
+Inzwischen können beliebige TrueType-Schriften mit TeX verwendet werden.
+ConTeXt liefert einige Schriften bereits mit, 
+weitere Schriften lassen sich leicht im Verzeichnis \type{/tex/texmf-fonts} 
+im ConTeX Verzeichnis installieren. 
+Diese müssen dann mit dem Befehl \type{mtxrun --script fonts --reload} dem
+System bekanntgemacht werden.
+
+Der Befehl \type{mtxrun --script fonts --list --all} listet alle bekannten
+Zeichensätze auf. Das Ergebnis sollte daher am besten in eine Datei umgelenkt werden.
+Diese Datei ist sinnvoll, wenn man den Namen bzw. den Familiennamen eines Zeichensatzes ermitteln möchte.
+
+In der Environment-Datei befinden sich bereits die Definitionen für die Schriften aus dem ConTeXt Paket zum ausprobieren.
+
+Es reicht eine Textschrift (serif oder sans) und die Mathematikschrift zu definieren.
+Letztere wird für Aufzählungssymbole benötigt.
+Die meisten Schriften bieten keine Schreibmaschinenschrift an, 
+hier muss eine passende Alternative gefunden und evtl. skaliert werden.
+
+Für die Familie DejaVu sieht die Anpassung so aus:
+
+\starttyping
+\definefontfamily[dejafamily] [serif][DejaVu Serif]
+    [expansion=quality,protrusion=quality]
+\definefontfamily[dejafamily] [sans][DejaVu Sans]
+    [expansion=quality,protrusion=quality]
+\definefontfamily[dejafamily] [mono][Dejavu Sans Mono]
+    [scale=0.85, features=none]
+\definefontfamily[dejafamily] [math][DejaVu Math]
+\setupbodyfont[dejafamily,11pt]
+\stoptyping
+
+Folgende Schriften können definiert werden:
+
+{\bTABLE
+\setupTABLE[frame=off]
+\setupTABLE[r][1][style=\bf]
+\bTR \bTD Kurzform \eTD \bTD Langform \eTD \eTR
+\bTR \bTD rm \eTD \bTD serif \eTD \eTR
+\bTR \bTD ss \eTD \bTD sans \eTD \eTR
+\bTR \bTD tt \eTD \bTD mono \eTD \eTR
+\bTR \bTD mm \eTD \bTD math \eTD \eTR
+\bTR \bTD hw \eTD \bTD handwriting \eTD \eTR
+\bTR \bTD cg \eTD \bTD calligraphy \eTD \eTR
+\eTABLE
+}
+
+Außerdem lassen sich einige Optionen auswählen:
+
+{\bTABLE
+\setupTABLE[frame=off]
+\setupTABLE[c][each][align=lohi,frame=off]
+\setupTABLE[c=3][width=60 mm]
+\setupTABLE[r][1][style=\bf]
+\bTR \bTD Name      \eTD \bTD Optionen \eTD \bTD Bedeutung \eTD \eTR
+\bTR \bTD scale     \eTD \bTD Zahlenwert \eTD \bTD Zeichensatz wird vergrößert oder verkleinert. \eTD \eTR
+\bTR \bTD expansion \eTD \bTD quality \eTD \bTD Buchstaben werden geringfügig verbreitert oder verschmälert. \eTD \eTR
+\bTR \bTD[nr=4] protrusion \eTD \bTD pure \eTD \bTD Einige Satzzeichen hängen komplett über den Rand des Textbereiches. \eTD \eTR
+\bTR                            \bTD punctuation \eTD \bTD Satzeichen hängen teilweise über den Rand des Textbereiches. \eTD \eTR
+\bTR                            \bTD alpha \eTD \bTD Buchstabenbreiten werden verändert. \eTD \eTR
+\bTR                            \bTD quality \eTD \bTD alpha und punctuation \eTD \eTR
+\bTR \bTD features \eTD \bTD OpenType feature \eTD \bTD Schriftabhängig \eTD \eTR
+\eTABLE
+}
+
+Einige gängige Features für das lateinische Sprachsystem (\type{latn}).
+Hier hilft oft nur die Dokumentation zum Zeichensatz weiter.
+
+{\bTABLE
+\setupTABLE[frame=off]
+\setupTABLE[r][1][style=\bf]
+\bTR \bTD Feature \eTD \bTD Funktion \eTD \eTR
+\bTR \bTD liga \eTD \bTD Ligaturen werden automatisch erstellt \eTD \eTR
+\bTR \bTD dlig \eTD \bTD Exotische (veraltete) Ligaturen \eTD \eTR
+\bTR \bTD salt \eTD \bTD Alternativer Stil \eTD \eTR
+\bTR \bTD lnum \eTD \bTD Normale Ziffern \eTD \eTR
+\bTR \bTD onum \eTD \bTD Oldstyle Ziffern \eTD \eTR
+\bTR \bTD tnum \eTD \bTD Tabellenziffern (gleiche Breite) \eTD \eTR
+\bTR \bTD pnum \eTD \bTD Proportionale Ziffern \eTD \eTR
+\eTABLE
+}
+
+\stopsubsection
+
 \stopsection
 
 \stopcomponent
