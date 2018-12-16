@@ -119,20 +119,31 @@ Dieser sorgt für die richtige Darstellung des 1000er Zwischenraums und des Dezi
 \stoplines 
 
 In Deutschland ist die Kombination \type{30} üblich, kleiner 1000er Abstand und \type{,} als Dezimaltrenner.
-Der 1000er Trenner muss dabei mit eingegeben werden, bei der Eingabe der Zahl muss ein \type{.} benutzt werden.
-Hier zwei Zahlen im direkten Vergleich \digits{12,345} \digits{12345}.
+Der 1000er Trenner muss dabei mit eingegeben werden, bei der Eingabe der Zahl muss ein \type{.} als Dezimaltrenner
+und ein \type{,} als Tausendertrenner benutzt werden.
+Hier zwei Zahlen im direkten Vergleich mit Tausendertrenner \digits{12,345} \digits{12345} und ohne.
 Die Einstellung sollte für das gesamte Projekt in der Environment-Datei festgelegt werden.
 
 Die gleiche Einstellung gibt es auch für Einheiten, hier ist die Methode 3 zu wählen.
 
+\starttyping
+0 \setupunits[method=0]\unit{10,000.10 kilogram} 
+1 \setupunits[method=1]\unit{10,000.10 kilogram} 
+2 \setupunits[method=2]\unit{10,000.10 kilogram} 
+3 \setupunits[method=3]\unit{10,000.10 kilogram} 
+4 \setupunits[method=4]\unit{10,000.10 kilogram} 
+5 \setupunits[method=5]\unit{10,000.10 kilogram} 
+6 \setupunits[method=6]\unit{10,000.10 kilogram} 
+\stoptyping
+
 \startlines
-0 \setupunits[method=0]\unit{00,000.10 kilogram} 
-1 \setupunits[method=1]\unit{00,000.10 kilogram} 
-2 \setupunits[method=2]\unit{00,000.10 kilogram} 
-3 \setupunits[method=3]\unit{00,000.10 kilogram} 
-4 \setupunits[method=4]\unit{00,000.10 kilogram} 
-5 \setupunits[method=5]\unit{00,000.10 kilogram} 
-6 \setupunits[method=6]\unit{00,000.10 kilogram} 
+0 \setupunits[method=0]\unit{10,000.10 kilogram} 
+1 \setupunits[method=1]\unit{10,000.10 kilogram} 
+2 \setupunits[method=2]\unit{10,000.10 kilogram} 
+3 \setupunits[method=3]\unit{10,000.10 kilogram} 
+4 \setupunits[method=4]\unit{10,000.10 kilogram} 
+5 \setupunits[method=5]\unit{10,000.10 kilogram} 
+6 \setupunits[method=6]\unit{10,000.10 kilogram} 
 \stoplines 
 
 Benötigt man eine Leerstelle anstatt einer Ziffer, so können hier \type{@}, \type{_} oder \type{~} eingegeben werden.
