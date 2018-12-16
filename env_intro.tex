@@ -1,33 +1,19 @@
 \startenvironment env_intro
 
-\usepath[A]
-\setuphyphenation[method=expanded]
+%\usepath[A]
 
 \usemodule[wtitle]
 \usemodule[lettrine]
+%\usemodule[typearea]
 
+%
+% Spracheinstellungen
+%
 \language[de]
 \mainlanguage[de]
 \setbreakpoints[compound]
 
-\setupcolors[state=start]
-
-
-%\setupbibtex[database={epub_latex_beispiel},sort=author]
-%\setuppublications[alternative=apa]
-\definebtxdataset[default]
-\usebtxdataset[default][epub_latex_beispiel.bib]
-\usebtxdataset[default][intro.bib]
-\usebtxdefinitions[apa]
-
-% Enable hyperlinks
-\setupinteraction[state=start, color=middleblue]
-
-\setuppapersize [A4][A4]
-\setuplayout    [width=middle,  backspace=1.5in, cutspace=1.5in,
-                 height=middle, topspace=0.75in, bottomspace=0.75in]
-
-\setuppagenumbering[location={footer,center}]
+\setuphyphenation[method=expanded]
 
 %
 % Ligaturen für Aufl* Wörter
@@ -36,7 +22,88 @@
 \replaceword[eka][Auflistung][Au{fl}istung]
 \setreplacements[eka]
 
+%
+% Einstellungen für unit und digits
+%
+\setdigitmode {3} \setdigitorder{0} % kleiner 1000er Trenner, Komma
+\setupunits[method=3]
+
+%
+% Farben
+%
+\setupcolors[state=start]
+
+%
+% Enable hyperlinks
+%
+\setupinteraction[state=start, color=middleblue]
+
+%
+% Papierformat und Layout
+%
+\setuppapersize [A4][A4]
+\setuplayout    [width=middle,  backspace=1.5in, cutspace=1.5in,
+                 height=middle, topspace=0.75in, bottomspace=0.75in]
+
+%
+% Schriften vor typearea
+%
+%\setupbodyfontenvironment[default][em=italic] % default = slanted
+%\setupbodyfontenvironment[default][em=bold]
+%
+% Fallback für Mathe Symbole
+%
+\definefallbackfamily[mainface][mm][TeX Gyre Pagella][preset=math:digitsnormal,features=f:oldstyle]
+%
+% Default: Latin Modern
+%
 \setupbodyfont[11pt]
+%
+%\definefontfamily [antykwat] [serif] [AntykwaTorunska] [expansion=quality,protrusion=quality]
+%\definefontfamily [antykwat] [sans] [AntykwaTorunska] [expansion=quality,protrusion=quality]
+%\setupbodyfont[antykwat]
+%
+%\definefontfamily [antykwap] [serif] [Antykwa Poltawskiego] [expansion=quality,protrusion=quality]
+%\definefontfamily [antykwap] [sans] [Antykwa Poltawskiego] [expansion=quality,protrusion=quality]
+%\setupbodyfont[antykwap]
+%
+%\definefontfamily[latinfamily] [serif][Latin Modern Roman][expansion=quality,protrusion=quality]
+%\definefontfamily[latinfamily] [sans][Latin Modern Sans][expansion=quality,protrusion=quality]
+%\definefontfamily[latinfamily] [mono][Latin Modern Mono][scale=0.85, features=none]
+%\definefontfamily[latinfamily] [math][Latin Modern Math] % für itemize
+%\setupbodyfont[latinfamily,11pt]
+%
+%\definefontfamily[dejafamily] [serif][DejaVu Serif][expansion=quality,protrusion=quality]
+%\definefontfamily[dejafamily] [sans][DejaVu Sans][expansion=quality,protrusion=quality]
+%\definefontfamily[dejafamily] [mono][Dejavu Sans Mono][scale=0.85, features=none]
+%\definefontfamily[dejafamily] [math][DejaVu Math] % für itemize
+%\setupbodyfont[dejafamily,11pt]
+%
+% TeX Gyre Adventor
+% TeX Gyre Schola
+% TeX Gyre Termes
+% TeX Gyre Bonum
+% TeX Gyre Chorus
+% TeX Gyre Heros
+%
+%\definefontfamily[pagellafamily] [serif][TeX Gyre Pagella][expansion=quality,protrusion=quality]
+%\definefontfamily[pagellafamily] [sans][TeX Gyre Heros][expansion=quality,protrusion=quality]
+%\definefontfamily[pagellafamily] [mono][][scale=0.85, features=none]
+%\definefontfamily[pagellafamily] [math][TeX Gyre Pagella Math] % für itemize
+%\setupbodyfont[pagellafamily,11pt]
+
+% 
+% Layout mit typearea 
+%
+%\setupTypeArea[bcor=3mm, oneside=yes, alphabets=2.6]
+
+\setuppagenumbering[location={footer,center}]
+%\setuppagenumbering[alternative=doublesided,location={footer,marginedge}]
+%
+% header footer
+% left middle right margin marginedge inleft inright
+
+%\showframe % Debug Layout
 
 \setupwhitespace[medium]
 
@@ -52,10 +119,11 @@
 %\setuphead[subsubsubsection, subsubsubsubsection][number=yes]
 \setuphead[subsubsubsection, subsubsubsubsection][alternative=text]
 
+\setupcombinedlist[content][list={chapter,section,subsection,subsubsection}]
+
 %
 % Neue Auzählung
 %
-
 \defineitemgroup[aufzählung][level=3]
 \setupitemgroup[aufzählung][1][n,repeat][stopper=)]
 \setupitemgroup[aufzählung][2][a,repeat][stopper=),width=2em]
@@ -85,16 +153,13 @@
 \setupitemize[autointro]    % prevent orphan list intro
 \setupitemize[indentnext=no]
 
-\setupfloat[figure][default={here,nonumber}]
-\setupfloat[table][default={here,nonumber}]
-
 \setupthinrules[width=15em] % width of horizontal rules
 
 \setupdelimitedtext
   [blockquote]
-  [before={\blank[medium]},
-   after={\blank[medium]},
-   indentnext=no,
+  [before     = {\blank[medium]},
+   after      = {\blank[medium]},
+   indentnext = no,
   ]
 
 %\setupdelimitedtext[quotation:1][left=»,right=«]
@@ -102,40 +167,46 @@
 %\setupdelimitedtext[quotation:1][left=„,right=“]
 %\setupdelimitedtext[quotation:2][left=‚,right=’]
 
-\setupcombinedlist[content][list={chapter,section,subsection,subsubsection}]
+%
+% Figure und table 
+%
+\setupfloat[figure][default={here,nonumber}]
+\setupfloat[table][default={here,nonumber}]
 
 %
-% Einstellungen für unit und digits
+% Literaturverzeichnis
 %
-\setdigitmode {3} \setdigitorder{0} % kleiner 1000er Trenner, Komma
-\setupunits[method=3]
+\definebtxdataset[default]
+\usebtxdataset[default][epub_latex_beispiel.bib]
+\usebtxdataset[default][intro.bib]
+\usebtxdefinitions[apa]
 
 %
 % Initiale einfach
 %
 \setupinitial
-   [location=text,
-    n=2,
-    color=darkred,
-    distance=0em,
-    hoffset=0em,
-    voffset=3.4ex,
-    before=\blank]
+   [location = text,
+    n        = 2,
+    color    = darkred,
+    distance = 0em,
+    hoffset  = 0em,
+    voffset  = 3.4ex,
+    before   = \blank]
 
 %
 % und mit t-lettrine
 %
-\setuplettrine[Lines=3, % default 2
-               Hang=.5, % default 0
-               Oversize=0,
-               Raise=0,
-               Findent=0pt,
-               Nindent=0em,
-               Slope=0em,
-               Ante=,
-               FontHook=\green, % default leer
-               TextFont=\kap\bf, % default \sc
-               Image=no]
-
+\setuplettrine
+   [Lines    = 3, % default 2
+    Hang     = .5, % default 0
+    Oversize = 0,
+    Raise    = 0,
+    Findent  = 0pt,
+    Nindent  = 0em,
+    Slope    = 0em,
+    Ante     = ,
+    FontHook = \green, % default leer
+    TextFont = \kap\bf, % default \sc
+    Image    = no]
 
 \stopenvironment
