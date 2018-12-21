@@ -17,7 +17,7 @@ Es gibt mehrere Möglichkeiten in ConTeXt Tabellen zu erzeugen.
 Die gängigsten sind:
 
 \startdescription{Tabulate}
-Für einfache Tabellen.
+Für einfache Tabellen. Dieser Mechanismus wird auch zum Ausrichten von Formeln benutzt.
 \stopdescription
 
 \startdescription{Table}
@@ -36,7 +36,140 @@ Natürliche Tabellen (natural tables) sehr leistungsfähig, erfordert viel Schre
 Extreme Tabellen (extreme tables) weitgehend kompatibel mit natürlichen Tabellen. Bessere Seitenumbrüche.
 \stopdescription
 
-In diesem Dokument werden nur die \type{TABLE} behandelt.\index{TABLE}
+\startsubsection[
+  reference=Tabulate,
+  title={Tabulate}
+  ]
+
+Mit der \type{tabulate} Umgebung lassen sich einfache Tabellen leicht erstellen.
+
+\starttyping
+\starttabulate[|r|l|]
+\HL
+\NC {\bf Format} \NC {\bf Bedeutung}                 \NR
+\HL
+\NC c           \NC Zentriert                        \NR
+\NC l           \NC Linksbündig                      \NR
+\NC r           \NC Rechtsbündig                     \NR
+\NC w(1cm)      \NC Einzeilig, feste Breite          \NR
+\NC p(1cm)      \NC Absatz, feste Breite             \NR
+\NC g.          \NC Ausgerichtet am Zeichen \type{.} \NR
+\NC m           \NC Mathematikmodus                  \NR
+\NC M           \NC abgesetzter Mathematikmodus      \NR
+\HL
+\stoptabulate
+\stoptyping
+
+\starttabulate[|r|l|]
+\HL
+\NC {\bf Format} \NC {\bf Bedeutung}                 \NR
+\HL
+\NC c           \NC Zentriert                        \NR
+\NC l           \NC Linksbündig                      \NR
+\NC r           \NC Rechtsbündig                     \NR
+\NC w(1cm)      \NC Einzeilig, feste Breite          \NR
+\NC p(1cm)      \NC Absatz, feste Breite             \NR
+\NC g.          \NC Ausgerichtet am Zeichen \type{.} \NR
+\NC m           \NC Mathematikmodus                  \NR
+\NC M           \NC abgesetzter Mathematikmodus      \NR
+\HL
+\stoptabulate
+
+\starttabulate[|c|l|r|g,|m|M|]
+\NC \type{c}  \NC \type{l} \NC \type{r} \NC \type{g,} \NC \type{m}   \NC \type{M}   \NR\HL
+\NC c         \NC l        \NC r        \NC 1,234     \NC x^{2}      \NC x^3        \NR
+\NC Zentriert \NC links    \NC rechts   \NC 23,5      \NC \int_{x=1} \NC \int_{x=1} \NR
+\stoptabulate
+
+Die Spaltendefinition lässt sich außerdem durch das Anhängen von Formatierungsoptionen beeinflussen:
+
+\starttabulate[|rT|l|]
+\NC {\bf Option} \NC {\bf Bedeutung} \NR
+\NC i            \NC Abstand links \NR
+\NC j            \NC Abstand rechts \NR
+\NC B            \NC Fett \NR
+\NC I            \NC Kursiv \NR
+\NC S            \NC Schräg \NR
+\NC T            \NC Schreibmaschinenschrift \NR
+\stoptabulate
+
+Mit dem Befehl \type{\setuptabulate[split=yes]} können lange Tabellen auf mehrere Seiten verteilt werden.
+Beim Umbruch verhalten sich die unterschiedlichen Linien etwas anders.
+Normalerweise reicht die \type{\HL} Linie aus. 
+Bei wiederholten Tabellenköpfen sollten jedoch \type{\FL} und \type{\LL} benutzt werden.
+
+\starttabulate[|lB|l|]
+\NC {\bf Linie} \NC {\bf Beschreibung} \NR
+\NC \type{\HL}  \NC Horizontale Linie \NR\HL
+\NC \type{\FL}  \NC Erste Linie \NR\FL
+\NC \type{\ML}  \NC Mittlere Linie \NR\ML
+\NC \type{\TL}  \NC Untere Linie \NR\TL
+\NC \type{\BL}  \NC Letzte Linie \NR\BL
+\NC \type{\LL}  \NC Letzte Linie (Tabellekopf)\NR\LL
+\stoptabulate
+
+Bei geteilten Tabellen lässt sich auch ein Tabellenkopf definieren, 
+der über die folgenden Tabellenteile gesetzt wird.
+
+\starttyping
+\setuptabulate[split=yes, header=repeat]
+\starttabulatehead[]
+  \FL
+  \NC {\bf Tabellen} \NC {\bf Kopf} \NC \NR
+  \LL
+\stoptabulatehead
+\starttabulate[|r|l|]
+  \NC Tabellen \NC Zeile \NC \NR
+\stoptabulate
+\stoptyping
+
+{
+\setuptabulate[split=yes, header=repeat]
+\starttabulatehead[]
+\FL
+\NC {\bf Tabellen} \NC {\bf Kopf} \NC \NR
+\LL
+\stoptabulatehead
+\starttabulate[|r|l|]
+\NC Tabellen \NC Zeile \NC \NR
+\NC Tabellen \NC Zeile \NC \NR
+\NC Tabellen \NC Zeile \NC \NR
+\NC Tabellen \NC Zeile \NC \NR
+\NC Tabellen \NC Zeile \NC \NR
+\NC Tabellen \NC Zeile \NC \NR
+\NC Tabellen \NC Zeile \NC \NR
+\NC Tabellen \NC Zeile \NC \NR
+\NC Tabellen \NC Zeile \NC \NR
+\NC Tabellen \NC Zeile \NC \NR
+\NC Tabellen \NC Zeile \NC \NR
+\NC Tabellen \NC Zeile \NC \NR
+\NC Tabellen \NC Zeile \NC \NR
+\NC Tabellen \NC Zeile \NC \NR
+\NC Tabellen \NC Zeile \NC \NR
+\NC Tabellen \NC Zeile \NC \NR
+\NC Tabellen \NC Zeile \NC \NR
+\NC Tabellen \NC Zeile \NC \NR
+\NC Tabellen \NC Zeile \NC \NR
+\NC Tabellen \NC Zeile \NC \NR
+\NC Tabellen \NC Zeile \NC \NR
+\NC Tabellen \NC Zeile \NC \NR
+\NC Tabellen \NC Zeile \NC \NR
+\NC Tabellen \NC Zeile \NC \NR
+\NC Tabellen \NC Zeile \NC \NR
+\NC Tabellen \NC Zeile \NC \NR
+\NC Tabellen \NC Zeile \NC \NR
+\NC Tabellen \NC Zeile \NC \NR
+\NC Tabellen \NC Zeile \NC \NR
+\stoptabulate
+}
+
+\stopsubsection
+
+\startsubsection[
+  reference=TABLE,
+  title={TABLE}
+  ]
+\index{TABLE}
 
 Eine Tabelle ist einfach aufgebaut.
 Die \type{\setupTABLE} Befehle bestimmen das Aussehen der Tabelle.
@@ -557,6 +690,8 @@ Mit dem Befehl \type{\placetable} erhält man ein Gleitobjekt mit einer \type{\c
 \NC\AR
 \HL
 \stoptable
+
+\stopsubsection
 
 \stopsection
 
