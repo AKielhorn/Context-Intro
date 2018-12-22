@@ -10,7 +10,7 @@
 
 \startsection[title={Installation}]
 \index{Installation}
-Installation unter Unix und macOS:
+Installation unter Unix:
 
 \starttyping
 mkdir ~/context
@@ -29,6 +29,12 @@ wget http://minimals.contextgarden.net/setup/first-setup.sh
 sh ./first-setup.sh --engine=luatex --modules=all
 \stoptyping
 
+Auf dem Mac gibt es normalerweise kein \type{wget}, 
+stattdessen kann die Datei mit \type{rsync} geladen werden.
+
+\starttyping
+rsync -av rsync://contextgarden.net/minimals/setup/first-setup.sh .
+\stoptyping
 
 Im \goto{Contextgarden}[url(https://wiki.contextgarden.net/ConTeXt_Standalone\#Windows)]
 gibt es ein Archiv mit der notwendigen Software für Windows: \index{Windows}
