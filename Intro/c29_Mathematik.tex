@@ -43,50 +43,79 @@ kann sich im Text darauf beziehen, siehe Formel \in[formel1].
 
 \starttyping
 \placeformula[formel1]
-\startformula  v = u + at\stopformula
+\startformula
+  v = u + at
+\stopformula
 \stoptyping
 
 \placeformula[formel1]
-\startformulav = u + at\stopformula
+\startformula
+v = u + at
+\stopformula
 
 Die gleiche Formel ohne \type{\placeformula}:
 
-\startformulav = u + at\stopformula
+\startformula
+v = u + at
+\stopformula
 
 Mehrere Formeln werden zentriert untereinander geschrieben.
 Die einzelnen Formeln werden dabei von \type{\NC … \NR} umschlossen. 
 
 \starttyping
-\placeformula \startformula  \startmathalignment[n=1]
-    \NC v = u + at,           \NR    \NC d = ut + \frac12 at^2 \NR  \stopmathalignment\stopformula
+\placeformula \startformula
+  \startmathalignment[n=1]
+    \NC v = u + at,           \NR
+    \NC d = ut + \frac{1}{2} at^2 \NR
+  \stopmathalignment
+\stopformula
 \stoptyping
 
 In diesem Fall wird für die Gruppe eine Nummer vergeben.
 
-\placeformula \startformula  \startmathalignment[n=1]
-    \NC v = u + at,           \NR    \NC d = ut + \frac12 at^2 \NR  \stopmathalignment\stopformula
+\placeformula \startformula
+  \startmathalignment[n=1]
+    \NC v = u + at,           \NR
+    \NC d = ut + \frac{1}{2} at^2 \NR
+  \stopmathalignment
+\stopformula
 
 Um alle (oder nur einzelne) Formel zu nummerieren, 
 muss die Zeile, die eine Nummer erhalten soll, mit \type{\NR[+]} abgeschlossen werden.
 
-\placeformula \startformula  \startmathalignment[n=1]
-    \NC v = u + at,           \NR[+]    \NC d = ut + \frac12 at^2 \NR  \stopmathalignment\stopformula
+\placeformula \startformula
+  \startmathalignment[n=1]
+    \NC v = u + at,           \NR[+]
+    \NC d = ut + \frac{1}{2} at^2 \NR
+  \stopmathalignment
+\stopformula
 
 Mit \type{\startmathalignment[number=auto]} werden die Formeln einzeln nummeriert.
 
-\placeformula \startformula  \startmathalignment[n=1,number=auto]
-    \NC v = u + at,           \NR    \NC d = ut + \frac12 at^2 \NR  \stopmathalignment\stopformula
+\placeformula \startformula
+  \startmathalignment[n=1,number=auto]
+    \NC v = u + at,           \NR
+    \NC d = ut + \frac{1}{2} at^2 \NR
+  \stopmathalignment
+\stopformula
 
 Die Formeln lassen sich auch linksbündig \type{[align=left]} oder rechtsbündig \type{[align=right]} ausrichten.
 Wichtiger ist aber die Ausrichtung nach Spalten.
 
 \starttyping
 \startmathalignment
-  \NC v \NC = u + at,           \NR  \NC d \NC = ut + \frac12 at^2 \NR\stopmathalignment
+  \NC v \NC = u + at,           \NR
+  \NC d \NC = ut + \frac{1}{2} at^2 \NR
+\stopmathalignment
+
 \stoptyping
 
-\startformula  \startmathalignment
-\NC v \NC = u + at,           \NR\NC d \NC = ut + \frac12 at^2 \NR  \stopmathalignment\stopformula
+\startformula
+  \startmathalignment
+\NC v \NC = u + at,           \NR
+\NC d \NC = ut + \frac{1}{2} at^2 \NR
+  \stopmathalignment
+\stopformula
 
 Es können auch mehrere Spalten definiert werden, 
 in diesem Fall muss die Anzahl der Spalten angegeben werden.
@@ -117,7 +146,7 @@ Einfache $a^b_c$, mehrfache  $a^{ab}_{ac}$ und mehrstufige  $a^{b^c}_d$ Exponent
 Als Index wird oft ein Wort anstelle eines Formelzeichens verwendet.
 Dies muss als \type{\text{}} eingegeben werden.
 
-\type{$P_{\text{Antrieb}}$} $P_{\text{Antrieb}}$ statt \type{$P_{Anbrieb}$} $P_{Anbrieb}$.
+\type{$P_{\text{Antrieb}}$} $P_{\text{Antrieb}}$ statt \type{$P_{Antrieb}$} $P_{Antrieb}$.
 
 \stopsubsection
 \startsubsection[title={Brüche und Klammern}]

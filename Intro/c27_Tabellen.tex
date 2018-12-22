@@ -40,7 +40,7 @@ Extreme Tabellen (extreme tables) weitgehend kompatibel mit natürlichen Tabelle
   reference=Tabulate,
   title={Tabulate}
   ]
-
+\index{Tabulate}
 Mit der \type{tabulate} Umgebung lassen sich einfache Tabellen leicht erstellen.
 
 \starttyping
@@ -105,7 +105,7 @@ Bei wiederholten Tabellenköpfen sollten jedoch \type{\FL} und \type{\LL} benutz
 \NC \type{\ML}  \NC Mittlere Linie \NR\ML
 \NC \type{\TL}  \NC Untere Linie \NR\TL
 \NC \type{\BL}  \NC Letzte Linie \NR\BL
-\NC \type{\LL}  \NC Letzte Linie (Tabellekopf)\NR\LL
+\NC \type{\LL}  \NC Letzte Linie (Tabellenkopf)\NR\LL
 \stoptabulate
 
 Bei geteilten Tabellen lässt sich auch ein Tabellenkopf definieren, 
@@ -267,13 +267,13 @@ Es sind nur rechteckige Zellen möglich.
 \setupTABLE[c][1,2,3][leftframe=on]
 \setupTABLE[c][last][rightframe=on]
 
-\bTR \bTD[nc=2,align=middle] Item \eTD \bTD\eTD \eTR
-\bTR \bTD Animal \eTD \bTD Description \eTD \bTD Price (\$)\eTD \eTR
-\bTR \bTD Gnat \eTD \bTD per gram \eTD \bTD 13.65 \eTD\eTR
-\bTR \bTD\eTD       \bTD each     \eTD \bTD  0.01 \eTD \eTR
-\bTR \bTD Gnu   \eTD \bTD stuffed \eTD \bTD 92.50 \eTD \eTR 
-\bTR \bTD Emu   \eTD \bTD stuffed \eTD \bTD 33.33 \eTD \eTR
-\bTR \bTD Armadillo \eTD \bTD frozen \eTD \bTD 8.99 \eTD \eTR 
+\bTR \bTD[nc=2,align=middle] Item \eTD \bTD             \eTD \eTR
+\bTR \bTD Animal                  \eTD \bTD Description \eTD \bTD Price (\$) \eTD \eTR
+\bTR \bTD Gnat                    \eTD \bTD per gram    \eTD \bTD 13.65      \eTD \eTR
+\bTR \bTD                         \eTD \bTD each        \eTD \bTD  0.01      \eTD \eTR
+\bTR \bTD Gnu                     \eTD \bTD stuffed     \eTD \bTD 92.50      \eTD \eTR
+\bTR \bTD Emu                     \eTD \bTD stuffed     \eTD \bTD 33.33      \eTD \eTR
+\bTR \bTD Armadillo               \eTD \bTD frozen      \eTD \bTD 8.99       \eTD \eTR
 \eTABLE}
 \blank[big]
 
