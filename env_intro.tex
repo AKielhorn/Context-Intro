@@ -2,7 +2,6 @@
 
 %\usepath[A]
 
-\usemodule[wtitle]
 \usemodule[lettrine]
 %\usemodule[typearea]
 
@@ -44,6 +43,22 @@
 \setuppapersize [A4][A4]
 \setuplayout    [width=middle,  backspace=1.5in, cutspace=1.5in,
                  height=middle, topspace=0.75in, bottomspace=0.75in]
+
+%
+% Titelseite
+%
+\startsetups [document:start]
+ %\noheaderandfooterlines
+  \blank[force,2*big]
+  \startalignment[middle]
+    {\definedfont[Regular at 18pt]\documentvariable{title}\par}
+    \blank[3*medium]
+    {\definedfont[Regular at 14pt]\documentvariable{author}\par}
+    \blank[2*medium]
+    {\definedfont[Regular at 14pt]\doifelsedocumentvariable{date}{\documentvariable{date}}{\currentdate}\par}
+  \stopalignment
+  \blank[3*medium]
+\stopsetups
 
 %
 % Schriften vor typearea
