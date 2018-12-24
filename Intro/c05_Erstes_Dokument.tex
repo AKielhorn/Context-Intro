@@ -52,22 +52,17 @@ Jede Sprache hat ihre Eigenheiten.
 Das fängt bei den Trennmustern an, 
 geht über die Anführungszeichen bis hin zu Bezeichnungen für bestimmte Dokumentteile wie Kapitel oder Seite.
 
-In ConTeXt gibt es zwei Befehle zur Sprachauswahl
-
-\starttyping
-\language[de]
-\stoptyping
-
-schaltet auf deutsche Trennmuster um.
-Die automatische Trennung funktioniert sehr gut.
-
-Für alle anderen Einstellungen gibt es den Befehl
+Die Hauptsprache wird in ConTeXt mit dem Befehl
 
 \starttyping
 \mainlanguage[de]
 \stoptyping
 
-Dieser sorgt dafür, dass statt \quotation{\mainlanguage[en]\labeltext{page}} oder \quotation{\mainlanguage[en]\labeltext{figure}} die richtigen Wörter
+ausgewählt.
+Dieser setzt auch andere Einstellungen, wie Anführungsstriche und 
+automatisch generierte Texte.
+
+Er sorgt dafür, dass statt \quotation{\mainlanguage[en]\labeltext{page}} oder \quotation{\mainlanguage[en]\labeltext{figure}} die richtigen Wörter
 \quotation{\labeltext{page}} und \quotation{\labeltext{figure}} erscheinen.
 
 {Mit dem Befehl
@@ -79,6 +74,25 @@ Dieser sorgt dafür, dass statt \quotation{\mainlanguage[en]\labeltext{page}} od
 \stoptyping
 
 lassen sich die Begriffe ändern. Jetzt wir als Text \quotation{\labeltext{figure}} ausgegeben.}
+
+Neben der aktuellen Rechtschreibung (seit 1996) wird auch die mittlere Rechtschreibung (1901 -- 1996)
+unterstützen.
+Dazu ist als Sprache \type{deo} zu wählen.
+Für die alte Rechtschreibung (1876 -- 1901) gibt es leider keine Trennmuster.
+
+Texte in anderen Sprachen lassen sich ausgeben, wenn man die Sprache umschaltet.
+
+\starttyping
+{\language[fr]
+La langue française. Le français se parle dans de nombreux pays.
+}
+\stoptyping
+
+Wählt die französischen Trennmuster aus. 
+
+{\language[fr]
+La langue française. Le français se parle dans de nombreux pays.
+}
 
 \stopsubsection
 
