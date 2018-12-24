@@ -86,32 +86,75 @@ Die Liste wird dreifach verschachtelt.
   \stopitemize
 \stopitemize
 
-\startparagraph
-Es folgt noch eine Liste, bei der der Listenpunkt mit $\diamond$ überschrieben wurde.
- Dazu definiert man ein neues Symbol und verwendet es in der \type{itemize} Umgebung.
-\stopparagraph
+ConTeXt kennt bereits einige Symbole, die als Alternative für das Listensymbol benutzt werden können.
+
+\starttabulate[|T|ch{\symbol}|]
+\NC \rmbf Name    \NC \rmbf Symbol    \NC\NR
+\TB
+\NC bullet        \HC {bullet}        \NC\NR
+\NC dash          \HC {dash}          \NC\NR
+\NC star          \HC {star}          \NC\NR
+\NC triangle      \HC {triangle}      \NC\NR
+\NC circle        \HC {circle}        \NC\NR
+\NC square        \HC {square}        \NC\NR
+\NC diamond       \HC {diamond}       \NC\NR
+\NC checkmark     \HC {checkmark}     \NC\NR
+\NC asterisk      \HC {asterisk}      \NC\NR
+\TB
+\NC blacktriangle \HC {blacktriangle} \NC\NR
+\NC blacksquare   \HC {blacksquare}   \NC\NR
+%\NC blackdiamond  \HC {blackdiamond}  \NC\NR
+\TB
+\NC 1             \HC {1}             \NC\NR
+\NC 2             \HC {2}             \NC\NR
+\NC 3             \HC {3}             \NC\NR
+\NC 4             \HC {4}             \NC\NR
+\NC 5             \HC {5}             \NC\NR
+\NC 6             \HC {6}             \NC\NR
+\NC 7             \HC {7}             \NC\NR
+\NC 8             \HC {8}             \NC\NR
+\NC 9             \HC {9}             \NC\NR
+\stoptabulate
+
+Die Symbole 1 -- 9 werden für die entsprechenden Auflistungsebenen genutzt.
 
 \starttyping
-{
-\definesymbol[itemneu][{$\diamond$}]
-\startitemize[symbol=itemneu]
+\startitemize[diamond]
 \item
   Listenpunkt 1
 \item
   Listenpunkt 2
 \stopitemize
-}
 \stoptyping
 
-{
-\definesymbol[itemneu][{$\diamond$}]
-\startitemize[symbol=itemneu]
+\startitemize[diamond]
 \item
   Listenpunkt 1
 \item
   Listenpunkt 2
 \stopitemize
-}
+
+Reichen diese Symbole nicht aus, so lassen sich eigene definieren.
+Hier z.\,B. ein beliebiges Unicodezeichen.
+
+\starttyping
+\definesymbol[itemneu][⚭]
+\startitemize[itemneu]
+\item
+  Listenpunkt 1
+\item
+  Listenpunkt 2
+\stopitemize
+\stoptyping
+
+\definesymbol[itemneu][⚭]
+\startitemize[itemneu]
+\item
+  Listenpunkt 1
+\item
+  Listenpunkt 2
+\stopitemize
+
 \stopsection
 
 \stopcomponent
