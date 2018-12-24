@@ -18,16 +18,19 @@ cd ~/context
 wget http://minimals.contextgarden.net/setup/first-setup.sh
 
  # Install the latest beta of ConTeXt
- # This takes a long time, so go have a coffee
  # Flags you can add to the first-setup.sh call:
  #     --modules=all      # Install all third-party modules
  #     --context=current  # Install latest stable version
- #     --engine=luatex    # Install only MkIV, leave out MkII
- #                        # This shrinks the install from 
- #                        # 360 MB to 300 MB
 
-sh ./first-setup.sh --engine=luatex --modules=all
+sh ./first-setup.sh --modules=all
 \stoptyping
+
+Dieser Befehl installiert ConTeXT MkIV.
+Der Speicherbedarf liegt bei 370 MB.
+
+Die ältere Version (MkII) sollte nicht mehr benutzt werden.
+Sie benötigt zusätzlich noch \type{Ruby} und \type{pdftex} bzw.
+\type{XeTeX}. Diese Programme werden hier nicht mitinstalliert.
 
 Auf dem Mac gibt es normalerweise kein \type{wget}, 
 stattdessen kann die Datei mit \type{rsync} geladen werden.
@@ -48,7 +51,7 @@ Das Archiv enthält \type{luatex} und \type{rsync}.
 Damit lässt sich dann
 
 \starttyping
-first-setup.bat --engine=luatex --modules=all
+first-setup.bat --modules=all
 \stoptyping
 
 aufrufen. Die Installation dauert abhängig von der Internetverbindung ca. 10 
