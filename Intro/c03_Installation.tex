@@ -58,6 +58,25 @@ aufrufen. Die Installation dauert abhängig von der Internetverbindung ca. 10
 Minuten.
 Dank \type{rsync} werden bei einem Update nur die geänderten Dateien übertragen.
 
+Nach Abschluss der Installation wird folgende Meldung ausgegeben:
+
+\starttyping
+When you want to use context, you need to initialize the tree by typing:
+
+  . /Users/axel/context/tex/setuptex
+
+in your shell or add
+  "/Users/axel/context/tex/texmf-osx-64/bin"
+to PATH variable if you want to set it permanently.
+\stoptyping
+
+Wenn man nur eine ConTeXt-Version installiert, 
+ist es am einfachsten den \type{PATH} entsprechend zu setzen.
+
+Möchte man mehrere Versionen installieren um eine stabile Version als
+Reserve zu haben, gleichzeitig aber die aktuellen Beta-Version auszuprobieren,
+kann über den Befehl \type{setuptex} die jeweils gewünschte Version gewählt werden.
+
 Zum Übersetzen wird ConTeXt in der Kommandozeile mit
 
 \starttyping
