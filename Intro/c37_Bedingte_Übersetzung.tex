@@ -1,0 +1,128 @@
+% !TEX TS-program = ConTeXt (LuaTeX 1.0.9)
+% !TEX encoding = UTF-8 Unicode
+
+% Copyright 2018 Axel Kielhorn
+% Lizenz: CC-BY-SA 4.0 Unported http://creativecommons.org/licenses/by-sa/4.0/deed.de
+
+\startcomponent *
+\product prd_intro
+\project project_intro
+
+
+\startsection[
+  reference=bedingte-übersetzung,
+  title={Bedingte Übersetzung},
+  ]
+
+Mit ConTeXt ist es einfach, mehrere Varianten eines Dokuments zu erstellen.
+So kann z.\,B. ein Aufgabenbogen für die Studierenden nur die Fragen enthalten,
+die Variante für die Korrigierenden enthält zusätzlich noch die Antworten.
+
+Da beides aus einem Dokumente erstellt wird, bleiben Fragen und Antworten synchron.
+
+\starttyping
+\enablemode[antwort]
+
+Frage 1:
+
+\startmode[antwort]
+Antwort 1:
+\stopmode
+
+\stoptyping
+
+Mit \type{\enablemode[]} wir eine Mode aktiviert, mit \type{\disablemode[]} wird er deaktiviert.
+Außerdem kann ein Mode beim Aufruf von ConTeXt auf der Kommandozeile aktiviert werden.
+
+\starttyping
+context --mode=antwort
+\stoptyping
+
+Mehrere Modes werden durch Komata getrennt.
+Modes können nicht geschachtelt werden, der \type{\startmode} gilt bis zum nächsten \type{\stopmode}-Befehl.
+
+Eine andere Anwendung sind mehrsprachige Texte, bei denen die Sprachen einzeln ein- oder ausgeschaltet werden.
+
+\starttyping
+\enablemode[deutsch]
+\enablemode[englisch]
+
+\startmode[deutsch,englisch]
+In beiden Sprachen.
+Zum Beispiel für Abbildungen.
+\stopmode
+
+\startmode[englisch]
+This is in english
+\stopmode
+\stoptyping
+
+\enablemode[englisch]
+
+\startmode[deutsch,englisch]
+In beiden Sprachen.
+Zum Beispiel für Abbildungen.
+\stopmode
+
+\startmode[englisch]
+This is in english
+\stopmode
+
+Zusätzlich zu den \type{\startmode}/\type{\stopmode}-Befehlen gibt es noch die invertierte Form \type{\startnotmode}/\type{\stopnotmode}.
+Der so markierte Bereich wird ausgeführt, wenn der Mode {\em nicht} definiert ist.
+
+Die Argumente der Befehle \type{\startmode} und \type{\startnotmode} verknüpfen die Argumente mit einer \type{oder}-Funktion,
+ist eines der Argumente aktiv (bzw. inaktiv), wird er Inhalt des Modes ausgegeben.
+
+Zusätzlich gibt es die Befehle \type{\startallmodes} und \type{\startnotallmodes}, hier müssen {\em alle} Bedingungen erfüllt sein,
+es findet eine \type{und}-Verknüpfung statt.
+
+\starttyping
+\startmode[mode1, mode2, ...]
+  % Bearbeitet wenn ein Mode aktiv ist
+\stopmode
+
+\startnotmode[mode1, mode2, ...]
+  % Bearbeitet wenn ein Mode inaktiv ist
+\stopnotmode
+
+\startallmodes[mode1, mode2, ...]
+  % Bearbeitet wenn alle Modes aktiv sind
+\stopallmodes
+
+\startnotallmodes[mode1, mode2, ...]
+  % Bearbeitet wenn alle Modes inaktiv sind
+\stopnotallmodes
+\stoptyping
+
+Für kurze Texte gibt es außerdem noch vier \type{\doif}-Befehle
+
+\starttyping
+\doifmode        {mode1, mode2} 
+                 {Bearbeitet wenn ein Mode aktiv ist}
+\doifnotmode     {mode1, mode2} 
+                 {Bearbeitet wenn ein Mode inaktiv ist}
+\doifallmodes    {mode1, mode2} 
+                 {Bearbeitet wenn alle Modes aktiv sind}
+\doifnotallmodes {mode1, mode2} 
+                 {Bearbeitet wenn alle Modes inaktiv sind}
+\stoptyping
+
+sowie drei \type{\doifelse}-Befehle
+
+\starttyping
+\doifmodeelse        {mode1, mode2, ...} 
+                     {Bearbeitet wenn ein Mode aktiv ist}      
+                     {sonst wird dieses bearbeitet} 
+\doifallmodeselse    {mode1, mode2, ...} 
+                     {Bearbeitet wenn alle Modes aktiv sind}   
+                     {sonst wird dieses bearbeitet} 
+\doifnotallmodeselse {mode1, mode2, ...} 
+                     {Bearbeitet wenn alle Modes inaktiv sind} 
+                     {sonst wird dieses bearbeitet}
+\stoptyping
+
+
+\stopsection
+
+
