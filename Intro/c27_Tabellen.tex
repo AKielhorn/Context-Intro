@@ -362,6 +362,30 @@ Die Ausrichtung kann daher für eine Zeile deaktiviert werden.
 \eTABLE
 }
 
+Alternativ kann die Kopfzeile auch mit \type{\bTH \eTH} definiert werden.
+Dadurch werden die Einträge auch gleich hervorgehoben.
+
+\starttyping
+\bTR \bTH Jahr \eTH \bTH WKN 123456 \eTH \bTH WKN A78C90 \eTH \eTR
+\stoptyping
+
+{
+\setupTABLE[row][each][frame=off]
+%\setupTABLE[c][1][width=0.1\textwidth]
+\setupTABLE[c][2][alignmentcharacter={,},aligncharacter=yes,align=middle]
+\setupTABLE[c][3][alignmentcharacter={,},aligncharacter=yes,align=middle]
+
+\bTABLE
+    \bTABLEbody
+        \bTR \bTH Jahr \eTH \bTH WKN 123456 \eTH \bTH WKN A78C90 \eTH \eTR
+        \bTR \bTD 2010 \eTD \bTD  120,56    \eTD \bTD 100,5      \eTD \eTR
+        \bTR \bTD 2011 \eTD \bTD  130,78    \eTD \bTD  90,78     \eTD \eTR
+        \bTR \bTD 2012 \eTD \bTD  140,9     \eTD \bTD  99,2      \eTD \eTR
+        \bTR \bTD 2013 \eTD \bTD  120,89    \eTD \bTD 120        \eTD \eTR
+    \eTABLEbody
+\eTABLE
+}
+
 Tabellen können auch über mehrere Seiten verlaufen.
 Die Option \type{split=yes}, bzw. \type{split=repeat} definiert dabei, ob der Tabellenkopf wiederholt werden soll, oder nicht. Außerdem kann man für die Folgeseiten einen anderen Kopf definieren.
 
@@ -378,7 +402,7 @@ Die Option \type{split=yes}, bzw. \type{split=repeat} definiert dabei, ob der Ta
    backgroundcolor=green]
 % Kopfzeile
 \bTABLEhead
-\bTR
+\bTR [align=middle]
 \bTH [nc=3] Kopfzeile  \eTH
 \eTR
 \eTABLEhead
