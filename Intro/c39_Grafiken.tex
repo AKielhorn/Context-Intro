@@ -60,6 +60,37 @@ Für das Abbildungsverzeichnis testen wir noch eine zweite Abbildung.
 
 \placefigure{Eine Kuh als Gleitobjekt}{\externalfigure[cow.pdf]}
 
+\startsubsection[title={Bildersuche}]
+
+Wo sucht ConTeXt nach Bildern?
+
+Standardmäßig sucht ConTeXt im aktuellen Verzeichnis sowie im darüberliegenden Verzeichnis.
+Möchte man die Bilder in ein Unterverzeichnis verbannen, 
+so kann man entweder jedes Mal den Pfad angeben:
+
+\starttyping
+\externalfigure{Bilder/cow.pdf}
+\stoptyping
+
+Einfacher ist es den Pfad für das gesamte Dokument als Suchpfad zu definieren.
+
+\starttyping
+\setupexternalfigures[directory={Bilder,../Bilder}] 
+\stoptyping
+
+So könnte man auch ein Verzeichnis außerhalb des Dokumentpfades angeben,
+dies wird dann aber nicht in die Versionsverwaltung einbezogen und bei der
+Weitergabe des Projekts kann man es leicht vergessen.
+
+\starttyping
+\setupexternalfigures[directory={/Users/axel/Pictures/context-bilder}] 
+\stoptyping
+
+Hierbei gibt es einen Stolperstein: Viele Betriebssysteme verwenden standardmäßig englische
+Bezeichnungen für die Verzeichnisse, zeigen auf der grafischen Oberfläche aber übersetzte Namen an.
+Den wirklichen Verzeichnisnamen verrät dann das Terminal oder die Eingabeaufforderung. 
+
+\stopsubsection
 \stopsection
 
 \stopcomponent
