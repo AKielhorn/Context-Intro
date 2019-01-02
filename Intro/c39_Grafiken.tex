@@ -27,7 +27,7 @@ Dabei kann das Bild skaliert werden.
 \externalfigure[cow.pdf]
 \externalfigure[cow.pdf][width=1cm]
 \externalfigure[cow.pdf][height=1cm]
-\externalfigure[cow.pdf][scale=500]%
+\externalfigure[cow.pdf][scale=500]
 \externalfigure[cow.pdf][maxwidth=0.4\textwidth]
 
 Damit die Kuh nicht die Seite verlässt, 
@@ -39,26 +39,89 @@ empfiehlt es sich in der Environment-Datei folgende Einstellung vorzunehmen:
      maxheight=0.8\textheight]
 \stoptyping
 
-Bilder lassen sich in 90° Schritten rotieren, dazu dient die Option \type{orientation}.
-
-\starttyping
-\externalfigure[cow.pdf][orientation=90] % 90, 180, 270
-\stoptyping
-
-Aus Tierschutzgründen gibt es hierzu keine Abbildung.
-
 Diese Kuh wird bei ConTeXt als Beispielgrafik mitgeliefert.
 Neben PDF können auch die Formate JPEG, JPEG2000, JBIG und PNG benutzt werden.
 
 Mit dem \type{\placefigure} Befehl werden aus den Bildern Gleitobjekte.
 Außerdem werden sie ins Abbildungsverzeichnis aufgenommen.
+Die Standardplatzierungsoption in ConTeXt ist \type{[here]}.
+In einigen Fällen muss sie explizit angegeben werden, 
+da sonst der Text {\bf Abbildung} nicht erscheint.
+Die Option \type{[none]} unterdrückt die Nummerierung und die Bildunterschrift.
 
-\placefigure{%
-\useURL[url5][http://wiki.contextgarden.net/Using_Graphics][][Eine Kuh im Internet]\from[url5]}{\externalfigure[cow.pdf]}
+\starttyping
+% Ohne Unterschrift und Nummer
+\placefigure[none]{Noch eine Kuh am Berg}{
+  \externalfigure[cow.pdf][orientation=-90,height=3cm]}
 
-Für das Abbildungsverzeichnis testen wir noch eine zweite Abbildung.
+% Nur Abbildung und Nummer
+\placefigure[here]{}{
+  \externalfigure[cow.pdf][orientation=-90,height=3cm]}
+\stoptyping
 
-\placefigure{Eine Kuh als Gleitobjekt}{\externalfigure[cow.pdf]}
+\placefigure[here]{%
+\useURL[url5][http://wiki.contextgarden.net/Using_Graphics][][Eine Kuh im Internet]\from[url5]}{\externalfigure[cow.pdf][height=4cm]}
+
+\startsubsection[title={Kuhakrobatik}]
+
+Bilder lassen sich in 90° Schritten rotieren, dazu dient die Option \type{orientation}.
+
+\starttyping
+\placefigure[here]{Kuh am Berghang}{
+  \externalfigure[cow.pdf][orientation=-90]}% -90, 90, 180, 270
+\stoptyping
+
+\placefigure[here]{Kuh am Berghang}{
+\externalfigure[cow.pdf][orientation=-90,height=3cm]}
+
+Möchte man die Bildunterschrift mitdrehen, so ist dies als Option dem \type{\placefigure}-Befehl mitzuteilen.
+Auch hier sind nur 90° Schritte möglich.
+
+\starttyping
+\placefigure[90]{Eine gedrehte Kuh}{
+\externalfigure[cow.pdf][height=3cm]}
+\stoptyping
+
+\placefigure[90]{Eine gedrehte Kuh}{
+\externalfigure[cow.pdf][height=3cm]}
+
+Soll nur die Bildunterschrift gedreht werden, dreht man das Bild wieder zurück.
+
+\starttyping
+\placefigure[90]{Eine Kuh mit gedrehter Bildunterschrift}{
+\externalfigure[cow.pdf][orientation=-90,height=3cm]}
+\stoptyping
+
+\placefigure[90,frame]{Eine Kuh mit gedrehter Bildunterschrift}{
+\externalfigure[cow.pdf][orientation=-90,height=3cm]}
+
+Andere Drehwinkel für das Bild lassen sich mit den \type{\rotate}-Befehl erreichen.
+
+\starttyping
+\placefigure[here]{Eine um 45° gedrehte Kuh}{
+\rotate[rotation=45]{\externalfigure[cow.pdf]}}
+\stoptyping
+
+\placefigure[here]{Eine um 45° gedrehte Kuh}{
+\rotate[rotation=45]{\externalfigure[cow.pdf][height=3cm]}}
+
+Das funktioniert auch ohne \type{\placefigure}.
+Damit auch diese Kuh mittig in der Zeile steht, 
+wird sie in eine \type{alignment}-Umgebung eingebettet.
+Hier ist zusätzlich noch der Befehl \type{\dontleavehmode} erforderlich.
+
+\starttyping
+\startalignment[middle]
+\dontleavehmode
+\rotate[rotation=45]{\externalfigure[cow.pdf][height=3cm]}
+\stopalignment\stoptyping
+
+\startalignment[middle]
+\dontleavehmode
+\rotate[rotation=45]{\externalfigure[cow.pdf][height=3cm]}
+\stopalignment
+
+\stopsubsection
 
 \startsubsection[title={Bildersuche}]
 
@@ -91,6 +154,9 @@ Bezeichnungen für die Verzeichnisse, zeigen auf der grafischen Oberfläche aber
 Den wirklichen Verzeichnisnamen verrät dann das Terminal oder die Eingabeaufforderung. 
 
 \stopsubsection
+
+%\placelistoffigures[criterium=all]
+
 \stopsection
 
 \stopcomponent
