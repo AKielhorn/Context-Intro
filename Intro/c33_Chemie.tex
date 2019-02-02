@@ -27,7 +27,16 @@ Leider ist dieser Bereich schlecht dokumentiert.
  \chemical{2 H_2}\chemical{PLUS}\chemical{O_2}\chemical{GIVES}\chemical{2 H_2O}
 \stopchemicalformula
 
-Das kann man auch als Textformel darstellen: \chemical{2 H_2,PLUS,O_2,GIVES,2 H_2O}.
+%Das kann man auch als Textformel darstellen: \chemical{2 H_2,PLUS,O_2,GIVES,2 H_2O}.
+
+Außerhalb der \type{startchemical} Umgebung funktioniert der \type{\chemical} Befehl nicht,
+wenn PDF/A erzeugt werden soll.
+Der \type{\molecule} Befehl liefert aber die einzelnen Moleküle auch im Text: 
+\molecule{2 H_2} + \molecule{O_2} \rightarrow \molecule{2 H_2O}.
+
+\starttyping
+\molecule{2 H_2} + \molecule{O_2} \rightarrow \molecule{2 H_2O}
+\stoptyping
 
 Wasser dissoziiert zu Ionen.
 
