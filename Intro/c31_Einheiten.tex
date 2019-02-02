@@ -148,6 +148,25 @@ Die gleiche Einstellung gibt es auch für Einheiten, hier ist die Methode 3 zu w
 
 Benötigt man eine Leerstelle anstatt einer Ziffer, so können hier \type{@}, \type{_} oder \type{~} eingegeben werden.
 
+Es ist aufwändig, jedes Mal den Tausendertrenner einzugeben.
+Der \type{\spaceedigits} Befehl fügt den Zwischenraum automatisch ein.
+Damit hier ein \type{,} als Dezimaltrenner erscheint,
+muss das \type{\spaceddigitssymbol} entsprechend definiert werden.
+
+Mit diesem Befehl kann man sich ein eigenen \type{\spacedunit} Befehl definieren.
+
+\starttyping
+\let\spaceddigitssymbol,
+\spaceddigits{12345.67}
+\define[2]\spacedunit{\spaceddigits{#1}\unit{#2}}
+\spacedunit{123456789.5}{volt}
+\stoptyping
+
+\let\spaceddigitssymbol,
+\spaceddigits{12345.67}
+\define[2]\spacedunit{\spaceddigits{#1}\unit{#2}}
+\spacedunit{123456789.5}{volt}
+
 ConTeXt kennt auch die abgeleiteten Einheiten
 
 \starttyping
