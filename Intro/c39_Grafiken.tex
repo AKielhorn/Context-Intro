@@ -155,6 +155,85 @@ Den wirklichen Verzeichnisnamen verrät dann das Terminal oder die Eingabeauffor
 
 \stopsubsection
 
+\startsubsection[title={Farben}]
+\index{Farben}
+
+Einige Farben sind in ConTeXt bereits vordefiniert, anderen können über Module hinzugeladen werden.
+
+Ein wichtiger Farbraum ist z.\,B. RAL:
+
+\starttyping
+\usemodule[colo-imp-ral]
+\color[RAL6011]{Resedagrün} 
+\stoptyping
+
+\usemodule[colo-imp-ral]
+\color[RAL6011]{Resedagrün} 
+
+Die vordefinierten Farben sind:
+
+\color [red]           {red}
+\color [green]         {green}
+\color [blue]          {blue}
+
+\color [cyan]          {cyan}
+\color [magenta]       {magenta}
+\color [yellow]        {magenta}
+
+\color [white]        {white}
+\color [black]        {black}
+\color [gray]         {gray}
+
+\color [lightred]     {lightred}
+\color [lightgreen]   {lightgreen}
+\color [lightblue]    {lightblue}
+\color [lightcyan]    {lightcyan}
+\color [lightmagenta] {lightmagenta}
+\color [lightyellow]  {lightyellow}
+
+\color [middlered]    {middlered}
+\color [middlegreen]  {middlegreen}
+\color [middleblue]   {middleblue}
+\color [middlecyan]   {middlecyan}
+\color [middlemagenta]{middlemagenta}
+\color [middleyellow] {middleyellow}
+
+\color [darkred]      {darkred}
+\color [darkgreen]    {darkgreen}
+\color [darkblue]     {darkblue}
+\color [darkcyan]     {darkcyan}
+\color [darkmagenta]  {darkmagenta}
+\color [darkyellow]   {darkyellow}
+
+\color [darkgray]     {darkgray}
+\color [middlegray]   {middlegray}
+\color [lightgray]    {lightgray}
+\color [palegray]     {palegray}
+
+\color [orange]       {orange}
+\color [lightorange]  {lightorange}
+\color [middleorange] {middleorange}
+\color [darkorange]   {darkorange}
+
+Außerdem kann man sich eigene Farben passend zur Corporate Identity definieren.
+Die angegebene Werte sind \type{RBG}-Werte von 0 bis 1 bzw. ein sechsstelliger Hex-Wert.
+So lassen sich in ConTeXt die gleichen Farben verwenden wie in HTML. (YCMV)\footnote{Your Color May Vary.}
+Alternativ lassen sich auch Farben in den Farbmodellen \type{CMYK}, \type{HSB} definieren.
+
+\starttyping
+\definecolor[ciblue][r=0.000, g=0.314, b=0.580]
+\definecolor[salmon][h=AB5757]
+\stoptyping
+
+\definecolor [ciblue] [r=0.000, g=0.314, b=0.580]
+
+Für offizielle Dokumente bitte die Farbe \color[ciblue]{ciblue} verwenden.
+
+\definecolor[salmon][h=AB5757]
+Ist das wirklich \color[salmon]{lachsfarben}?
+
+\stopsubsection
+
 %\placelistoffigures[criterium=all]
 
 \stopsection
