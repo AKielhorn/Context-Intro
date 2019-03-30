@@ -2,6 +2,23 @@
 \startproduct [*]
 \project project_intro
 
+\setupinteraction
+  [title={Eine kurze Einführung in ConTeXt},
+%   subtitle=SUBTITLE,
+   author={Axel Kielhorn},
+   keyword={ConTeXt, Einführung}]
+
+%% For PDF/A
+\setupbackend[
+format={pdf/a-1b:2005}, % or pdf/a-1a:2005
+profile={default_cmyk.icc,default_rgb.icc,default_gray.icc},
+intent=ISO coated v2 300\letterpercent\space (ECI)]
+
+%% Tagged PDF
+%% method=auto ==> default tags by Adobe
+\setupbackend[export=yes]
+\setupstructure[state=start,method=auto]
+
 \startdocument
   [ title={Eine kurze Einführung in ConTeXt},
    author={Axel Kielhorn},

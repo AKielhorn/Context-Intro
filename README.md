@@ -14,12 +14,13 @@ englisch.
 
  *  Unterschiedliche environments (Design, Fonts)
  *  Define / Setup Beispiele und Erklärungen (JUH)
- *  Tabulate erklären (wg. Mathematik)
  *  Logo im Hintergrund
- *  PDF/A
 
 # DONE
 
  *  Fuß- und Endnoten
  *  Bibliography
  *  Klammern eckig / geschweift (JUH)
+ *  Tabulate erklären (wg. Mathematik)
+ *  Bilder drehen: Beispiele ergänzt
+ *  PDF/A
