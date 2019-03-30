@@ -1,0 +1,108 @@
+% !TEX TS-program = ConTeXt (LuaTeX 1.0.9)
+% !TEX encoding = UTF-8 Unicode
+
+% Copyright 2018 Axel Kielhorn
+% Lizenz: CC-BY-SA 4.0 Unported http://creativecommons.org/licenses/by-sa/4.0/deed.de
+
+\startcomponent *
+\product prd_intro
+\project project_intro
+
+\startsection[
+  reference=hervorhebungen,
+  title={Hervorhebungen},
+  ]
+
+Es gibt mehrere Möglichkeiten Textblöcke hervorzuheben.
+So kann man sie z.\,B. mit einem breiteren Rand setzen.
+
+Mit dem Befehl \type{\startnarrower} wird der Rand standardmäßig auf beiden Seiten um \unit{5 mm} verbreitert,
+der Textblock wird somit \unit{1 cm} schmaler.
+
+\startnarrower
+\input knuth
+\stopnarrower
+
+Die Breite lässt sich für beide Ränder getrennt einstellen:
+
+\starttyping
+\setupnarrower[left=1cm,right=3cm]
+\startnarrower[left,right]
+\input knuth
+\stopnarrower\stoptyping
+
+\setupnarrower[left=1cm,right=3cm]
+\startnarrower[left,right]
+\input knuth
+\stopnarrower
+
+Oder für beide Seiten gleich.
+Die Option \type{[middle]} muss beim \type{\startnarrower}-Befehl nicht angegeben werden,
+da es die Standardeinstellung ist.\index{narrower}
+
+\starttyping
+\setupnarrower[middle=1cm]
+\startnarrower
+\input knuth
+\stopnarrower\stoptyping
+
+\setupnarrower[middle=1cm]
+\startnarrower
+\input knuth
+\stopnarrower
+
+Sehr viel auffälliger ist es jedoch den Text mit einer Markierung im Rand zu versehen:\index{sidebar}
+
+\starttyping
+\startsidebar
+\input knuth
+\stopsidebar
+\stoptyping
+
+\startsidebar
+\input knuth
+\stopsidebar
+
+Natürlich kann man die Farbe und die Position auch verändern:
+
+\starttyping
+\startsidebar[rulecolor=red, distance=1cm]
+\input knuth
+\stopsidebar
+\stoptyping
+
+\startsidebar[rulecolor=red, distance=1cm]
+\input knuth
+\stopsidebar
+
+Aber sowas würde natürlich niemand machen.
+Besser ist es zwei neue Stile zu definieren und diese dann zu benutzen:
+
+\starttyping
+\definesidebar[neu][rulecolor=green,rulethickness=3pt,distance=6pt]
+\definesidebar[alt][rulecolor=red,  rulethickness=3pt,distance=6pt]
+\stoptyping
+
+\definesidebar[neu][rulecolor=green, rulethickness=3pt, distance=6pt]
+\definesidebar[alt][rulecolor=red,   rulethickness=3pt, distance=6pt]
+
+\startsidebar[alt]
+\input knuth
+\stopsidebar
+
+\startsidebar[neu]
+\input knuth
+\stopsidebar
+
+Beide Arten lassen sich auch kombinieren,
+dabei muss man darauf achten, die \type{sidebar} innerhalb der \type{narrower} Umgebung zu benutzen.
+
+\startnarrower
+\startsidebar
+\input knuth
+\stopsidebar
+\stopnarrower
+
+
+\stopsection
+\stopcomponent
