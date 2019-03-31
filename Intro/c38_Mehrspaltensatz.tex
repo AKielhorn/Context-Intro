@@ -1,0 +1,83 @@
+% !TEX TS-program = ConTeXt (LuaTeX 1.0.9)
+% !TEX encoding = UTF-8 Unicode
+
+% Copyright 2018 Axel Kielhorn
+% Lizenz: CC-BY-SA 4.0 Unported http://creativecommons.org/licenses/by-sa/4.0/deed.de
+
+\startcomponent *
+\product prd_intro
+\project project_intro
+
+
+\startsection[
+  reference=mehrspaltensatz,
+  title={Mehrspaltensatz},
+  ]
+\index{Mehrspaltensatz}
+
+\definepagecolumns [zwei]
+        [n=2,
+        distance=5mm]
+
+Bei größeren Papierformaten werden die Zeilen oft zu lang.
+Eine mögliche Lösung ist es, den Text auf mehrere Spalten zu verteilen.
+In schmalen Spalten wird der Zeilenumbruch schwieriger, 
+wie man am Beispiel mit den drei Spalten erkennen kann.
+
+Es gibt mehrere Möglichkeiten für den Mehrspaltensatz.
+
+\starttyping
+\setupcolumns[n=2,distance=1cm,align=raggedright]
+\startcolumns
+Dieser Text wir ...
+\stopcolumns
+\stoptyping
+\index{startcolumns}
+
+erzeugt Spalten mit gleicher Höhe.
+Dies wird für mehrspaltige Aufzählungen und den Index benutzt.
+
+\setupcolumns[n=2,distance=1cm,align=raggedright]
+\startcolumns
+Dieser Text wir auf zwei Spalten verteilt.
+Er muss etwas länger werden, damit man das sieht.
+Noch reicht es nicht, aber mir wird schon noch was einfallen.
+So, das war's.
+\stopcolumns
+
+\setupcolumns[n=3,distance=1cm,align=raggedright]
+\startcolumns
+Dieser Text wir auf drei Spalten verteilt.
+Er muss etwas länger werden, damit man das sieht.
+Noch reicht es nicht, aber mir wird schon noch was einfallen.
+So, das war's.
+\stopcolumns
+
+Soll das gesamte Dokument zweispaltig sein, so ist 
+\starttyping
+\definepagecolumns [zwei]
+        [n=2,
+        distance=5mm]
+\startpagecolumns[zwei]
+\setuptolerance[tolerant]
+...
+\stoppagecolumns        
+\stoptyping
+\index{startpagecolumns}
+
+die bessere Wahl.
+Dieser Befehl erzeugt bei jedem Wechsel der Spaltendefinition eine neue Seite.
+Um einen brauchbaren Zeilenumbruch zu erhalten muss die \type{tolerance} erhöht werden.
+Neben \type{tolerant} gibt es noch die Option \type{verytolerant} und \type{stretch}.
+
+\startpagecolumns[zwei]
+\setuptolerance[tolerant]
+\input knuth
+\input knuth
+\input knuth
+\input knuth
+\stoppagecolumns
+
+\stopsection
+
+
