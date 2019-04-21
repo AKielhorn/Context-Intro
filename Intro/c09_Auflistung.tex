@@ -155,6 +155,29 @@ Hier z.\,B. ein beliebiges Unicodezeichen.
   Listenpunkt 2
 \stopitemize
 
+Natürlich geht das auch in Farbe:
+
+\starttyping
+\definesymbol[mysymbol][{$\red\blacklozenge$}]
+\definesymbol[redtriangle][{$\red\blacktriangleright$}]
+\stoptyping
+
+\definesymbol[mysymbol][{$\red\blacklozenge$}]
+\definesymbol[redtriangle][{$\red\blacktriangleright$}]
+
+\startitemize[mysymbol]
+\item foo
+\item bar
+\item baz
+\stopitemize
+
+\startitemize[redtriangle]
+\item foo
+\item bar
+\item baz
+\stopitemize
+
+
 \stopsection
 
 \stopcomponent
