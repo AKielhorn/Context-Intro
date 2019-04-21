@@ -36,6 +36,16 @@ zusätzlich gibt es noch die Option \type{landscape} für Dokumente im Querforma
 
 Außerdem gibt es die Formate S3 bis S6, S8, SM und SW für die Darstellung am Bildschirm, z.\,B. für Präsentationen.
 
+Eigene Papiergrößen lassen sich leicht definieren.
+Hier werden drei Seiten mit einem Drittel der DIN A4 Breite auf ein Blatt DIN A4 montiert.
+
+\starttyping
+\definepapersize [A4/3] [width=99mm,height=210mm]
+\setuppapersize  [A4/3] [A4,landscape]
+\setuppaper      [nx=3,ny=1]
+[XY]
+\stoptyping
+
 Wie man im Beispiel sieht, verwendet ConTeXt zwei Arten von Klammern.
 Text der ausgegeben wird steht normalerweise in geschweiften Klammern \type{{}},
 Optionen oder Parameter in eckigen Klammern \type{[]}.
