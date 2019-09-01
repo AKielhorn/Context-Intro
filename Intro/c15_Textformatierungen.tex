@@ -17,29 +17,45 @@ In diesem Abschnitt sollen verschiedenen Textformatierungen ausprobiert
 werden. 
 Die Befehle ändern den nachfolgenden Text.
 Sie müssen daher mit dem Text in \type{{}} eingeschlossen werden.
+Alternativ gibt es auch eine Form in der der Text als Argument übergeben wird.
 
 \startitemize
+\setupalign[tolerant]
 \item
-  hervorgehoben: \type{{\em }} {\em hervorgehoben}
+  hervorgehoben: \type{{\em }} {\em hervorgehoben}. 
+  Die Standardeinstellung für \type{\em} ist geneigt, 
+  für dieses Dokument wurde in der Environmentdatei kursive ausgewählt:
+  \type{\setupbodyfontenvironment[default][em=italic]} 
 \item
-  fett: \type{{\bf }} {\bf fett}
+  fett: \type{{\bf }} {\bf fett} oder \type{\bold{fett}} \bold{fett}.
 \item
-  kursiv: \type{{\em }} {\em kursiv}
+  kursiv: \type{{\it }} {\it kursiv} oder \type{\italic{kursiv}} \italic{kursiv}.
 \item
-  geneigt: \type{{\sl }} {\sl geneigt}
+  kursiv fett: \type{{\bi }} {\bi kursiv fett} oder\type{\italicbold{kursiv fett}} 
+  (\type{bolditalic} geht auch) \italicbold{kursiv}.
 \item
-  Sans-Serif: \type{{\ss }} {\ss Sans Serif}
+  geneigt: \type{{\sl }} {\sl geneigt} oder \type{\slanted{geneigt}} \slanted{geneigt}. 
 \item
-  Schreibmaschine: \type{{\tt }} {\tt Schreibmaschine}
+  geneigt fett: \type{{\bs }} {\bs geneigt fett} oder \type{\slantedbold{geneigt fett}} 
+  (\type{boldslanted} geht auch) \slantedbold{geneigt fett}. 
 \item
-  Kapitälchen: \type{{\sc }} {\sc Kapitälchen}
+  Sans-Serif: \type{{\ss }} {\ss Sans Serif} oder \type{\sans{Sans Serif}} \sans{Sans Serif}.
+\item
+  Sans-Serif Fett: \type{\sansbold{Sans Serif Fett}} \sansbold{Sans Serif Fett}.  
+\item
+  Schreibmaschine: \type{{\tt }} {\tt Schreibmaschine} oder \type{\mono{Schreibmaschine}} 
+  \mono{Schreibmaschine}
+\item
+  Schreibmaschine fett: \type{{\tt\bf }} {\tt\bf Schreibmaschine fett} oder 
+  \type{\monobold{ Schreibmaschine fett}} \monobold{Schreibmaschine fett}.
+\item
+  Kapitälchen: \type{{\sc Kapitälchen}} {\sc Kapitälchen}
 \item
   unterstrichen 1: \type{{\underbar }} {\underbar alles unterstrichen}
 \item
   unterstrichen 2: \type{{\underbars }} {\underbars Jedes Wort wird einzeln unterstrichen}
 \item
   Oldstyle Ziffern: Normale Ziffern 1234567890 oder mit \type{{\os }} {\os 1234567890}
-
 \stopitemize
 
 Textformatierungen kann man auch blockweise für ganze Absätze nutzen:
