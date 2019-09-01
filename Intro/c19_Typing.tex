@@ -26,6 +26,78 @@ In LaTeX heißt die Umgebung \type{verbatim}.
 \stopitemize
 \stoptyping
 
+\startsubsection[
+  reference=syntax,
+  title={Syntaxhervorhebung}]
+
+ConTeXt kann verschiedene Syntaxelemente farblich hervorheben.
+Dazu muss eine neuer \type{\typing}-Befehl definiert werden,
+damit die richtige Sprache ausgewählt wird.
+
+Unterstützt werden \type{C}, \type{LUA}, \type{MP} (MetaPost und MetaFont), \type{TEX} und \type{XML}.
+
+Das Modul \type{scite} unterstützt zusätzlich noch \type{btx} (BibTeX), \type{sql} und \type{JSON}.
+
+Die größte Auswahl an Syntaxdefinitionen bietet das Modul \type{vim}.
+Um es zu benutzen muss ein Vim mit den entsprechenden Definitionen installiert sein.
+Unter Linux und MacOS (bis Version 10.14) ist das normalerweise der Fall.
+
+In diesem Beispiel wird MetaPost (abgekürzt \type{MP} bzw. \type{mp}) benutzt:
+
+Dazu wird der Farbmodus eingeschaltet und die sprachspezifischen Befehle definiert:
+
+\starttyping
+  \setupcolors[state=start]
+  \definetyping [MP] [option=MP]
+  \usemodule[vim]
+  \definevimtyping[MPV][syntax=mp] % MP Vim
+\stoptyping
+
+\setupcolors[state=start]
+\definetyping [MP] [option=MP]
+%\usemodule[vim]
+\definevimtyping[MPV][syntax=mp]
+
+
+Zuerst nur die ConText Standard-Version:
+
+\starttyping
+  \startMP
+  draw (0,0) withpen pencircle 1in withcolor red ;
+  \stopMP
+\stoptyping
+
+\startMP
+draw (0,0) withpen pencircle 1in withcolor red ;
+\stopMP
+
+Dann mit Scite (Der \type{\usemodule}-Befehl gehört normalerweise an den Anfang des Dokuments, bzw. in die Environment-Datei.):
+
+\starttyping
+  \usemodule[scite]
+  \startMP
+  draw (0,0) withpen pencircle 1in withcolor red ;
+  \stopMP
+\stoptyping
+
+\usemodule[scite]
+
+\startMP
+draw (0,0) withpen pencircle 1in withcolor red ;
+\stopMP
+
+Und zum Abschluss mit Vim:
+
+\starttyping
+  \startMPV
+  draw (0,0) withpen pencircle 1in withcolor red ;
+  \stopMPV
+\stoptyping
+
+\startMPV
+draw (0,0) withpen pencircle 1in withcolor red ;
+\stopMPV
+
 \stopsection
 
 \stopcomponent
