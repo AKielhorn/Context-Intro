@@ -33,6 +33,42 @@ forcieren bzw. zu empfehlen.
 
 Der oben beschrieben Fehler tritt mit den aktuellen Trennmustern nicht mehr auf.
 
+Bei schmalen Spalten oder langen nichttrennbaren Wörter kann es trotzdem zu übervollen Zeilen kommen.
+Hier sollte man ConTeXt etwas mehr Leerraum gönnen.
+Der Befehl \type{\setupalign} hilft hier weiter:
+
+\starttyping
+\setupalign[hyphenated,morehyphenation,flushleft]
+\stoptyping
+
+Die möglichen Optionen sind:
+
+\starttabulate[|T|l|]
+\NC hanging         \NC Satzzeichen hängen in den Rand \NR
+\NC nohanging       \NC Satzzeichen hängen nicht in den Rand \NR
+\NC hz              \NC Buchstaben dürfen leicht verbreitert werden \NR
+\NC nohz            \NC Buchstaben dürfen nicht verbreitert werden \NR
+\NC hyphenated      \NC Mit Trennung \NR
+\NC nothyphenated   \NC Ohne Trennung \NR
+\NC lesshyphenation \NC Weniger Trennstellen \NR
+\NC morehyohenation \NC Mehr Trennstellen \NR
+\NC tolerant        \NC Mehr Wortzwischenraum \NR
+\NC verytolerant    \NC Noch mehr Wortzwischenraum \NR
+\NC stretch         \NC Riesige Wortzwischenräume \NR
+\NC flushleft       \NC Linksbündig ohne Blocksatz \NR
+\NC flushright      \NC Rechtsbündig ohne Blocksatz \NR
+\NC middle          \NC Horizontal zentrierter Satz \NR
+\stoptabulate
+
+Man kann die Einstellung auch nur für bestimmte Absätze ändern, 
+z.\,B. wenn viele Wörter mit \type{\type} gesätzt werden.
+
+\starttyping
+\startalignment[verytolerant]
+Nur hier geändert
+\stopalignment
+\stoptyping
+
 \stopsection
 
 \stopcomponent
