@@ -123,6 +123,52 @@ Hier ist zusätzlich noch der Befehl \type{\dontleavehmode} erforderlich.
 
 \stopsubsection
 
+\placefloats
+\startsubsection[title={Zuschneiden}]
+
+Manchmal muss man Bilder an den Rändern beschneiden.
+
+\starttyping
+\clip[width=2cm, height=3cm, hoffset=0mm, voffset=0mm]
+     {\externalfigure[cow.pdf]}
+\stoptyping
+
+Ein Ausschnitt von 2 cm \times 3 cm zeigt den Kopf der Kuh.
+Der Offset wird dabei von links oben gezählt.
+
+\clip[width=2cm, height=3cm, hoffset=0mm, voffset=0mm]
+     {\externalfigure[cow.pdf]}
+
+Man kann ein Bild auch in mehrere Kacheln zerschneiden und diese dann
+einzeln anzeigen.
+Das benötigt man wenn zwei Schauspieler in ein Kuh-Kostüm einsteigen sollen.
+
+\starttyping
+\hbox{
+\clip[nx=2,x=1]{\externalfigure[cow.pdf]}%
+Schauspieler
+\clip[nx=2,x=2]{\externalfigure[cow.pdf]}
+}
+\stoptyping
+
+\hbox{
+\clip[nx=2,x=1]{\externalfigure[cow.pdf]}%
+Schauspieler%
+\clip[nx=2,x=2]{\externalfigure[cow.pdf]}
+}
+
+Dieser Befehl teilt das Bild in X-Richtung in zwei Teile und gibt den ersten bzw. zweiten Teil aus.
+Mit \type{ny=} wird das Bild in y-Richtung geteilt.
+
+Der \type{\clip} Befehl funktioniert nicht nur bei Bildern.
+Es können z.\,B. auch Texte beschnitten werden.
+
+\blank
+\scale[sx=2, sy=3]{\clip[nx=1, ny=2, x=1, y=2]{Geheimtext}}
+
+\stopsubsection
+
+
 \startsubsection[title={Bildersuche}]
 
 Wo sucht ConTeXt nach Bildern?
