@@ -40,6 +40,40 @@ Es gibt auch ein  Stichwortverzeichnis:
 
 \stopsubsection
 
+\startsubsection[title={Eigene Verzeichnisse}]
+
+Natürlich kann man auch eigene Verzeichnisse definieren.
+Die Definition zeigt nur einige der Optionen.
+
+\starttyping
+% Register for date
+\defineregister [myregister]
+\setupregister  [myregister] [
+  indicator=no          %% Sortierbuchstaben ausgeben
+      style=sansbold,   %% Überschrift
+  textstyle=slanted,    %% Eintrag
+  pagestyle=bolditalic, %% Format Seitenzahl
+          n=1,          %% Anzahl Spalten
+]
+\stoptyping
+
+% Register for date
+\defineregister [myregister]
+\setupregister  [myregister] [
+  indicator=no          %% no letter
+      style=sansbold,   %% headings
+  textstyle=slanted,    %% entries
+  pagestyle=bolditalic, %% page refs
+          n=1,          %% columns
+]
+
+Jetzt steht der Befehl \type{\myregister}\myregister{Myregister} zur Verfügung.
+Das Verzeichnis wird mit \type{\placemyregister} ausgegebn.
+
+\placemyregister
+
+\stopsubsection
+
 \startsubsection[title={Literaturverzeichnis}]
 
 Und zuletzt „natürlich“ das Literaturverzeichnis:
