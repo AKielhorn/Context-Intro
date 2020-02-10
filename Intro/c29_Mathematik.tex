@@ -59,6 +59,19 @@ Die gleiche Formel ohne \type{\placeformula}:
 v = u + at
 \stopformula
 
+Auf die Formel kann man sich mit dem Befehl
+
+\starttyping
+\ref[number][formulalabel]
+\ref[page][formel1]
+\stoptyping
+
+beziehen: In Formel \ref[number][formel1] 
+auf Seite \ref[page][formel1] wurde das bereits vorgestellt.
+
+Einfacher geht es mit \type{\in[formel1]}, 
+das ergibt sie Formelnummer und gleichzeitig einen Link zur Formel \in[formel1].
+
 Mehrere Formeln werden zentriert untereinander geschrieben.
 Die einzelnen Formeln werden dabei von \type{\NC … \NR} umschlossen. 
 
