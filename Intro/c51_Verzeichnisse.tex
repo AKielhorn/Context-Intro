@@ -13,6 +13,49 @@
   title={Verzeichnisse},
   ]
 
+\placecontent[criterium=local]
+
+\startsubsection[title={Inhaltsverzeichnis}]
+
+Das Inhaltsverzeichnis wird entweder mit \type{\completecontent[criterium=all]}
+oder mit \type{\placecontent[criterium=all]} erstellt. 
+Im ersten Fall gibt es ein Kapitel ohne Nummer, 
+das auch nicht im Inhaltsverzeichnis erscheint, im zweiten nicht.
+
+Die Option \type{[criterium]} gibt an, welchen Umfang das Verzeichnis haben soll.
+Der Standard ist \type{[criterium=all]} und erzeugt ein Inhaltsverzeichnis für das gesamte Dokument.
+Das funktioniert aber nur, wenn der Befehl am Anfang des Dokumentes steht,
+es ist daher eine gute Idee die Option \type{[criterium]} immer explizit zu setzen.
+Mit dem Wert \type{[local]} wird ein Verzeichnis für die aktuelle Hierarchiestufe, in diesem Fall \type{section}, erstellt. 
+
+\useURL[contextcontent][https://wiki.contextgarden.net/Table_of_Contents][][Contextgarden]
+
+Es gibt viele Möglichkeiten das Aussehen des Inhaltsverzeichnises zu beeinflussen.
+Im \from[contextcontent] gibt es dazu eine umfangreiche Seite.
+
+\usesymbols[mvs]
+\setupsymbolset[martinvogel 2]
+
+\startsubsubsection[title={I \symbol[martinvogel 2][Heart] BX}, list={I like the Bronx}]
+
+Normalerweise erscheint der \type{title} der Gliederungsüberschrift im Inhaltsverzeichnis.
+Manchmal ist das nicht sinnvoll, weil der Titel zu lang ist, oder Formeln und andere Sonderzeichen enthält.
+
+Mit der Option \type{list} kann ein alternativer Text für den Verzeichniseintrag gewählt werden.
+\starttyping
+\startsubsubsection[
+  title={I \symbol[martinvogel 2][Heart] BX},
+  list={I like the Bronx},
+  ]
+\stoptyping
+
+Mit der Option \type{marking} kann außerdem der Text bestimmt werden, der in Kopf- oder Fußzeilen erscheint,
+wenn man ein Layout benutzt, das die jeweilige Gliederungsüberschrift ausgibt.
+
+\stopsubsubsection
+
+\stopsubsection
+
 \startsubsection[title={Abbildungsverzeichnis}]
 
 Im  \in{Kapitel}[Grafiken] ab \at{Seite}[Grafiken] wurden zwei Abbildungen
