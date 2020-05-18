@@ -215,23 +215,47 @@ Diese können einfach aufgerufen werden.
 \startsubsection[title={Betriebssystem Schriften}]
 
 ConTeXt kann auch auf die installierten Schriften des Betriebssystems zugreifen.
-Diese müssen vorher definiert werden:
+Diese müssen vorher definiert werden. 
+Bei Schriften im \type{.ttc} Format ist etwas mehr Aufwand erforderlich:
 
 \starttyping
-\definefontfamily[optima][rm][Optima]
-\setupbodyfont[optima]
+\starttypescript [sans] [optima]
+ \setups[font:fallback:sans]
+ \definefontsynonym [Sans]           [file:Optima.ttc(Optima Regular)]     [features=default]
+ \definefontsynonym [SansBold]       [file:Optima.ttc(Optima Bold)]       [features=default]
+ \definefontsynonym [SansItalic]     [file:Optima.ttc(Optima Italic)]      [features=default]
+ \definefontsynonym [SansBoldItalic] [file:Optima.ttc(Optima Bold Italic)] [features=default]
+\stoptypescript
+
+\definetypeface [optima] [ss] [sans] [optima] [default]
+
+\setupbodyfont [optima]
 \stoptyping
 
 Die Schrift Optima wird bei macos mitgelieffert:
 
 \start
-\definefontfamily[optima][rm][Optima]
-\setupbodyfont[optima]
+\starttypescript [sans] [optima]
+ \setups[font:fallback:sans]
+ \definefontsynonym [Sans]           [file:Optima.ttc(Optima Regular)]     [features=default]
+ \definefontsynonym [SansBold]       [file:Optima.ttc(Optima Bold)]       [features=default]
+ \definefontsynonym [SansItalic]     [file:Optima.ttc(Optima Italic)]      [features=default]
+ \definefontsynonym [SansBoldItalic] [file:Optima.ttc(Optima Bold Italic)] [features=default]
+\stoptypescript
+
+\definetypeface [optima] [ss] [sans] [optima] [default]
+
+\setupbodyfont [optima]
 
 Das hier ist Optima. {\bf Optima in Fett} {\it und in Kursiv.}
 \stop
 
 Mandala stammt von der \quotation{Association for Insight Meditation} und unterliegt der GPL.
+
+\starttyping
+\definefontfamily[mandala][rm][Mandala]
+\setupbodyfont[mandala]
+\stoptyping
 
 \start
 \definefontfamily[mandala][rm][Mandala]
@@ -245,7 +269,7 @@ und wurde unter der OFL 1.1 veröffentlicht.
 
 \start
 \definefontfamily[vollkorn][rm][Vollkorn]
-\setupbodyfont[Vollkorn]
+\setupbodyfont[vollkorn]
 
 Das hier ist Vollkorn. {\bf Vollkorn in Fett} {\it und in Kursiv.}
 \stop
