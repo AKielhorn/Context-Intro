@@ -193,6 +193,13 @@
 %\setupdelimitedtext[quotation:1][left=„,right=“]
 %\setupdelimitedtext[quotation:2][left=‚,right=’]
 
+% Quote und Quotation mit "left protrusion" (links hängenden Satzzwichen)
+% \setupquote erbt die Einstellung von \setupquotation.
+% Wolfgang Schuster E-Mail vom 2020-05-14.
+
+\setupquotation [method=font]
+\setupquote     [method=font]
+
 %
 % Figure und table 
 %
