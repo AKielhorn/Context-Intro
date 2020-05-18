@@ -167,6 +167,91 @@ Hier hilft oft nur die Dokumentation zum Zeichensatz weiter.
 
 \stopsubsection
 
+\startsubsection[title={Mitgelieferte Schriften}]
+
+Anders als bei TeX-Live werden mit ConTeXt nur wenige Schriften mitgeliefert.
+Diese können einfach aufgerufen werden.
+
+\startitemize
+\item \start\setupbodyfont[antykwa-poltawskiego]Antykwa Poltawski\stop
+\item \start\setupbodyfont[antykwa]Atykwa Toruska\stop
+\item \start\setupbodyfont[dejavu]DejaVu und DejaVu Math\stop
+\item \start\setupbodyfont[gentium]Gentium-TUG\stop
+\item \start\setupbodyfont[IBMPlex]IBM Plex\stop
+\item \start\setupbodyfont[iwona]Iwona\stop
+\item \start\setupbodyfont[kurier]\ss Kurier\stop
+
+\item \start\setupbodyfont[adventor]TeX Gyre Adventor\stop
+\item \start\setupbodyfont[bonum]TeX Gyre Bonum und TeX Gyre Bonum Math\stop
+\item \start\setupbodyfont[chorus]TeX Gyre Chorus\stop
+\item \start\setupbodyfont[cursor]TeX Gyre Cursor\stop
+\item \start\setupbodyfont[heros]TeX Gyre Heros\stop
+\item \start\setupbodyfont[pagella]TeX Gyre Pagella und TeX Gyre Pagella Math\stop
+\item \start\setupbodyfont[schola]TeX Gyre Schola und TeX Gyre Schola Math\stop
+\item \start\setupbodyfont[termes]TeX Gyre Termes und TeX Gyre Termes Math\stop
+\stopitemize
+
+\starttyping
+\start\setupbodyfont[antykwa-poltawskiego]Antykwa Poltawski\stop
+\start\setupbodyfont[antykwa]Atykwa Toruska\stop
+\start\setupbodyfont[dejavu]DejaVu und DejaVu Math\stop
+\start\setupbodyfont[gentium]Gentium-TUG\stop
+\start\setupbodyfont[IBMPlex]IBM Plex\stop
+\start\setupbodyfont[iwona]Iwona\stop
+\start\setupbodyfont[kurier]\ss Kurier\stop
+
+\start\setupbodyfont[adventor]TeX Gyre Adventor\stop
+\start\setupbodyfont[bonum]TeX Gyre Bonum und TeX Gyre Bonum Math\stop
+\start\setupbodyfont[chorus]TeX Gyre Chorus\stop
+\start\setupbodyfont[cursor]TeX Gyre Cursor\stop
+\start\setupbodyfont[heros]TeX Gyre Heros\stop
+\start\setupbodyfont[pagella]TeX Gyre Pagella und TeX Gyre Pagella Math\stop
+\start\setupbodyfont[schola]TeX Gyre Schola und TeX Gyre Schola Math\stop
+\start\setupbodyfont[termes]TeX Gyre Termes und TeX Gyre Termes Math\stop
+\stoptyping
+
+\stopsubsection
+
+\startsubsection[title={Betriebssystem Schriften}]
+
+ConTeXt kann auch auf die installierten Schriften des Betriebssystems zugreifen.
+Diese müssen vorher definiert werden:
+
+\starttyping
+\definefontfamily[optima][rm][Optima]
+\setupbodyfont[optima]
+\stoptyping
+
+Die Schrift Optima wird bei macos mitgelieffert:
+
+\start
+\definefontfamily[optima][rm][Optima]
+\setupbodyfont[optima]
+
+Das hier ist Optima. {\bf Optima in Fett} {\it und in Kursiv.}
+\stop
+
+Mandala stammt von der \quotation{Association for Insight Meditation} und unterliegt der GPL.
+
+\start
+\definefontfamily[mandala][rm][Mandala]
+\setupbodyfont[mandala]
+
+Das hier ist Mandala. {\bf Mandala in Fett} {\it und in Kursiv.}
+\stop
+
+Vollkorn stammt von \quotation{The Vollkorn Project Authors} (Friedrich Althausen)
+und wurde unter der OFL 1.1 veröffentlicht.
+
+\start
+\definefontfamily[vollkorn][rm][Vollkorn]
+\setupbodyfont[Vollkorn]
+
+Das hier ist Vollkorn. {\bf Vollkorn in Fett} {\it und in Kursiv.}
+\stop
+
+\stopsubsection
+
 \stopsection
 
 \stopcomponent
