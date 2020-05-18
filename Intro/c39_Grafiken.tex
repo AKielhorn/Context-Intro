@@ -278,6 +278,32 @@ Für offizielle Dokumente bitte die Farbe \color[ciblue]{ciblue} verwenden.
 \definecolor[salmon][h=AB5757]
 Ist das wirklich \color[salmon]{lachsfarben}?
 
+Farben können auch transparent sein:
+
+\starttyping
+\definecolor[labelbackground][a=1,t=0.2,r=1,g=1,b=0]
+\stoptyping
+
+Dabei gibt der Wert \type{a} an, wie die Transparenz mit der Grundfarbe verrechnet wird.
+
+\starttyping
+\definetransparency [none]        [0]
+\definetransparency [normal]      [1]
+\definetransparency [multiply]    [2]
+\definetransparency [screen]      [3]
+\definetransparency [overlay]     [4]
+\definetransparency [softlight]   [5]
+\definetransparency [hardlight]   [6]
+\definetransparency [colordodge]  [7]
+\definetransparency [colorburn]   [8]
+\definetransparency [darken]      [9]
+\definetransparency [lighten]    [10]
+\definetransparency [difference] [11]
+\definetransparency [exclusion]  [12]
+\stoptyping
+
+Transparente Farben sind vor allem für Graphiken sinnvoll.
+
 \stopsubsection
 
 %\placelistoffigures[criterium=all]
