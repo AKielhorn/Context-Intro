@@ -141,6 +141,45 @@ Das führt zur Verwirrung und sollte vermieden werden.}
 
 \stopsubsection
 
+\startsubsection[title={Randnoten}]
+
+Statt am Seitenende oder am Kapitelende kann man Anmerkungen auch in den Rand
+\inmargin{Rand}schreiben. Dabei stehen mehrere Ränder zur Verfügung:
+
+\startdescription{\type{\inmargin{}}}
+Der Befehl setzt sein Argument in den Rand.
+\stopdescription
+
+\startdescription{\type{\inleft}{}}
+Der Befehl setzt sein Argument in den linken Rand.
+\stopdescription
+
+\startdescription{\type{\inright{}}}
+Der Befehl setzt sein Argument in den rechten Rand.
+\stopdescription
+
+\startdescription{\type{\inouter{}}}
+Der Befehl setzt sein Argument in den äußeren Rand eines zweiseitigen Dokuments.
+\stopdescription
+
+\startdescription{\type{\ininner{}}}
+Der Befehl setzt sein Argument in den inneren Rand eines zweiseitigen Dokuments.
+\stopdescription
+
+\inouter{außen}%
+Ein langer Blindtext, damit genügend Rand zur Verfügung steht, 
+\ininner{innen}%
+sonst würden die Randnotizen ineinander laufen und man könnte die Unterschiede nicht sehen.
+\inleft{links}%
+Das müsste jetzt reichen.
+\inright{rechts}
+
+Wenn hinter dem Befehl eine Leerstelle steht, so erscheint diese im Text. 
+Daher entweder direkt weiterschreiben \type{\inmargin{Rand}Text}, 
+oder den Befehl in eine eigene Zeile schreiben und mit einem \type{%}-Zeichen abschließen.
+
+\stopsubsection
+
 \stopsection
 
 \stopcomponent
