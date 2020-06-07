@@ -56,8 +56,23 @@ Alternativ gibt es auch eine Form in der der Text als Argument übergeben wird.
   unterstrichen 2: \type{{\underbars }} {\underbars Jedes Wort wird einzeln unterstrichen}
 \item
   Oldstyle Ziffern: Normale Ziffern 1234567890 oder mit \type{{\os }} {\os 1234567890}
-\stopitemize
+\item
+  Durchstreichen: \type{\overstrike{}} {\overstrike{over}}, 
+  für einen durchgehenden Strich und \type{\overstrikes} für einen Strich pro Wort.
+  Die Farbe und Liniendicke lässt sich ändern 
+  \setupbar[overstrike][color=red,rulethickness=0.2]\overstrike{rot schwarz} \overstrikes{rot schwarz}
+  \starttyping
+    \setupbar[overstrike][% overstrikes, over/underbar[s]
+    color=red,            %  Farbe
+    rulethickness=0.4,    %  Liniendicke in pt 
+    offset=1]             %  Höhenverschiebung in ex (0.5)
+    \overstrike{rot}}
+  \stoptyping
 
+  Analog gibt es auch die Befehle \type{\overbar}, \type{\overbars} sowie \type{\underbar} und \type{\underbars}.
+
+\stopitemize
+  
 Textformatierungen kann man auch blockweise für ganze Absätze nutzen:
 
 {\em Dies ist ein kurzer Absatz {\em mit einem hervorgehobenen Einschub}, 
