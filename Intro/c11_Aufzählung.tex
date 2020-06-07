@@ -151,6 +151,71 @@ Die Zählweise lässt sich leicht anpassen:
   \stopitemize
 \stopitemize
 
+Um den Buchstaben kann man auch Klammern setzen.
+
+\starttyping
+\startitemize[a][left=(, right=), stopper=]
+\item
+  Listenpunkt 1
+\item
+  Listenpunkt 2
+\stopitemize
+\stoptyping
+
+\startitemize[a][left=(, right=), stopper=]
+\item
+  Listenpunkt 1
+\item
+  Listenpunkt 2
+\stopitemize
+
+Bei kurzen Einträgen können diese auf mehrere Spalten verteilt werden.
+Dabei werden zuerst die Spalten aufgefüllt. Durch den Parameter \type{joinedup}
+wird der Zeilenabstand unterdrückt.
+
+\starttyping
+\startitemize[columns,n,joinedup]
+\item eins
+\item zwei
+\item drei
+\item eins
+\item zwei
+\item drei
+\stopitemize
+\stoptyping
+
+\startitemize[columns,n,joinedup]
+\item eins
+\item zwei
+\item drei
+\item eins
+\item zwei
+\item drei
+\stopitemize
+
+Das geht auch zeilenweise, allerdings müssen die Einträge dann in 
+\type{\startitem} \type{\stopitem} Befehle eingeschlossen werden.
+
+\starttyping
+\startitemize[n,horizontal,three]
+\startitem eins \stopitem
+\startitem zwei \stopitem
+\startitem drei \stopitem
+\startitem eins \stopitem
+\startitem zwei \stopitem
+\startitem drei \stopitem
+\stopitemize
+\stoptyping
+
+\startitemize[n,horizontal,three]
+\startitem eins \stopitem
+\startitem zwei \stopitem
+\startitem drei \stopitem
+\startitem eins \stopitem
+\startitem zwei \stopitem
+\startitem drei \stopitem
+\stopitemize
+
 Damit man das nicht bei jeder Aufzählung angeben muss, definiert man es global für das gesamte Dokument.
 
 \starttyping
@@ -160,7 +225,7 @@ Damit man das nicht bei jeder Aufzählung angeben muss, definiert man es global 
 \setupitemgroup[aufzählung][2][a,repeat][stopper=),width=2em]
 \setupitemgroup[aufzählung][3][n][width=3em]
 
-%im Dokument
+% im Dokument
 \startaufzählung
 \item
   Listenpunkt 1
