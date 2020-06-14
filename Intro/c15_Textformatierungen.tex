@@ -19,6 +19,12 @@ Die Befehle ändern den nachfolgenden Text.
 Sie müssen daher mit dem Text in \type{{}} eingeschlossen werden.
 Alternativ gibt es auch eine Form in der der Text als Argument übergeben wird.
 
+\definetextbackground
+ [Highlight]
+ [frame=off,
+  background=color,
+  backgroundcolor=yellow]
+
 \startitemize
 \setupalign[tolerant]
 \item
@@ -69,10 +75,21 @@ Alternativ gibt es auch eine Form in der der Text als Argument übergeben wird.
     \overstrike{rot}}
   \stoptyping
 
-  Analog gibt es auch die Befehle \type{\overbar}, \type{\overbars} sowie \type{\underbar} und \type{\underbars}.
+Analog gibt es auch die Befehle \type{\overbar}, \type{\overbars} sowie \type{\underbar} und \type{\underbars}.
+
+\item Hintergrund einfärben (Textmarker): Zum Einfärben des Hintergrundes definiert man sich einfach einen neues Befeh: 
+  \starttyping
+    \definetextbackground
+    [Highlight]
+    [frame=off,
+    background=color,
+    backgroundcolor=yellow]
+  \stoptyping
+  
+Dann lässt sich mit \type{\Highlight{}} der Text \Highlight{auch über mehrere Wörter markieren.}
 
 \stopitemize
-  
+
 Textformatierungen kann man auch blockweise für ganze Absätze nutzen:
 
 {\em Dies ist ein kurzer Absatz {\em mit einem hervorgehobenen Einschub}, 
