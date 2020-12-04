@@ -157,9 +157,9 @@ und lassen sich mit \type{{}} gruppieren.
 Einfache $a^b_c$, mehrfache  $a^{ab}_{ac}$ und mehrstufige  $a^{b^c}_d$ Exponenten.
 
 Als Index wird oft ein Wort anstelle eines Formelzeichens verwendet.
-Dies muss als \type{\text{}} eingegeben werden.
+Dies muss als \type{\mathtext{}} eingegeben werden.
 
-\type{$P_{\text{Antrieb}}$} $P_{\text{Antrieb}}$ statt \type{$P_{Antrieb}$} $P_{Antrieb}$.
+\type{$P_{\mathtext{Antrieb}}$} $P_{\mathtext{Antrieb}}$ statt \type{$P_{Antrieb}$} $P_{Antrieb}$.
 
 \stopsubsection
 \startsubsection[title={Brüche und Klammern}]
@@ -229,6 +229,38 @@ griechische Buchstabe genauso aussieht, wie der lateinische.
 \bTR \bTD Omega   \eTD \bTD \Omega           \eTD \bTD \omega            \eTD \bTD $\Omega$   \eTD \bTD $\omega$   \eTD \eTR
 \eTABLE
 }
+
+\stopsubsection
+
+\startsubsection[title={Texte in Formeln}]
+
+Text wir in Formeln als Variable interpretiert, zwischen den Variablen gibt es eine implizite Multiplikation.
+$ab$ steht also für $a \times b$. 
+Das ist oft nicht das, was man möchte. 
+Es gibt mehrere Befehle, um Text in Formeln einzufügen, dabei sind auch Hervorhebungen möglich.
+
+In der \type{\mathword} Variante werden Leerzeichen ignoriert.
+Das ist hilfreich, wenn der Text automatisch erzeugt wird.
+
+\starttabulate [|l|l|]
+\NC \type{\mathtext{Aufrechter Text}}        \NC $\mathtext{Aufrechter Text}$        \NC \NR
+\NC \type{\mathtexttf{Aufrechter Text}}      \NC $\mathtexttf{Aufrechter Text}$      \NC \NR
+\NC \type{\mathtextit{Kursiver Text}}        \NC $\mathtextit{Kursiver Text}$        \NC \NR
+\NC \type{\mathtextsl{Schräger Text}}        \NC $\mathtextsl{Schräger Text}$        \NC \NR
+\NC \type{\mathtextbf{Fetter Text}}          \NC $\mathtextbf{Fetter Text}$          \NC \NR
+\NC \type{\mathtextbi{Fetter kursiver Text}} \NC $\mathtextbi{Fetter kursiver Text}$ \NC \NR
+\NC \type{\mathtextbs{Fetter schräger Text}} \NC $\mathtextbs{Fetter schräger Text}$ \NC \NR
+\stoptabulate
+
+\starttabulate [|l|l|]
+\NC \type{\mathword{Aufrechtes Wort}}        \NC $\mathword{Aufrechtes Wort}$        \NC \NR
+\NC \type{\mathwordtf{Aufrechtes Wort}}      \NC $\mathwordtf{Aufrechtes Wort}$      \NC \NR
+\NC \type{\mathwordit{Kursives Wort}}        \NC $\mathwordit{Kursives Wort}$        \NC \NR
+\NC \type{\mathwordsl{Schräges Wort}}        \NC $\mathwordsl{Schräges Wort}$        \NC \NR
+\NC \type{\mathwordbf{Fettes Wort}}          \NC $\mathwordbf{Fettes Wort}$          \NC \NR
+\NC \type{\mathwordbi{Fettes kursives Wort}} \NC $\mathwordbi{Fettes kursives Wort}$ \NC \NR
+\NC \type{\mathwordbs{Fettes schräges Wort}} \NC $\mathwordbs{Fettes schräges Wort}$ \NC \NR
+\stoptabulate
 
 \stopsubsection
 
