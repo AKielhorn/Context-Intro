@@ -266,10 +266,20 @@ Das ist hilfreich, wenn der Text automatisch erzeugt wird.
 
 \startsubsection[title={Beispielformeln}]
 
-
 Dies ist eine komplizierte Formel:
 \startformula 
     t-t_{0}=\sqrt{\frac{l}{g}}\int_{0}^{\varphi}{\frac{d\psi}{\sqrt{1-k^{2}\sin^{2} {\psi}}}} = \left(\sqrt{\frac{l}{g}} F(k,\varphi)\right) 
+\stopformula
+
+Mehrzeilige Grenzen:
+
+\startformula
+ \lim_{%
+   \startsubstack
+     x \to 2 \NR
+     x  <  2 \NR
+   \stopsubstack
+ } = +\infty
 \stopformula
 
 \stopsubsection
