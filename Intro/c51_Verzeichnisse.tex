@@ -36,7 +36,11 @@ Im \from[contextcontent] gibt es dazu eine umfangreiche Seite.
 \usesymbols[mvs]
 \setupsymbolset[martinvogel 2]
 
-\startsubsubsection[title={I \symbol[martinvogel 2][Heart] BX}, list={I like the Bronx}]
+\startsubsubsection[%
+title={I \symbol[martinvogel 2][Heart] BX},
+list={I like the Bronx},
+reference=bronx,
+]
 
 Normalerweise erscheint der \type{title} der Gliederungsüberschrift im Inhaltsverzeichnis.
 Manchmal ist das nicht sinnvoll, weil der Titel zu lang ist, oder Formeln und andere Sonderzeichen enthält.
@@ -46,6 +50,7 @@ Mit der Option \type{list} kann ein alternativer Text für den Verzeichniseintra
 \startsubsubsection[
   title={I \symbol[martinvogel 2][Heart] BX},
   list={I like the Bronx},
+  reference=bronx,
   ]
 \stoptyping
 
