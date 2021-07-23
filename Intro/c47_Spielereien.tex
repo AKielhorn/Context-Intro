@@ -8,13 +8,17 @@
 \product prd_intro
 \project project_intro
 
+\definemeasure[CAindent][12pt]
+\setupindenting[yes,\measure{CAindent}]
+\setupinitial[n=2,m=1]
+
 \startsection[
   reference=spielereien,
   title={Spielereien},
   ]
 \index{Initiale}
-\startparagraph
 
+\startparagraph
 \lettrine{D}{ieses} Dokument soll als Beispiel für die Konvertierung von LaTeX nach
 EPUB dienen. Wichtig hierbei ist, dass alle Befehle oder Pakete, die
 sich auf das Layout beziehen (Satzspiegel, Seitenränder etc.) in der
