@@ -1,0 +1,74 @@
+% !TEX TS-program = ConTeXt (LuaTeX 1.0.9)
+% !TEX encoding = UTF-8 Unicode
+
+% Copyright 2021 Axel Kielhorn
+% Lizenz: CC-BY-SA 4.0 Unported http://creativecommons.org/licenses/by-sa/4.0/deed.de
+
+\startcomponent *
+\product prd_intro
+\project project_intro
+
+\startsection[
+  reference=Probleme,
+  title={Probleme erschießen},
+  ]
+
+In der Mailingliste treten einige Anfragen gehäuft auf.
+Daher hier eine kurze Zusammenfassung, damit ich das nicht vergesse.
+
+\startsubsection[title={Zeichensätze}]
+\index{Zeichensätze}
+
+Ich kann den Zeichensatz XY nicht mehr benutzen.
+
+Hier hilf es oft, den Font Cache zu aktualisieren:
+
+\starttyping
+	mtxrun --script fonts --reload
+\stoptyping
+oder mit Gewalt:
+\starttyping
+	mtxrun --script fonts --reload --force
+\stoptyping
+
+Eine Liste aller verfügbarer Zeichen erhält man mit:
+
+\starttyping
+	mtxrun --script fonts --list --all 
+\stoptyping
+
+\starttabulate[|lT|lT|lT|lT|]
+\NC identifier		\NC familyname	\NC fontname \NC filename \NR
+\NC lmroman10regular \NC latinmodernroman \NC lmroman10regular \NC lmroman10-regular.otf \NR
+\stoptabulate
+
+Das hilft oft den genauen Namen herauszufinden unter dem ConTeXt den Zeichensatz kennt.
+
+Am besten leitet man die Ausgabe in eine Date um, da sie doch etwas länger wird.
+
+\stopsubsection
+
+\startsubsection[title={Cache allgemein}]
+\index{Cache}
+
+Neben dem Font Cache gibt es noch den allgemeinen Cache für allerlei Sachen.
+Manchmal hilft es, den von Hand zu löschen und neu anzulegen:
+
+\starttyping
+	mtxrun --script cache --erase && mtxrun --generate
+\stoptyping
+
+Wenn es dann immer noch nicht funktioniert, lohnt es sich die Ausgabe anzusehen.
+Evtl. zeigt ja ein Pfad noch auf eine veraltete Version.
+
+\stopsubsection
+
+
+%\startparagraph
+%
+%\stopparagraph
+
+\stopsection
+
+\stopcomponent
+
