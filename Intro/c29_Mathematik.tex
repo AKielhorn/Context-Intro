@@ -264,6 +264,46 @@ Das ist hilfreich, wenn der Text automatisch erzeugt wird.
 
 \stopsubsection
 
+\startsubsection[title={Tabellen in Formeln}]
+
+Bei Tabellen hat sich das Verhalten mit dem Erscheinen von LMTX verändert.
+Bisher wurde die zweite Spalte im Textmodus gesätzt.
+Das ist zwar das, was man in den meisten Fällen wünscht,
+überrascht aber, da es inkonsistent ist.
+
+\starttyping
+\startformula
+\delta_{ij} =
+\startcases  
+\NC 1 \NC if $i = j$ \NR
+\NC 0 \NC otherwise \NR
+\stopcases             
+\stopformula           
+\stoptyping
+
+In LMTX gibt es daher den neuen Befehl \type{\TC} für TextColumn. 
+Ein \type{\NC} erzeugt jetzt eine Spalte im Mathe-Modus.
+
+\starttyping
+\startformula
+\delta_{ij} =
+\startcases  
+\NC 1 \TC if $i = j$ \NR
+\NC 0 \TC otherwise \NR
+\stopcases             
+\stopformula           
+\stoptyping
+
+\startformula
+\delta_{ij} =
+\startcases  
+\NC 1 \NC if $i = j$ \NR
+\NC 0 \NC otherwise \NR
+\stopcases             
+\stopformula           
+
+\stopsubsection
+
 \startsubsection[title={Beispielformeln}]
 
 Dies ist eine komplizierte Formel:
