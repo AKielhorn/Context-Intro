@@ -48,9 +48,49 @@ Da kein Datum definiert wurde, wird das Datum der PDF-Erstellung benutzt.
 
 \stopsubsection
 
+
 %\startparagraph
 %
 %\stopparagraph
+
+\startsubsection[
+  reference=Abkürzung,
+  title={Abkürzung},
+  ]
+
+Das ist alles so kompliziert, geht es nicht auch einfacher?
+
+Natürlich würde ich diese Frage nicht stellen, wenn es keine Antwort darauf gäbe.
+
+\startsubsection[
+  reference=Pandoc,
+  title={Pandoc},
+  ]
+
+\index{Pandoc}  
+Das Program \goto{Pandoc}[url(https://pandoc.org)] konvertiert (unter anderem) Markdown in viele Formate.
+
+Ein Zielformat ist \ConTeXt\. So kann man den Text zuerst in Markdown schreiben, 
+nach \ConTeXt\ konvertieren und dann die Feinheiten im erzeugten Text bearbeiten.
+
+\stopsubsection
+
+\startsubsection[
+  reference=Org-Mode,
+  title={Org-Mode},
+  ]
+
+\index{Org Mode}
+Für Anhänger des Org Modes gibt es seit kurzem einen 
+\goto{ConTeX Exporter}[url(https://github.com/Jason-S-Ross/ox-context)]
+mit dem man direkt \ConTeXt\ exportieren kann.
+
+Vorher ging das nur mit einem Zwischenschritt über Pandoc.
+
+\stopsubsection
+
+\stopsubsection
+
 
 \stopsection
 
