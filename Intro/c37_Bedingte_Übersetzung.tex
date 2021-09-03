@@ -1,4 +1,4 @@
-% !TEX TS-program = ConTeXt (LuaTeX 1.0.9)
+% !TEX TS-program = ConTeXt (LMTX2021)
 % !TEX encoding = UTF-8 Unicode
 
 % Copyright 2018 Axel Kielhorn
@@ -122,7 +122,29 @@ sowie drei \type{\doifelse}-Befehle
                      {sonst wird dieses bearbeitet}
 \stoptyping
 
+\startsubsection[
+  title={Version erkennen},
+  ]
 
+Neben ConTeXt \MKII\ und \MKIV\ gibt es seit 2019 auch die Version \LMTX.
+
+Manchmal muss man wissen, welche Version gerade benutzt wird,
+z.\,B. wenn man Module schreibt, die mit allen Version funktionieren sollen.
+Es gibt drei vordefinierte \type{modes} die das überprüfen:
+
+\starttyping
+\doifmode        {*mkii}{\MKII}
+\doifmode        {*mkiv}{\MKIV}
+\doifmode        {*lmtx}{\LMTX}
+\stoptyping
+
+Diese Dokument wurde mit
+\doifmode        {*mkii}{\MKII\ }%
+\doifmode        {*mkiv}{\MKIV\ }%
+\doifmode        {*lmtx}{\LMTX\ }%
+übersetzt.
+
+\stopsubsection
 \stopsection
 
 
