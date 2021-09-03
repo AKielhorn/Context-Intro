@@ -1,4 +1,4 @@
-% !TEX TS-program = ConTeXt (LuaTeX 1.0.9)
+% !TEX TS-program = ConTeXt (LMTX2021)
 % !TEX encoding = UTF-8 Unicode
 
 % Copyright 2018 Axel Kielhorn
@@ -10,7 +10,7 @@
 
 \definemeasure[CAindent][12pt]
 \setupindenting[yes,\measure{CAindent}]
-\setupinitial[n=2,m=1]
+\setupinitial[font=Roman at 30 pt,n=2,m=1]
 
 \startsection[
   reference=spielereien,
@@ -18,30 +18,52 @@
   ]
 \index{Initiale}
 
+%\startparagraph
+%\lettrine{D}{ieses} Dokument soll als Beispiel für die Konvertierung von LaTeX nach
+%EPUB dienen. Wichtig hierbei ist, dass alle Befehle oder Pakete, die
+%sich auf das Layout beziehen (Satzspiegel, Seitenränder etc.) in der
+%Regel bei einen EPUB, welches keine feste Seitenstruktur hat, keinen
+%Sinn ergeben und somit auch von den meisten Konvertierungsprogrammen
+%ignoriert werden. Aus dem Grund werden auch Veränderungen von Abständen
+%oder ähnliches nicht geprüft.\cite[stein2000]
+%\stopparagraph
+
 \startparagraph
-\lettrine{D}{ieses} Dokument soll als Beispiel für die Konvertierung von LaTeX nach
+\placeinitial{D}{\sc ieses} Dokument soll als Beispiel für die Konvertierung von LaTeX nach
 EPUB dienen. Wichtig hierbei ist, dass alle Befehle oder Pakete, die
 sich auf das Layout beziehen (Satzspiegel, Seitenränder etc.) in der
 Regel bei einen EPUB, welches keine feste Seitenstruktur hat, keinen
 Sinn ergeben und somit auch von den meisten Konvertierungsprogrammen
 ignoriert werden. Aus dem Grund werden auch Veränderungen von Abständen
-oder ähnliches nicht geprüft.\cite[stein2000]
+oder ähnliches nicht geprüft. \cite[stein2000]
 \stopparagraph
 
 \startparagraph
-\lettrine[FontHook=]{D}{as} Dokument hat neben dieser Einleitung einen Teil mit
-Beispielen. In einzelnen Abschnitten werden spezifische Elemente eines
-LaTeX-Dokuments beschrieben, die der Konverter dann in das EPUB
-übernehmen soll.\cite[mertens2012]
+\setupinitial[font=Roman at 30 pt,n=1,m=1,before{\blank[big]}]
+\noindenting\placeinitial{D}{\sc ieses} Dokument soll als Beispiel für die Konvertierung von LaTeX nach
+EPUB dienen. Wichtig hierbei ist, dass alle Befehle oder Pakete, die
+sich auf das Layout beziehen (Satzspiegel, Seitenränder etc.) in der
+Regel bei einen EPUB, welches keine feste Seitenstruktur hat, keinen
+Sinn ergeben und somit auch von den meisten Konvertierungsprogrammen
+ignoriert werden. Aus dem Grund werden auch Veränderungen von Abständen
+oder ähnliches nicht geprüft. \cite[stein2000]
 \stopparagraph
 
+%
+%\startparagraph
+%\lettrine[FontHook=]{D}{as} Dokument hat neben dieser Einleitung einen Teil mit
+%Beispielen. In einzelnen Abschnitten werden spezifische Elemente eines
+%LaTeX-Dokuments beschrieben, die der Konverter dann in das EPUB
+%übernehmen soll.\cite[mertens2012]
+%\stopparagraph
+
 \startparagraph
-\placeinitial Für das Verständnis der Konvertierung ist es daneben ggf. noch wichtig,
+\noindenting\placeinitial {F}ür das Verständnis der Konvertierung ist es daneben ggf. noch wichtig,
 dass ein EPUB zu einem großen Teil einer HTML-Seite mit CSS-Elementen
 entspricht. Dementsprechend wird bei der Konvertierung von ConTeXt zuerst
 der Zwischenschritt über HTML gegangen. So kann man direkt im Browser
 prüfen, ob das Dokument gut aussieht, bevor man sie in ein EPUB
-wandelt.\cite[becker2012]
+wandelt. \cite[becker2012]
 \stopparagraph
 
 \stopsection
