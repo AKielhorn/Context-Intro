@@ -1,4 +1,4 @@
-% !TEX TS-program = ConTeXt (LuaTeX 1.0.9)
+% !TEX TS-program = ConTeXt (LMTX2021)
 % !TEX encoding = UTF-8 Unicode
 
 % Copyright 2018 Axel Kielhorn
@@ -163,6 +163,33 @@ der über die folgenden Tabellenteile gesetzt wird.
 \NC Tabellen \NC Zeile \NC \NR
 \stoptabulate
 }
+
+\startmode[*lmtx]
+
+Ab \LMTX\ vom September 2021 gibt es die Möglichkeit, in einer \type{tabulate}
+Umgebung mehrere Spalten zu einer zusammenzufassen.
+Damit können diese auch in der einfachen Tabellenumgebung benutzt werden,
+ohne auf \type{TABLE} umsteigen zu müssen.
+
+\starttyping
+   \starttabulate[|c|c|c|]
+       \NC 1   \NC Zweite Spalte \NC Dritte Spalte \NR
+       \NC 2   \NC Zweite        \NC Dritte        \NR
+       \NC 3 r \NS[1][r]Zweite und dritte          \NR
+       \NC 3 c \NS[1][c]Zweite und dritte          \NR
+       \NC 3 l \NS[1][l]Zweite und dritte          \NR
+   \stoptabulate
+\stoptyping
+
+   \starttabulate[|c|c|c|]
+       \NC 1   \NC Zweite Spalte \NC Dritte Spalte \NR
+       \NC 2   \NC Zweite        \NC Dritte        \NR
+       \NC 3 r \NS[1][r]Zweite und dritte          \NR
+       \NC 3 c \NS[1][c]Zweite und dritte          \NR
+       \NC 3 l \NS[1][l]Zweite und dritte          \NR
+   \stoptabulate
+\stopmode
+
 
 \stopsubsection
 

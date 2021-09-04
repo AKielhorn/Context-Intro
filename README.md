@@ -38,6 +38,9 @@ gehört.
 % \enablemode[Fonts]
 ~~~
 
+Diese Version kann mit LMTX verarbeitet werden. Es wird eine Version ab 
+September 2021 benötigt, da eine `tabulate` Erweiterung genutzt wird, die mit 
+dieser Version neu hinzukam.
 
 # TODO
 
