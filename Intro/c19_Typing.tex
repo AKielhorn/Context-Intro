@@ -55,9 +55,11 @@ Dazu wird der Farbmodus eingeschaltet und die sprachspezifischen Befehle definie
 
 \setupcolors[state=start]
 \definetyping [MP] [option=MP]
-%\usemodule[vim]
-\definevimtyping[MPV][syntax=mp]
 
+\startmode{Vim}
+\usemodule[vim]
+\definevimtyping[MPV][syntax=mp]
+\stopmode
 
 Zuerst nur die ConText Standard-Version:
 
