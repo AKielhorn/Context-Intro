@@ -13,7 +13,7 @@
   title={Grafiken},
   ]
 \index{Bilder}\index{Grafik}
-Bilder werden mit dem Befehl \type{\externalfigure} eingebunden. 
+Bilder werden mit dem Befehl \tex{externalfigure} eingebunden. 
 Dabei kann das Bild skaliert werden.
 
 \starttyping
@@ -42,7 +42,7 @@ empfiehlt es sich in der Environment-Datei folgende Einstellung vorzunehmen:
 Diese Kuh wird bei ConTeXt als Beispielgrafik mitgeliefert.
 Neben PDF können auch die Formate JPEG, JPEG2000, JBIG und PNG benutzt werden.
 
-Mit dem \type{\placefigure} Befehl werden aus den Bildern Gleitobjekte.
+Mit dem \tex{placefigure} Befehl werden aus den Bildern Gleitobjekte.
 Außerdem werden sie ins Abbildungsverzeichnis aufgenommen.
 Die Standardplatzierungsoption in ConTeXt ist \type{[here]}.
 In einigen Fällen muss sie explizit angegeben werden, 
@@ -74,7 +74,7 @@ Bilder lassen sich in 90° Schritten rotieren, dazu dient die Option \type{orien
 \placefigure[here]{Kuh am Berghang}{
 \externalfigure[cow.pdf][orientation=-90,height=3cm]}
 
-Möchte man die Bildunterschrift mitdrehen, so ist dies als Option dem \type{\placefigure}-Befehl mitzuteilen.
+Möchte man die Bildunterschrift mitdrehen, so ist dies als Option dem \tex{placefigure}-Befehl mitzuteilen.
 Auch hier sind nur 90° Schritte möglich.
 
 \starttyping
@@ -95,7 +95,7 @@ Soll nur die Bildunterschrift gedreht werden, dreht man das Bild wieder zurück.
 \placefigure[90,frame]{Eine Kuh mit gedrehter Bildunterschrift}{
 \externalfigure[cow.pdf][orientation=-90,height=3cm]}
 
-Andere Drehwinkel für das Bild lassen sich mit den \type{\rotate}-Befehl erreichen.
+Andere Drehwinkel für das Bild lassen sich mit den \tex{rotate}-Befehl erreichen.
 
 \starttyping
 \placefigure[here]{Eine um 45° gedrehte Kuh}{
@@ -105,10 +105,10 @@ Andere Drehwinkel für das Bild lassen sich mit den \type{\rotate}-Befehl erreic
 \placefigure[here]{Eine um 45° gedrehte Kuh}{
 \rotate[rotation=45]{\externalfigure[cow.pdf][height=3cm]}}
 
-Das funktioniert auch ohne \type{\placefigure}.
+Das funktioniert auch ohne \tex{placefigure}.
 Damit auch diese Kuh mittig in der Zeile steht, 
 wird sie in eine \type{alignment}-Umgebung eingebettet.
-Hier ist zusätzlich noch der Befehl \type{\dontleavehmode} erforderlich.
+Hier ist zusätzlich noch der Befehl \tex{dontleavehmode} erforderlich.
 
 \starttyping
 \startalignment[middle]
@@ -160,7 +160,7 @@ Schauspieler%
 Dieser Befehl teilt das Bild in X-Richtung in zwei Teile und gibt den ersten bzw. zweiten Teil aus.
 Mit \type{ny=} wird das Bild in y-Richtung geteilt.
 
-Der \type{\clip} Befehl funktioniert nicht nur bei Bildern.
+Der \tex{clip} Befehl funktioniert nicht nur bei Bildern.
 Es können z.\,B. auch Texte beschnitten werden.
 
 \blank

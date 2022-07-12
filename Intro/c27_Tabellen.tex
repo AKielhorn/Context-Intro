@@ -93,20 +93,20 @@ Die Spaltendefinition lässt sich außerdem durch das Anhängen von Formatierung
 \NC T            \NC Schreibmaschinenschrift \NR
 \stoptabulate
 
-Mit dem Befehl \type{\setuptabulate[split=yes]} können lange Tabellen auf mehrere Seiten verteilt werden.
+Mit dem Befehl \tex{setuptabulate[split=yes]} können lange Tabellen auf mehrere Seiten verteilt werden.
 Beim Umbruch verhalten sich die unterschiedlichen Linien etwas anders.
-Normalerweise reicht die \type{\HL} Linie aus. 
-Bei wiederholten Tabellenköpfen sollten jedoch \type{\FL} und \type{\LL} benutzt werden.
+Normalerweise reicht die \tex{HL} Linie aus. 
+Bei wiederholten Tabellenköpfen sollten jedoch \tex{FL} und \tex{LL} benutzt werden.
 
 \starttabulate[|lB|l|]
 \NC {\bf Linie} \NC {\bf Beschreibung} \NR
-\NC \type{\HL}  \NC Horizontale Linie \NR\HL
-\NC \type{\FL}  \NC Erste Linie \NR\FL
-\NC \type{\ML}  \NC Mittlere Linie \NR\ML
-\NC \type{\TL}  \NC Untere Linie \NR\TL
-\NC \type{\TB}  \NC Leerzeile (optionale Höhe in \type{[]} angeben)  \NR\TB
-\NC \type{\BL}  \NC Letzte Linie \NR\BL
-\NC \type{\LL}  \NC Letzte Linie (Tabellenkopf)\NR\LL
+\NC \tex{HL}  \NC Horizontale Linie \NR\HL
+\NC \tex{FL}  \NC Erste Linie \NR\FL
+\NC \tex{ML}  \NC Mittlere Linie \NR\ML
+\NC \tex{TL}  \NC Untere Linie \NR\TL
+\NC \tex{TB}  \NC Leerzeile (optionale Höhe in \type{[]} angeben)  \NR\TB
+\NC \tex{BL}  \NC Letzte Linie \NR\BL
+\NC \tex{LL}  \NC Letzte Linie (Tabellenkopf)\NR\LL
 \stoptabulate
 
 Bei geteilten Tabellen lässt sich auch ein Tabellenkopf definieren, 
@@ -200,7 +200,7 @@ ohne auf \type{TABLE} umsteigen zu müssen.
 \index{TABLE}
 
 Eine Tabelle ist einfach aufgebaut.
-Die \type{\setupTABLE} Befehle bestimmen das Aussehen der Tabelle.
+Die \tex{setupTABLE} Befehle bestimmen das Aussehen der Tabelle.
 Damit sie nur für diese Tabelle gelten, wird die komplette Tabelle in \type{{}} eingeschlossen.
 
 \blank[big]
@@ -711,7 +711,7 @@ Damit lassen sich auch runde Ecken innerhalb der Tabelle erzeugen.
 \useURL[contextTABLE][https://wiki.contextgarden.net/TABLE][][Contextgarden]
 Tabellen sind extrem vielfältig, mehr Informationen gibt es im \from[contextTABLE], allerdings nur auf englisch.
 
-Mit dem Befehl \type{\placetable} erhält man ein Gleitobjekt mit einer \type{\caption}, auf die man sich später beziehen kann.
+Mit dem Befehl \tex{placetable} erhält man ein Gleitobjekt mit einer \tex{caption}, auf die man sich später beziehen kann.
 
 \index{table}
 \placetable{Eine sehr einfache Tabelle.}

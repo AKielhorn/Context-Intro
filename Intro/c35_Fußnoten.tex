@@ -48,9 +48,9 @@
   ]
 \index{Fußnoten}
 
-Fußnoten werden mit den \type{\footnote{}}\index{footnote} Befehl erzeugt.
-Das Aussehen des Fußnotensymbols im Text wird mit dem Befehl \type{\setupnote} definiert.
-Die Fußnote selbst wird mit dem Befehl \type{\setupnotation} definiert.
+Fußnoten werden mit den \tex{footnote{}}\index{footnote} Befehl erzeugt.
+Das Aussehen des Fußnotensymbols im Text wird mit dem Befehl \tex{setupnote} definiert.
+Die Fußnote selbst wird mit dem Befehl \tex{setupnotation} definiert.
 Das Aussehen der Fußnoten lässt sich leicht ändern.
 
 \starttyping
@@ -121,14 +121,14 @@ aufgerufen werden.
 \input ward\authornote{Eine normale Fußnote in Originaltext. Mit etwas Text, damit die Seite voll wird. \input ward}
 
 \input ward\translaternote{Eine Fußnote des Übersetzers.
-Sie benutzt einen anderen Zähler als die \type{\authornode} und wird mit Buchstaben statt Zahlen markiert.}
+Sie benutzt einen anderen Zähler als die \tex{authornode} und wird mit Buchstaben statt Zahlen markiert.}
 \commentnote{Mehr Informationen gibt es in den Endnoten am Ende des Kapitels.}
 
 \input ward\translaterpnote{Alternativ kann man die Übersetzernoten auch seitenweise nummerieren.
 Zur Unterscheidung von normalen Fußnoten hier mit Zeichen statt Zahlen.}
 
 \input ward\footnote{Eine normale Fußnote. 
-Sie benutzt den gleichen Zähler wie \type{\authornote}, aber das Symbol ist nicht fett.
+Sie benutzt den gleichen Zähler wie \tex{authornote}, aber das Symbol ist nicht fett.
 Das führt zur Verwirrung und sollte vermieden werden.}
 
 \input ward\commentnote{Noch eine Endnote, damit es sich lohnt.} 
@@ -146,23 +146,23 @@ Das führt zur Verwirrung und sollte vermieden werden.}
 Statt am Seitenende oder am Kapitelende kann man Anmerkungen auch in den Rand
 \inmargin{Rand}schreiben. Dabei stehen mehrere Ränder zur Verfügung:
 
-\startdescription{\type{\inmargin{}}}
+\startdescription{\tex{inmargin{}}}
 Der Befehl setzt sein Argument in den Rand.
 \stopdescription
 
-\startdescription{\type{\inleft}{}}
+\startdescription{\tex{inleft}{}}
 Der Befehl setzt sein Argument in den linken Rand.
 \stopdescription
 
-\startdescription{\type{\inright{}}}
+\startdescription{\tex{inright{}}}
 Der Befehl setzt sein Argument in den rechten Rand.
 \stopdescription
 
-\startdescription{\type{\inouter{}}}
+\startdescription{\tex{inouter{}}}
 Der Befehl setzt sein Argument in den äußeren Rand eines zweiseitigen Dokuments.
 \stopdescription
 
-\startdescription{\type{\ininner{}}}
+\startdescription{\tex{ininner{}}}
 Der Befehl setzt sein Argument in den inneren Rand eines zweiseitigen Dokuments.
 \stopdescription
 
@@ -175,7 +175,7 @@ Das müsste jetzt reichen.
 \inright{rechts}
 
 Wenn hinter dem Befehl eine Leerstelle steht, so erscheint diese im Text. 
-Daher entweder direkt weiterschreiben \type{\inmargin{Rand}Text}, 
+Daher entweder direkt weiterschreiben \tex{inmargin{Rand}Text}, 
 oder den Befehl in eine eigene Zeile schreiben und mit einem \type{%}-Zeichen abschließen.
 
 \stopsubsection

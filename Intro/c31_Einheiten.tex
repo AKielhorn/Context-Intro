@@ -46,7 +46,7 @@ Das Meter \unit{m} ist etwas anderes als die Masse $m$.
 }
 
 ConTeXt ist bei der Eingabe der Einheiten sehr flexibel.
-Im Mathe-Modus ist es ein Unterschied, ob die Maßzahl vor dem \type{\unit}-Befehl steht,
+Im Mathe-Modus ist es ein Unterschied, ob die Maßzahl vor dem \tex{unit}-Befehl steht,
 oder Teil des Befehls ist. Zeile 11 und 12 führen zu leicht unterschiedlichen Ergebnissen.
 
 \starttyping
@@ -81,7 +81,7 @@ oder Teil des Befehls ist. Zeile 11 und 12 führen zu leicht unterschiedlichen E
 12: $\frac{\unit{10 m/s}}{\unit{20 m/s}} $
 \stoplines
 
-Um eine einheitliche Darstellung der Zahlen zu erreichen, kann man den Befehl \type{\digits} verwenden.
+Um eine einheitliche Darstellung der Zahlen zu erreichen, kann man den Befehl \tex{digits} verwenden.
 Dieser sorgt für die richtige Darstellung des 1000er Zwischenraums und des Dezimaltrenners:
 
 \starttyping
@@ -149,11 +149,11 @@ Die gleiche Einstellung gibt es auch für Einheiten, hier ist die Methode 3 zu w
 Benötigt man eine Leerstelle anstatt einer Ziffer, so können hier \type{@}, \type{_} oder \type{~} eingegeben werden.
 
 Es ist aufwändig, jedes Mal den Tausendertrenner einzugeben.
-Der \type{\spaceedigits} Befehl fügt den Zwischenraum automatisch ein.
+Der \tex{spaceedigits} Befehl fügt den Zwischenraum automatisch ein.
 Damit hier ein \type{,} als Dezimaltrenner erscheint,
-muss das \type{\spaceddigitssymbol} entsprechend definiert werden.
+muss das \tex{spaceddigitssymbol} entsprechend definiert werden.
 
-Mit diesem Befehl kann man sich ein eigenen \type{\spacedunit} Befehl definieren.
+Mit diesem Befehl kann man sich ein eigenen \tex{spacedunit} Befehl definieren.
 
 \starttyping
 \let\spaceddigitssymbol,

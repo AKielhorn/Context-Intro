@@ -31,7 +31,7 @@ Antwort 1:
 
 \stoptyping
 
-Mit \type{\enablemode[]} wir eine Mode aktiviert, mit \type{\disablemode[]} wird er deaktiviert.
+Mit \tex{enablemode[]} wir eine Mode aktiviert, mit \tex{disablemode[]} wird er deaktiviert.
 Außerdem kann ein Mode beim Aufruf von ConTeXt auf der Kommandozeile aktiviert werden.
 
 \starttyping
@@ -39,7 +39,7 @@ context --mode=antwort
 \stoptyping
 
 Mehrere Modes werden durch Komata getrennt.
-Modes können nicht geschachtelt werden, der \type{\startmode} gilt bis zum nächsten \type{\stopmode}-Befehl.
+Modes können nicht geschachtelt werden, der \tex{startmode} gilt bis zum nächsten \tex{stopmode}-Befehl.
 
 Eine andere Anwendung sind mehrsprachige Texte, bei denen die Sprachen einzeln ein- oder ausgeschaltet werden.
 
@@ -68,13 +68,13 @@ Zum Beispiel für Abbildungen.
 This is in english
 \stopmode
 
-Zusätzlich zu den \type{\startmode}/\type{\stopmode}-Befehlen gibt es noch die invertierte Form \type{\startnotmode}/\type{\stopnotmode}.
+Zusätzlich zu den \tex{startmode}/\tex{stopmode}-Befehlen gibt es noch die invertierte Form \tex{startnotmode}/\tex{stopnotmode}.
 Der so markierte Bereich wird ausgeführt, wenn der Mode {\em nicht} definiert ist.
 
-Die Argumente der Befehle \type{\startmode} und \type{\startnotmode} verknüpfen die Argumente mit einer \type{oder}-Funktion,
+Die Argumente der Befehle \tex{startmode} und \tex{startnotmode} verknüpfen die Argumente mit einer \type{oder}-Funktion,
 ist eines der Argumente aktiv (bzw. inaktiv), wird er Inhalt des Modes ausgegeben.
 
-Zusätzlich gibt es die Befehle \type{\startallmodes} und \type{\startnotallmodes}, hier müssen {\em alle} Bedingungen erfüllt sein,
+Zusätzlich gibt es die Befehle \tex{startallmodes} und \tex{startnotallmodes}, hier müssen {\em alle} Bedingungen erfüllt sein,
 es findet eine \type{und}-Verknüpfung statt.
 
 \starttyping
@@ -95,7 +95,7 @@ es findet eine \type{und}-Verknüpfung statt.
 \stopnotallmodes
 \stoptyping
 
-Für kurze Texte gibt es außerdem noch vier \type{\doif}-Befehle
+Für kurze Texte gibt es außerdem noch vier \tex{doif}-Befehle
 
 \starttyping
 \doifmode        {mode1, mode2} 
@@ -108,7 +108,7 @@ Für kurze Texte gibt es außerdem noch vier \type{\doif}-Befehle
                  {Bearbeitet wenn alle Modes inaktiv sind}
 \stoptyping
 
-sowie drei \type{\doifelse}-Befehle
+sowie drei \tex{doifelse}-Befehle
 
 \starttyping
 \doifmodeelse        {mode1, mode2, ...} 

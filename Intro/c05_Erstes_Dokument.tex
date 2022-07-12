@@ -117,7 +117,7 @@ Jedes Produkt besteht aus mehreren Kapiteln, die jeweils in einer Datei gespeich
 Jedes Produkt wird als eigenes Dokument übersetzt.
 Es ist aber auch möglich nur einzelne Dateien zu übersetzen, 
 das spart in der Entwurfsphase sehr viel Zeit, da nur ein Dokument übersetzt wird.
-Das ist deutlich einfacher als mit \type{\includeonly} und \type{% !TEX root = } zu arbeiten.
+Das ist deutlich einfacher als mit \tex{includeonly} und \type{% !TEX root = } zu arbeiten.
 
 Diese Anleitung ist als Projekt aufgebaut.
 
@@ -149,17 +149,17 @@ Die Bezeichnungen sollten nur konsistent sein.
 
 Manchmal ist es sinnvoll den Dateinamen der aktuellen Datei zu kennen,
 z.\,B. um ihn bei einem Dokument mit mehreren Dateien in die Fußzeile zu schreiben.
-In den meisten Fällen reicht \type{\jobname} aus.
+In den meisten Fällen reicht \tex{jobname} aus.
 
 \starttabulate [|T|T|]
-\NC \type{\jobname}           \NC \jobname           \NC\NR
-\NC \type{\jobfilename}       \NC \jobfilename       \NC\NR
-% \NC \type{\jobfilesuffix}     \NC \jobfilesuffix     \NC\NR
-\NC \type{\inputfilename}     \NC \inputfilename     \NC\NR
-\NC \type{\inputfilebarename} \NC \inputfilebarename \NC\NR
-% \NC \type{\inputfilesuffix}   \NC \inputfilesuffix   \NC\NR
-\NC \type{\outputfilename}    \NC \outputfilename    \NC\NR
-\NC \type{\operatingsystem}   \NC \operatingsystem   \NC\NR
+\NC \tex{jobname}           \NC \jobname           \NC\NR
+\NC \tex{jobfilename}       \NC \jobfilename       \NC\NR
+% \NC \tex{jobfilesuffix}     \NC \jobfilesuffix     \NC\NR
+\NC \tex{inputfilename}     \NC \inputfilename     \NC\NR
+\NC \tex{inputfilebarename} \NC \inputfilebarename \NC\NR
+% \NC \tex{inputfilesuffix}   \NC \inputfilesuffix   \NC\NR
+\NC \tex{outputfilename}    \NC \outputfilename    \NC\NR
+\NC \tex{operatingsystem}   \NC \operatingsystem   \NC\NR
 \stoptabulate
 
 \stopsubsection

@@ -29,31 +29,31 @@ Alternativ gibt es auch eine Form in der der Text als Argument übergeben wird.
 \setupalign[tolerant]
 \item
   hervorgehoben: \type{{\em }} {\em hervorgehoben}. 
-  Die Standardeinstellung für \type{\em} ist geneigt, 
+  Die Standardeinstellung für \tex{em} ist geneigt, 
   für dieses Dokument wurde in der Environmentdatei kursive ausgewählt:
-  \type{\setupbodyfontenvironment[default][em=italic]} 
+  \tex{setupbodyfontenvironment[default][em=italic]} 
 \item
-  fett: \type{{\bf }} {\bf fett} oder \type{\bold{fett}} \bold{fett}.
+  fett: \type{{\bf }} {\bf fett} oder \tex{bold{fett}} \bold{fett}.
 \item
-  kursiv: \type{{\it }} {\it kursiv} oder \type{\italic{kursiv}} \italic{kursiv}.
+  kursiv: \type{{\it }} {\it kursiv} oder \tex{italic{kursiv}} \italic{kursiv}.
 \item
-  kursiv fett: \type{{\bi }} {\bi kursiv fett} oder\type{\italicbold{kursiv fett}} 
+  kursiv fett: \type{{\bi }} {\bi kursiv fett} oder\tex{italicbold{kursiv fett}} 
   (\type{bolditalic} geht auch) \italicbold{kursiv}.
 \item
-  geneigt: \type{{\sl }} {\sl geneigt} oder \type{\slanted{geneigt}} \slanted{geneigt}. 
+  geneigt: \type{{\sl }} {\sl geneigt} oder \tex{slanted{geneigt}} \slanted{geneigt}. 
 \item
-  geneigt fett: \type{{\bs }} {\bs geneigt fett} oder \type{\slantedbold{geneigt fett}} 
+  geneigt fett: \type{{\bs }} {\bs geneigt fett} oder \tex{slantedbold{geneigt fett}} 
   (\type{boldslanted} geht auch) \slantedbold{geneigt fett}. 
 \item
-  Sans-Serif: \type{{\ss }} {\ss Sans Serif} oder \type{\sans{Sans Serif}} \sans{Sans Serif}.
+  Sans-Serif: \type{{\ss }} {\ss Sans Serif} oder \tex{sans{Sans Serif}} \sans{Sans Serif}.
 \item
-  Sans-Serif Fett: \type{\sansbold{Sans Serif Fett}} \sansbold{Sans Serif Fett}.  
+  Sans-Serif Fett: \tex{sansbold{Sans Serif Fett}} \sansbold{Sans Serif Fett}.  
 \item
-  Schreibmaschine: \type{{\tt }} {\tt Schreibmaschine} oder \type{\mono{Schreibmaschine}} 
+  Schreibmaschine: \type{{\tt }} {\tt Schreibmaschine} oder \tex{mono{Schreibmaschine}} 
   \mono{Schreibmaschine}
 \item
   Schreibmaschine fett: \type{{\tt\bf }} {\tt\bf Schreibmaschine fett} oder 
-  \type{\monobold{ Schreibmaschine fett}} \monobold{Schreibmaschine fett}.
+  \tex{monobold{ Schreibmaschine fett}} \monobold{Schreibmaschine fett}.
 \item
   Kapitälchen: \type{{\sc Kapitälchen}} {\sc Kapitälchen}
 \item
@@ -62,11 +62,11 @@ Alternativ gibt es auch eine Form in der der Text als Argument übergeben wird.
   unterstrichen 2: \type{{\underbars }} {\underbars Jedes Wort wird einzeln unterstrichen}
 \item
   Oldstyle Ziffern: Normale Ziffern 1234567890 oder mit \type{{\oldstyle }} {\oldstyle 1234567890}
-  (Achtung: Es gibt noch den alten Befehl \type{\os}, dieser sollte {\em nicht} mehr verwendet werden.
-  \type{\os}: {\os 1992 -- 1999} \type{\oldstyle}: {\oldstyle 2000 -- 2020})
+  (Achtung: Es gibt noch den alten Befehl \tex{os}, dieser sollte {\em nicht} mehr verwendet werden.
+  \tex{os}: {\os 1992 -- 1999} \tex{oldstyle}: {\oldstyle 2000 -- 2020})
 \item
-  Durchstreichen: \type{\overstrike{}} {\overstrike{over}}, 
-  für einen durchgehenden Strich und \type{\overstrikes} für einen Strich pro Wort.
+  Durchstreichen: \tex{overstrike{}} {\overstrike{over}}, 
+  für einen durchgehenden Strich und \tex{overstrikes} für einen Strich pro Wort.
   Die Farbe und Liniendicke lässt sich ändern 
   \setupbar[overstrike][color=red,rulethickness=0.2]\overstrike{rot schwarz} \overstrikes{rot schwarz}
   \starttyping
@@ -77,7 +77,7 @@ Alternativ gibt es auch eine Form in der der Text als Argument übergeben wird.
     \overstrike{rot}}
   \stoptyping
 
-Analog gibt es auch die Befehle \type{\overbar}, \type{\overbars} sowie \type{\underbar} und \type{\underbars}.
+Analog gibt es auch die Befehle \tex{overbar}, \tex{overbars} sowie \tex{underbar} und \tex{underbars}.
 
 \item Hintergrund einfärben (Textmarker): Zum Einfärben des Hintergrundes definiert man sich einfach einen neues Befeh: 
   \starttyping
@@ -88,31 +88,31 @@ Analog gibt es auch die Befehle \type{\overbar}, \type{\overbars} sowie \type{\u
     backgroundcolor=yellow]
   \stoptyping
   
-Dann lässt sich mit \type{\Highlight{}} der Text \Highlight{auch über mehrere Wörter markieren.}
+Dann lässt sich mit \tex{Highlight{}} der Text \Highlight{auch über mehrere Wörter markieren.}
 
 \stopitemize
 
 Textformatierungen kann man auch blockweise für ganze Absätze nutzen:
 
 {\em Dies ist ein kurzer Absatz {\em mit einem hervorgehobenen Einschub}, 
-der mit \type{\em} hervorgehoben wurde.}
+der mit \tex{em} hervorgehoben wurde.}
 
-{\bf Dies ist ein kurzer Absatz, der mit \type{\bf} fett gedruckt
+{\bf Dies ist ein kurzer Absatz, der mit \tex{bf} fett gedruckt
 wurde.}
 
-{\sc Dies ist ein kurzer Absatz, der mit \type{\sc} als Kapitälchen
+{\sc Dies ist ein kurzer Absatz, der mit \tex{sc} als Kapitälchen
 gesetzt wurde.}
 
-{\sl Dies ist ein kurzer Absatz, der mit \type{\sl} geneigt gesetzt
+{\sl Dies ist ein kurzer Absatz, der mit \tex{sl} geneigt gesetzt
 wurde.}
 
-{\it Dies ist ein kurzer Absatz, der mit \type{\it} kursiv gesetzt
+{\it Dies ist ein kurzer Absatz, der mit \tex{it} kursiv gesetzt
 wurde.}
 
-{\tt Dies ist ein kurzer Absatz, der mit \type{\tt} in
+{\tt Dies ist ein kurzer Absatz, der mit \tex{tt} in
 Schreibmaschinenschrift gesetzt wurde.}
 
-{\ss Dies ist ein kurzer Absatz, der mit \type{\ss} serifenlos gesetzt
+{\ss Dies ist ein kurzer Absatz, der mit \tex{ss} serifenlos gesetzt
 wurde.}
 
 \startsubsection[title={Schriftauswahl}]

@@ -16,7 +16,7 @@
 Leerzeichen werden nicht zu einem Leerraum zusammengefügt, ConTeXt-Befehle
 werden nicht ersetzen und Kommentare nicht ausgeblendet.
 
-Für kurze Einschübe in der Zeile dient der Befehl \type{\type{}}.
+Für kurze Einschübe in der Zeile dient der Befehl \tex{type{}}.
 
 In LaTeX heißt die Umgebung \type{verbatim}.
 
@@ -32,7 +32,7 @@ In LaTeX heißt die Umgebung \type{verbatim}.
   title={Syntaxhervorhebung}]
 
 ConTeXt kann verschiedene Syntaxelemente farblich hervorheben.
-Dazu muss eine neuer \type{\typing}-Befehl definiert werden,
+Dazu muss eine neuer \tex{typing}-Befehl definiert werden,
 damit die richtige Sprache ausgewählt wird.
 
 Unterstützt werden \type{C}, \type{LUA}, \type{MP} (MetaPost und MetaFont), \type{TEX} und \type{XML}.
@@ -74,7 +74,7 @@ Zuerst nur die ConText Standard-Version:
 draw (0,0) withpen pencircle 1in withcolor red ;
 \stopMP
 
-Dann mit Scite (Der \type{\usemodule}-Befehl gehört normalerweise an den Anfang des Dokuments, bzw. in die Environment-Datei.):
+Dann mit Scite (Der \tex{usemodule}-Befehl gehört normalerweise an den Anfang des Dokuments, bzw. in die Environment-Datei.):
 
 \starttyping
   \usemodule[scite]

@@ -164,13 +164,13 @@ damit die zusätzlichen Literaturverzeichnisse Daten enthalten.
 
 \startsubsection[title={Zitieren}]
 
-Zur Quellenangabe im Text wird der Befehl \type{\cite[Schlüssel]} benutzt.
+Zur Quellenangabe im Text wird der Befehl \tex{cite[Schlüssel]} benutzt.
 Die Formatierung für \type{apa} sieht so aus \cite[Kielhorn-Ziele-dtk].
 
 Zusätzlich können noch Texte vor und nach der Quellenangabe ausgegeben werden,
-z.\,B. eine Seitenzahl \type{\cite[righttext={ S.\nbsp 12}][Kielhorn-Context]}:
+z.\,B. eine Seitenzahl \tex{cite[righttext={ S.\nbsp 12}][Kielhorn-Context]}:
 \cite[righttext={ S.\nbsp 35}][Kielhorn-Context]
-\type{\nbsp} ist dabei ein nicht trennbares Leerzeichen, 
+\tex{nbsp} ist dabei ein nicht trennbares Leerzeichen, 
 es verhindert, das die Seitenzahl in die nächste Zeile rutscht.
 
 Über Optionen kann auf weitere Daten eines Eintrags zugegriffen werden:
@@ -178,22 +178,22 @@ es verhindert, das die Seitenzahl in die nächste Zeile rutscht.
 {\bTABLE
 \setupTABLE[frame=off]
 \setupTABLE[1][width=0.6\textwidth]
-\bTR \bTD \type{\cite[Kielhorn-Context] }              \eTD \bTD \cite[Kielhorn-Context]              \eTD \eTR
-\bTR \bTD \type{\cite[num][Kielhorn-Context] }         \eTD \bTD \cite[num][Kielhorn-Context]         \eTD \eTR
-\bTR \bTD \type{\cite[textnum][Kielhorn-Context] }     \eTD \bTD \cite[textnum][Kielhorn-Context]     \eTD \eTR
-\bTR \bTD \type{\cite[authornum][Kielhorn-Context] }   \eTD \bTD \cite[authornum][Kielhorn-Context]   \eTD \eTR
-\bTR \bTD \type{\cite[authoryear][Kielhorn-Context] }  \eTD \bTD \cite[authoryear][Kielhorn-Context]  \eTD \eTR
-\bTR \bTD \type{\cite[authoryears][Kielhorn-Context] } \eTD \bTD \cite[authoryears][Kielhorn-Context] \eTD \eTR
-\bTR \bTD \type{\cite[short][Kielhorn-Context] }       \eTD \bTD \cite[short][Kielhorn-Context]       \eTD \eTR
-\bTR \bTD \type{\cite[tag][Kielhorn-Context] }         \eTD \bTD \cite[tag][Kielhorn-Context]         \eTD \eTR
-\bTR \bTD \type{\cite[index][Kielhorn-Context] }       \eTD \bTD \cite[index][Kielhorn-Context]       \eTD \eTR
-\bTR \bTD \type{\cite[category][Kielhorn-Context] }    \eTD \bTD \cite[category][Kielhorn-Context]    \eTD \eTR
-\bTR \bTD \type{\cite[author][Kielhorn-Context] }      \eTD \bTD \cite[author][Kielhorn-Context]      \eTD \eTR
-\bTR \bTD \type{\cite[year][Kielhorn-Context] }        \eTD \bTD \cite[year][Kielhorn-Context]        \eTD \eTR
-\bTR \bTD \type{\cite[title][Kielhorn-Context] }       \eTD \bTD \cite[title][Kielhorn-Context]       \eTD \eTR
-\bTR \bTD \type{\cite[keywords][Kielhorn-Context] }    \eTD \bTD \cite[keywords][Kielhorn-Context]    \eTD \eTR
-\bTR \bTD \type{\cite[none][Kielhorn-Context] }        \eTD \bTD \cite[none][Kielhorn-Context]        \eTD \eTR
-\bTR \bTD \type{\cite[entry][Kielhorn-Context]}        \eTD \bTD \cite[entry][Kielhorn-Context]       \eTD \eTR
+\bTR \bTD \tex{cite[Kielhorn-Context] }              \eTD \bTD \cite[Kielhorn-Context]              \eTD \eTR
+\bTR \bTD \tex{cite[num][Kielhorn-Context] }         \eTD \bTD \cite[num][Kielhorn-Context]         \eTD \eTR
+\bTR \bTD \tex{cite[textnum][Kielhorn-Context] }     \eTD \bTD \cite[textnum][Kielhorn-Context]     \eTD \eTR
+\bTR \bTD \tex{cite[authornum][Kielhorn-Context] }   \eTD \bTD \cite[authornum][Kielhorn-Context]   \eTD \eTR
+\bTR \bTD \tex{cite[authoryear][Kielhorn-Context] }  \eTD \bTD \cite[authoryear][Kielhorn-Context]  \eTD \eTR
+\bTR \bTD \tex{cite[authoryears][Kielhorn-Context] } \eTD \bTD \cite[authoryears][Kielhorn-Context] \eTD \eTR
+\bTR \bTD \tex{cite[short][Kielhorn-Context] }       \eTD \bTD \cite[short][Kielhorn-Context]       \eTD \eTR
+\bTR \bTD \tex{cite[tag][Kielhorn-Context] }         \eTD \bTD \cite[tag][Kielhorn-Context]         \eTD \eTR
+\bTR \bTD \tex{cite[index][Kielhorn-Context] }       \eTD \bTD \cite[index][Kielhorn-Context]       \eTD \eTR
+\bTR \bTD \tex{cite[category][Kielhorn-Context] }    \eTD \bTD \cite[category][Kielhorn-Context]    \eTD \eTR
+\bTR \bTD \tex{cite[author][Kielhorn-Context] }      \eTD \bTD \cite[author][Kielhorn-Context]      \eTD \eTR
+\bTR \bTD \tex{cite[year][Kielhorn-Context] }        \eTD \bTD \cite[year][Kielhorn-Context]        \eTD \eTR
+\bTR \bTD \tex{cite[title][Kielhorn-Context] }       \eTD \bTD \cite[title][Kielhorn-Context]       \eTD \eTR
+\bTR \bTD \tex{cite[keywords][Kielhorn-Context] }    \eTD \bTD \cite[keywords][Kielhorn-Context]    \eTD \eTR
+\bTR \bTD \tex{cite[none][Kielhorn-Context] }        \eTD \bTD \cite[none][Kielhorn-Context]        \eTD \eTR
+\bTR \bTD \tex{cite[entry][Kielhorn-Context]}        \eTD \bTD \cite[entry][Kielhorn-Context]       \eTD \eTR
 \bTR \bTD \type{}                                      \eTD \bTD                                      \eTD \eTR
 \eTABLE
 }

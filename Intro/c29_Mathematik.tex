@@ -26,7 +26,7 @@ $…$
 \mathematics{…}
 \stoptyping
 
-Abgesetzte Formeln mittels \type{\startformula…\stopformula}.
+Abgesetzte Formeln mittels \tex{startformula…\stopformula}.
 
 Das Paket AMSTeX bietet in LaTeX viele Möglichkeiten Formel zu gestalten.
 Im Dokument 
@@ -37,7 +37,7 @@ werden die LaTeX und ConTeXt Befehle gegenübergestellt.
 \startsubsection[title={Ausrichtung}]
 
 Einzelne Formeln stehen in einer Zeile.
-Der Befehl \type{\placeformula} erzeugt dabei die Nummerierung.
+Der Befehl \tex{placeformula} erzeugt dabei die Nummerierung.
 Gibt man dem Befehl einen Formelnamen als Argument, 
 kann sich im Text darauf beziehen, siehe Formel \in[formel1].
 
@@ -53,7 +53,7 @@ kann sich im Text darauf beziehen, siehe Formel \in[formel1].
 v = u + at
 \stopformula
 
-Die gleiche Formel ohne \type{\placeformula}:
+Die gleiche Formel ohne \tex{placeformula}:
 
 \startformula
 v = u + at
@@ -69,11 +69,11 @@ Auf die Formel kann man sich mit dem Befehl
 beziehen: In Formel \ref[number][formel1] 
 auf Seite \ref[page][formel1] wurde das bereits vorgestellt.
 
-Einfacher geht es mit \type{\in[formel1]}, 
+Einfacher geht es mit \tex{in[formel1]}, 
 das ergibt sie Formelnummer und gleichzeitig einen Link zur Formel \in[formel1].
 
 Mehrere Formeln werden zentriert untereinander geschrieben.
-Die einzelnen Formeln werden dabei von \type{\NC … \NR} umschlossen. 
+Die einzelnen Formeln werden dabei von \tex{NC … \NR} umschlossen. 
 
 \starttyping
 \placeformula \startformula
@@ -94,7 +94,7 @@ In diesem Fall wird für die Gruppe eine Nummer vergeben.
 \stopformula
 
 Um alle (oder nur einzelne) Formel zu nummerieren, 
-muss die Zeile, die eine Nummer erhalten soll, mit \type{\NR[+]} abgeschlossen werden.
+muss die Zeile, die eine Nummer erhalten soll, mit \tex{NR[+]} abgeschlossen werden.
 
 \placeformula \startformula
   \startmathalignment[n=1]
@@ -103,7 +103,7 @@ muss die Zeile, die eine Nummer erhalten soll, mit \type{\NR[+]} abgeschlossen w
   \stopmathalignment
 \stopformula
 
-Mit \type{\startmathalignment[number=auto]} werden die Formeln einzeln nummeriert.
+Mit \tex{startmathalignment[number=auto]} werden die Formeln einzeln nummeriert.
 
 \placeformula \startformula
   \startmathalignment[n=1,number=auto]
@@ -157,15 +157,15 @@ und lassen sich mit \type{{}} gruppieren.
 Einfache $a^b_c$, mehrfache  $a^{ab}_{ac}$ und mehrstufige  $a^{b^c}_d$ Exponenten.
 
 Als Index wird oft ein Wort anstelle eines Formelzeichens verwendet.
-Dies muss als \type{\mathtext{}} eingegeben werden.
+Dies muss als \tex{mathtext{}} eingegeben werden.
 
 \type{$P_{\mathtext{Antrieb}}$} $P_{\mathtext{Antrieb}}$ statt \type{$P_{Antrieb}$} $P_{Antrieb}$.
 
 \stopsubsection
 \startsubsection[title={Brüche und Klammern}]
 
-Der \type{\frac{}{}} Befehl setzt einen normalen Bruch, 
-der Befehl \type{\binom{}{}} schreibt beide Argumente ohne Bruchstrich und fügt eine Klammer in der richtigen Größe hinzu.
+Der \tex{frac{}{}} Befehl setzt einen normalen Bruch, 
+der Befehl \tex{binom{}{}} schreibt beide Argumente ohne Bruchstrich und fügt eine Klammer in der richtigen Größe hinzu.
 
 \starttyping
 \frac{ab}{cd} \binom{ab}{cd}
@@ -175,7 +175,7 @@ der Befehl \type{\binom{}{}} schreibt beide Argumente ohne Bruchstrich und fügt
 \frac{ab}{cd} \binom{ab}{cd}
 \stopformula
 
-Klammern lassen sich auch aus einem Paar \type{\left( \right)} Befehlen aufbauen.
+Klammern lassen sich auch aus einem Paar \tex{left( \right)} Befehlen aufbauen.
 Die Befehle müssen immer zusammen benutzt werden, ist kein zweites Symbol gewünscht, kann ein \type{.} benutzt werden.
 
 \starttyping
@@ -239,27 +239,27 @@ $ab$ steht also für $a \times b$.
 Das ist oft nicht das, was man möchte. 
 Es gibt mehrere Befehle, um Text in Formeln einzufügen, dabei sind auch Hervorhebungen möglich.
 
-In der \type{\mathword} Variante werden Leerzeichen ignoriert.
+In der \tex{mathword} Variante werden Leerzeichen ignoriert.
 Das ist hilfreich, wenn der Text automatisch erzeugt wird.
 
 \starttabulate [|l|l|]
-\NC \type{\mathtext{Aufrechter Text}}        \NC $\mathtext{Aufrechter Text}$        \NC \NR
-\NC \type{\mathtexttf{Aufrechter Text}}      \NC $\mathtexttf{Aufrechter Text}$      \NC \NR
-\NC \type{\mathtextit{Kursiver Text}}        \NC $\mathtextit{Kursiver Text}$        \NC \NR
-\NC \type{\mathtextsl{Schräger Text}}        \NC $\mathtextsl{Schräger Text}$        \NC \NR
-\NC \type{\mathtextbf{Fetter Text}}          \NC $\mathtextbf{Fetter Text}$          \NC \NR
-\NC \type{\mathtextbi{Fetter kursiver Text}} \NC $\mathtextbi{Fetter kursiver Text}$ \NC \NR
-\NC \type{\mathtextbs{Fetter schräger Text}} \NC $\mathtextbs{Fetter schräger Text}$ \NC \NR
+\NC \tex{mathtext{Aufrechter Text}}        \NC $\mathtext{Aufrechter Text}$        \NC \NR
+\NC \tex{mathtexttf{Aufrechter Text}}      \NC $\mathtexttf{Aufrechter Text}$      \NC \NR
+\NC \tex{mathtextit{Kursiver Text}}        \NC $\mathtextit{Kursiver Text}$        \NC \NR
+\NC \tex{mathtextsl{Schräger Text}}        \NC $\mathtextsl{Schräger Text}$        \NC \NR
+\NC \tex{mathtextbf{Fetter Text}}          \NC $\mathtextbf{Fetter Text}$          \NC \NR
+\NC \tex{mathtextbi{Fetter kursiver Text}} \NC $\mathtextbi{Fetter kursiver Text}$ \NC \NR
+\NC \tex{mathtextbs{Fetter schräger Text}} \NC $\mathtextbs{Fetter schräger Text}$ \NC \NR
 \stoptabulate
 
 \starttabulate [|l|l|]
-\NC \type{\mathword{Aufrechtes Wort}}        \NC $\mathword{Aufrechtes Wort}$        \NC \NR
-\NC \type{\mathwordtf{Aufrechtes Wort}}      \NC $\mathwordtf{Aufrechtes Wort}$      \NC \NR
-\NC \type{\mathwordit{Kursives Wort}}        \NC $\mathwordit{Kursives Wort}$        \NC \NR
-\NC \type{\mathwordsl{Schräges Wort}}        \NC $\mathwordsl{Schräges Wort}$        \NC \NR
-\NC \type{\mathwordbf{Fettes Wort}}          \NC $\mathwordbf{Fettes Wort}$          \NC \NR
-\NC \type{\mathwordbi{Fettes kursives Wort}} \NC $\mathwordbi{Fettes kursives Wort}$ \NC \NR
-\NC \type{\mathwordbs{Fettes schräges Wort}} \NC $\mathwordbs{Fettes schräges Wort}$ \NC \NR
+\NC \tex{mathword{Aufrechtes Wort}}        \NC $\mathword{Aufrechtes Wort}$        \NC \NR
+\NC \tex{mathwordtf{Aufrechtes Wort}}      \NC $\mathwordtf{Aufrechtes Wort}$      \NC \NR
+\NC \tex{mathwordit{Kursives Wort}}        \NC $\mathwordit{Kursives Wort}$        \NC \NR
+\NC \tex{mathwordsl{Schräges Wort}}        \NC $\mathwordsl{Schräges Wort}$        \NC \NR
+\NC \tex{mathwordbf{Fettes Wort}}          \NC $\mathwordbf{Fettes Wort}$          \NC \NR
+\NC \tex{mathwordbi{Fettes kursives Wort}} \NC $\mathwordbi{Fettes kursives Wort}$ \NC \NR
+\NC \tex{mathwordbs{Fettes schräges Wort}} \NC $\mathwordbs{Fettes schräges Wort}$ \NC \NR
 \stoptabulate
 
 \stopsubsection
@@ -281,8 +281,8 @@ Das ist zwar das, was man in den meisten Fällen wünscht,
 \stopformula           
 \stoptyping
 
-In LMTX gibt es daher den neuen Befehl \type{\TC} für TextColumn. 
-Ein \type{\NC} erzeugt jetzt eine Spalte im Mathe-Modus.
+In LMTX gibt es daher den neuen Befehl \tex{TC} für TextColumn. 
+Ein \tex{NC} erzeugt jetzt eine Spalte im Mathe-Modus.
 
 \starttyping
 \startformula
