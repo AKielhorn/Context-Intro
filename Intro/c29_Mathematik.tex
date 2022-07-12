@@ -20,7 +20,7 @@ daher kann die reichlich vorhandene Literatur hier mitbenutzt werden.
 
 Formeln im Fließtext erreicht man mittels 
 \starttyping
-$…$
+$…$ % nicht empfohlen
 \m{…}
 \math{…}
 \mathematics{…}
@@ -154,12 +154,12 @@ Exponenten gelten nur im Mathematikmodus.
 Sie werden durch ein \type{^} und Indizes durch ein \type{_} gekennzeichnet
 und lassen sich mit \type{{}} gruppieren.
 
-Einfache $a^b_c$, mehrfache  $a^{ab}_{ac}$ und mehrstufige  $a^{b^c}_d$ Exponenten.
+Einfache \m{a^b_c}, mehrfache  \m{a^{ab}_{ac}} und mehrstufige  \m{a^{b^c}_d} Exponenten.
 
 Als Index wird oft ein Wort anstelle eines Formelzeichens verwendet.
 Dies muss als \tex{mathtext{}} eingegeben werden.
 
-\type{$P_{\mathtext{Antrieb}}$} $P_{\mathtext{Antrieb}}$ statt \type{$P_{Antrieb}$} $P_{Antrieb}$.
+\type{\m{P_{\mathtext{Antrieb}}}} \m{P_{\mathtext{Antrieb}}} statt \type{\m{P_{Antrieb}}} \m{P_{Antrieb}}.
 
 \stopsubsection
 \startsubsection[title={Brüche und Klammern}]
@@ -203,30 +203,30 @@ griechische Buchstabe genauso aussieht, wie der lateinische.
 \setupTABLE[frame=off]
 \setupTABLE[c][width=1.6cm]
 \bTR \bTD         \eTD \bTD [nc=2] Textmodus \eTD \bTD [nc=2] Mathemodus \eTD \bTD Varianten \eTD \eTR
-\bTR \bTD Alpha   \eTD \bTD \Alpha           \eTD \bTD \alpha            \eTD \bTD $\Alpha$   \eTD \bTD $\alpha$   \eTD \eTR
-\bTR \bTD Beta    \eTD \bTD \Beta            \eTD \bTD \beta             \eTD \bTD $\Beta$    \eTD \bTD $\beta$    \eTD \eTR
-\bTR \bTD Gamma   \eTD \bTD \Gamma           \eTD \bTD \gamma            \eTD \bTD $\Gamma$   \eTD \bTD $\gamma$   \eTD \eTR
-\bTR \bTD Delta   \eTD \bTD \Delta           \eTD \bTD \delta            \eTD \bTD $\Delta$   \eTD \bTD $\Delta$   \eTD \eTR
-\bTR \bTD Epsilon \eTD \bTD \Epsilon         \eTD \bTD \epsilon          \eTD \bTD $\Epsilon$ \eTD \bTD $\epsilon$ \eTD \bTD \varepsilon \eTD\eTR
-\bTR \bTD Zeta    \eTD \bTD \Zeta            \eTD \bTD \zeta             \eTD \bTD $\Zeta$    \eTD \bTD $\zeta$    \eTD \eTR
-\bTR \bTD Eta     \eTD \bTD \Eta             \eTD \bTD \eta              \eTD \bTD $\Eta$     \eTD \bTD $\eta$     \eTD \eTR
-\bTR \bTD Theta   \eTD \bTD \Theta           \eTD \bTD \theta            \eTD \bTD $\Theta$   \eTD \bTD $\theta$   \eTD \bTD \vartheta \eTD\eTR
-\bTR \bTD Iota    \eTD \bTD \Iota            \eTD \bTD \iota             \eTD \bTD $\Iota$    \eTD \bTD $\iota$    \eTD \eTR
-\bTR \bTD Kappa   \eTD \bTD \Kappa           \eTD \bTD \kappa            \eTD \bTD $\Kappa$   \eTD \bTD $\kappa$   \eTD \eTR
-\bTR \bTD Lambda  \eTD \bTD \Lambda          \eTD \bTD \lambda           \eTD \bTD $\Lambda$  \eTD \bTD $\lambda$  \eTD \eTR
-\bTR \bTD Mu      \eTD \bTD \Mu              \eTD \bTD \mu               \eTD \bTD $\Mu$      \eTD \bTD $\mu$      \eTD \eTR
-\bTR \bTD Nu      \eTD \bTD \Nu              \eTD \bTD \nu               \eTD \bTD $\Nu$      \eTD \bTD $\nu$      \eTD \eTR
-\bTR \bTD Xi      \eTD \bTD \Xi              \eTD \bTD \xi               \eTD \bTD $\Xi$      \eTD \bTD $\xi$      \eTD \eTR
-\bTR \bTD Omicron \eTD \bTD \Omicron         \eTD \bTD \omicron          \eTD \bTD $\Omicron$ \eTD \bTD $\omicron$ \eTD \eTR
-\bTR \bTD Pi      \eTD \bTD \Pi              \eTD \bTD \pi               \eTD \bTD $\Pi$      \eTD \bTD $\pi$      \eTD \bTD \varpi \eTD\eTR
-\bTR \bTD Rho     \eTD \bTD \Rho             \eTD \bTD \rho              \eTD \bTD $\Rho$     \eTD \bTD $\rho$     \eTD \bTD \varrho \eTD\eTR
-\bTR \bTD Sigma   \eTD \bTD \Sigma           \eTD \bTD \sigma            \eTD \bTD $\Sigma$   \eTD \bTD $\sigma$   \eTD \bTD \varsigma \eTD\eTR
-\bTR \bTD Tau     \eTD \bTD \Tau             \eTD \bTD \tau              \eTD \bTD $\Tau$     \eTD \bTD $\tau$     \eTD \eTR
-\bTR \bTD Upsilon \eTD \bTD \Upsilon         \eTD \bTD \upsilon          \eTD \bTD $\Upsilon$ \eTD \bTD $\upsilon$ \eTD \eTR
-\bTR \bTD Phi     \eTD \bTD \Phi             \eTD \bTD \phi              \eTD \bTD $\Phi$     \eTD \bTD $\phi$     \eTD \eTR
-\bTR \bTD Chi     \eTD \bTD \Chi             \eTD \bTD \chi              \eTD \bTD $\Chi$     \eTD \bTD $\chi$     \eTD \eTR
-\bTR \bTD Psi     \eTD \bTD \Psi             \eTD \bTD \psi              \eTD \bTD $\Psi$     \eTD \bTD $\psi$     \eTD \eTR
-\bTR \bTD Omega   \eTD \bTD \Omega           \eTD \bTD \omega            \eTD \bTD $\Omega$   \eTD \bTD $\omega$   \eTD \eTR
+\bTR \bTD Alpha   \eTD \bTD \Alpha           \eTD \bTD \alpha            \eTD \bTD \m{\Alpha}   \eTD \bTD \m{\alpha}   \eTD \eTR
+\bTR \bTD Beta    \eTD \bTD \Beta            \eTD \bTD \beta             \eTD \bTD \m{\Beta}    \eTD \bTD \m{\beta}    \eTD \eTR
+\bTR \bTD Gamma   \eTD \bTD \Gamma           \eTD \bTD \gamma            \eTD \bTD \m{\Gamma}   \eTD \bTD \m{\gamma}   \eTD \eTR
+\bTR \bTD Delta   \eTD \bTD \Delta           \eTD \bTD \delta            \eTD \bTD \m{\Delta}   \eTD \bTD \m{\Delta}   \eTD \eTR
+\bTR \bTD Epsilon \eTD \bTD \Epsilon         \eTD \bTD \epsilon          \eTD \bTD \m{\Epsilon} \eTD \bTD \m{\epsilon} \eTD \bTD \varepsilon \eTD\eTR
+\bTR \bTD Zeta    \eTD \bTD \Zeta            \eTD \bTD \zeta             \eTD \bTD \m{\Zeta}    \eTD \bTD \m{\zeta}    \eTD \eTR
+\bTR \bTD Eta     \eTD \bTD \Eta             \eTD \bTD \eta              \eTD \bTD \m{\Eta}     \eTD \bTD \m{\eta}     \eTD \eTR
+\bTR \bTD Theta   \eTD \bTD \Theta           \eTD \bTD \theta            \eTD \bTD \m{\Theta}   \eTD \bTD \m{\theta}   \eTD \bTD \vartheta \eTD\eTR
+\bTR \bTD Iota    \eTD \bTD \Iota            \eTD \bTD \iota             \eTD \bTD \m{\Iota}    \eTD \bTD \m{\iota}    \eTD \eTR
+\bTR \bTD Kappa   \eTD \bTD \Kappa           \eTD \bTD \kappa            \eTD \bTD \m{\Kappa}   \eTD \bTD \m{\kappa}   \eTD \eTR
+\bTR \bTD Lambda  \eTD \bTD \Lambda          \eTD \bTD \lambda           \eTD \bTD \m{\Lambda}  \eTD \bTD \m{\lambda}  \eTD \eTR
+\bTR \bTD Mu      \eTD \bTD \Mu              \eTD \bTD \mu               \eTD \bTD \m{\Mu}      \eTD \bTD \m{\mu}      \eTD \eTR
+\bTR \bTD Nu      \eTD \bTD \Nu              \eTD \bTD \nu               \eTD \bTD \m{\Nu}      \eTD \bTD \m{\nu}      \eTD \eTR
+\bTR \bTD Xi      \eTD \bTD \Xi              \eTD \bTD \xi               \eTD \bTD \m{\Xi}      \eTD \bTD \m{\xi}      \eTD \eTR
+\bTR \bTD Omicron \eTD \bTD \Omicron         \eTD \bTD \omicron          \eTD \bTD \m{\Omicron} \eTD \bTD \m{\omicron} \eTD \eTR
+\bTR \bTD Pi      \eTD \bTD \Pi              \eTD \bTD \pi               \eTD \bTD \m{\Pi}      \eTD \bTD \m{\pi}      \eTD \bTD \varpi \eTD\eTR
+\bTR \bTD Rho     \eTD \bTD \Rho             \eTD \bTD \rho              \eTD \bTD \m{\Rho}     \eTD \bTD \m{\rho}     \eTD \bTD \varrho \eTD\eTR
+\bTR \bTD Sigma   \eTD \bTD \Sigma           \eTD \bTD \sigma            \eTD \bTD \m{\Sigma}   \eTD \bTD \m{\sigma}   \eTD \bTD \varsigma \eTD\eTR
+\bTR \bTD Tau     \eTD \bTD \Tau             \eTD \bTD \tau              \eTD \bTD \m{\Tau}     \eTD \bTD \m{\tau}     \eTD \eTR
+\bTR \bTD Upsilon \eTD \bTD \Upsilon         \eTD \bTD \upsilon          \eTD \bTD \m{\Upsilon} \eTD \bTD \m{\upsilon} \eTD \eTR
+\bTR \bTD Phi     \eTD \bTD \Phi             \eTD \bTD \phi              \eTD \bTD \m{\Phi}     \eTD \bTD \m{\phi}     \eTD \eTR
+\bTR \bTD Chi     \eTD \bTD \Chi             \eTD \bTD \chi              \eTD \bTD \m{\Chi}     \eTD \bTD \m{\chi}     \eTD \eTR
+\bTR \bTD Psi     \eTD \bTD \Psi             \eTD \bTD \psi              \eTD \bTD \m{\Psi}     \eTD \bTD \m{\psi}     \eTD \eTR
+\bTR \bTD Omega   \eTD \bTD \Omega           \eTD \bTD \omega            \eTD \bTD \m{\Omega}   \eTD \bTD \m{\omega}   \eTD \eTR
 \eTABLE
 }
 
@@ -235,7 +235,7 @@ griechische Buchstabe genauso aussieht, wie der lateinische.
 \startsubsection[title={Texte in Formeln}]
 
 Text wir in Formeln als Variable interpretiert, zwischen den Variablen gibt es eine implizite Multiplikation.
-$ab$ steht also für $a \times b$. 
+\m{ab} steht also für \m{a \times b}. 
 Das ist oft nicht das, was man möchte. 
 Es gibt mehrere Befehle, um Text in Formeln einzufügen, dabei sind auch Hervorhebungen möglich.
 
@@ -243,23 +243,23 @@ In der \tex{mathword} Variante werden Leerzeichen ignoriert.
 Das ist hilfreich, wenn der Text automatisch erzeugt wird.
 
 \starttabulate [|l|l|]
-\NC \tex{mathtext{Aufrechter Text}}        \NC $\mathtext{Aufrechter Text}$        \NC \NR
-\NC \tex{mathtexttf{Aufrechter Text}}      \NC $\mathtexttf{Aufrechter Text}$      \NC \NR
-\NC \tex{mathtextit{Kursiver Text}}        \NC $\mathtextit{Kursiver Text}$        \NC \NR
-\NC \tex{mathtextsl{Schräger Text}}        \NC $\mathtextsl{Schräger Text}$        \NC \NR
-\NC \tex{mathtextbf{Fetter Text}}          \NC $\mathtextbf{Fetter Text}$          \NC \NR
-\NC \tex{mathtextbi{Fetter kursiver Text}} \NC $\mathtextbi{Fetter kursiver Text}$ \NC \NR
-\NC \tex{mathtextbs{Fetter schräger Text}} \NC $\mathtextbs{Fetter schräger Text}$ \NC \NR
+\NC \tex{mathtext{Aufrechter Text}}        \NC \m{\mathtext{Aufrechter Text}}        \NC \NR
+\NC \tex{mathtexttf{Aufrechter Text}}      \NC \m{\mathtexttf{Aufrechter Text}}      \NC \NR
+\NC \tex{mathtextit{Kursiver Text}}        \NC \m{\mathtextit{Kursiver Text}}        \NC \NR
+\NC \tex{mathtextsl{Schräger Text}}        \NC \m{\mathtextsl{Schräger Text}}        \NC \NR
+\NC \tex{mathtextbf{Fetter Text}}          \NC \m{\mathtextbf{Fetter Text}}          \NC \NR
+\NC \tex{mathtextbi{Fetter kursiver Text}} \NC \m{\mathtextbi{Fetter kursiver Text}} \NC \NR
+\NC \tex{mathtextbs{Fetter schräger Text}} \NC \m{\mathtextbs{Fetter schräger Text}} \NC \NR
 \stoptabulate
 
 \starttabulate [|l|l|]
-\NC \tex{mathword{Aufrechtes Wort}}        \NC $\mathword{Aufrechtes Wort}$        \NC \NR
-\NC \tex{mathwordtf{Aufrechtes Wort}}      \NC $\mathwordtf{Aufrechtes Wort}$      \NC \NR
-\NC \tex{mathwordit{Kursives Wort}}        \NC $\mathwordit{Kursives Wort}$        \NC \NR
-\NC \tex{mathwordsl{Schräges Wort}}        \NC $\mathwordsl{Schräges Wort}$        \NC \NR
-\NC \tex{mathwordbf{Fettes Wort}}          \NC $\mathwordbf{Fettes Wort}$          \NC \NR
-\NC \tex{mathwordbi{Fettes kursives Wort}} \NC $\mathwordbi{Fettes kursives Wort}$ \NC \NR
-\NC \tex{mathwordbs{Fettes schräges Wort}} \NC $\mathwordbs{Fettes schräges Wort}$ \NC \NR
+\NC \tex{mathword{Aufrechtes Wort}}        \NC \m{\mathword{Aufrechtes Wort}}        \NC \NR
+\NC \tex{mathwordtf{Aufrechtes Wort}}      \NC \m{\mathwordtf{Aufrechtes Wort}}      \NC \NR
+\NC \tex{mathwordit{Kursives Wort}}        \NC \m{\mathwordit{Kursives Wort}}        \NC \NR
+\NC \tex{mathwordsl{Schräges Wort}}        \NC \m{\mathwordsl{Schräges Wort}}        \NC \NR
+\NC \tex{mathwordbf{Fettes Wort}}          \NC \m{\mathwordbf{Fettes Wort}}          \NC \NR
+\NC \tex{mathwordbi{Fettes kursives Wort}} \NC \m{\mathwordbi{Fettes kursives Wort}} \NC \NR
+\NC \tex{mathwordbs{Fettes schräges Wort}} \NC \m{\mathwordbs{Fettes schräges Wort}} \NC \NR
 \stoptabulate
 
 \stopsubsection
@@ -275,7 +275,7 @@ Das ist zwar das, was man in den meisten Fällen wünscht,
 \startformula
 \delta_{ij} =
 \startcases  
-\NC 1 \NC if $i = j$ \NR
+\NC 1 \NC if \m{i = j} \NR
 \NC 0 \NC otherwise \NR
 \stopcases             
 \stopformula           
@@ -288,7 +288,7 @@ Ein \tex{NC} erzeugt jetzt eine Spalte im Mathe-Modus.
 \startformula
 \delta_{ij} =
 \startcases  
-\NC 1 \TC if $i = j$ \NR
+\NC 1 \TC if \m{i = j} \NR
 \NC 0 \TC otherwise \NR
 \stopcases             
 \stopformula           
@@ -297,7 +297,7 @@ Ein \tex{NC} erzeugt jetzt eine Spalte im Mathe-Modus.
 \startformula
 \delta_{ij} =
 \startcases  
-\NC 1 \NC if $i = j$ \NR
+\NC 1 \NC if \m{i = j} \NR
 \NC 0 \NC otherwise \NR
 \stopcases             
 \stopformula           
