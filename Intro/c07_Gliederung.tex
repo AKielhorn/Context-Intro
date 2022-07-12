@@ -15,15 +15,17 @@
   \index{Section}
   \index{Part}
   
-  Es gibt zwei Möglichkeiten Gliederungen zu definieren.
-  ConTeXt versteht die LaTeX-Befehle \tex{chapter{}}, \tex{section{}} usw.
+Es gibt zwei Möglichkeiten Gliederungen zu definieren.
+ConTeXt versteht die Befehle \tex{chapter{}}, \tex{section{}} usw. um einen neuen Abschnitt einzuleiten.
   
-  Für einige Funktionen (tagged-PDF, ePUB Export und XML Export) muss die Gliederung als Umgebung definiert werden.
+Für einige Funktionen (tagged-PDF, ePUB Export und XML Export) muss die Gliederung als Umgebung definiert werden.
+Diese Version sollte bevorzugt verwendet werden, da sie zusätzliche Optionen bietet:
   
 \starttyping
   \startsection[
-    reference=gliederung,
     title={Gliederung},
+    reference=gliederung,  % Für Verweise auf dieses Kapitel
+    bookmark={Gliederung}, % Bookmark für PDF
     ]
     Lorem ipsum dolor
   \stopsection
